@@ -12,9 +12,8 @@ stylesheet: brand
   Every other section belongs to one room of the guide's messaging house. The roof is the why, the three
   pillars are How Puli Works (People, Projects, Promises, Alan's call on Nov 18), and "Yours to keep" is the
   foundation. If a line fits no room, cut it.
-  The hero shows the real screenshot at /assets/images/puli/hero.png once it's there (about 2400px wide
-  is plenty); until then, the stand-in window, marked data-shot. A dark-mode capture at
-  /assets/images/puli/hero-dark.png shows in dark mode; capture both at the same window size.
+  The hero shows the screenshot at /assets/images/puli/hero.png (about 2400px wide), and hero-dark.png in dark
+  mode; capture both at the same window size. (The typed stand-in note is gone: Alan, Nov 20.)
   What the screenshot shows (Alan, Nov 18): meeting notes in the editor; the calendar and contextual
   information in the context pane; and the sidebar, though maybe not the notes list.
 {%- endcomment -%}
@@ -32,42 +31,14 @@ stylesheet: brand
       </div>
     </div>
 
-    {%- assign shot = site.static_files | where: "path", "/assets/images/puli/hero.png" | first -%}
-    {%- assign shot_dark = site.static_files | where: "path", "/assets/images/puli/hero-dark.png" | first -%}
-    {%- if shot %}
     {%- comment -%} AVIF first, a seventh the size of the PNGs, which stay for browsers without AVIF. The hero is the first
       thing anyone sees, so it loads ahead of everything else. {%- endcomment %}
     <figure class="q-shot"><picture>
-      {%- if shot_dark %}
       <source srcset="{{ '/assets/images/puli/hero-dark.avif' | relative_url }}" type="image/avif" media="(prefers-color-scheme: dark)">
-      <source srcset="{{ shot_dark.path | relative_url }}" media="(prefers-color-scheme: dark)">
-      {%- endif %}
+      <source srcset="{{ '/assets/images/puli/hero-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)">
       <source srcset="{{ '/assets/images/puli/hero.avif' | relative_url }}" type="image/avif">
-      <img src="{{ shot.path | relative_url }}" width="1828" height="994" fetchpriority="high" alt="Puli on a Mac: a meeting note, with the page of the person it mentions open beside it.">
+      <img src="{{ '/assets/images/puli/hero.png' | relative_url }}" width="1828" height="994" fetchpriority="high" alt="Puli on a Mac: a meeting note, with the page of the person it mentions open beside it.">
     </picture></figure>
-    {%- else %}
-    <div class="q-window q-app" data-shot="Screenshot: meeting notes in the editor; the calendar and contextual information in the context pane; the sidebar showing, maybe not the notes list.">
-      <span class="q-window__bar" aria-hidden="true"><i></i><i></i><i></i></span>
-      <div class="q-app__body">
-        <div class="q-typed" data-type>
-          <p class="q-typed__title">1:1 with Dana · Tue, Nov 10</p>
-          <p>Caught up with <b class="q-person">@Dana-Whitfield</b> on <b class="q-project">#Project-Atlas</b>.</p>
-          <p>The reorg landed better than she feared.</p>
-          <p>[ ] Introduce <b class="q-person">@Dana-Whitfield</b> to the finance team by Fri</p>
-        </div>
-        <aside class="q-pane" aria-label="Dana's page, in the context pane">
-          <p class="q-pane__name">Dana Whitfield</p>
-          <p class="q-pane__role">Head of Ops</p>
-          <dl>
-            <div><dt>About</dt><dd>Married to Sam. Two kids, both in soccer.</dd></div>
-            <div><dt>Projects</dt><dd><span class="q-project">#Project-Atlas</span></dd></div>
-            <div><dt>Last time · Oct 20</dt><dd>Worried about the reorg.</dd></div>
-            <div><dt>You owe her</dt><dd>An introduction to the finance team</dd></div>
-          </dl>
-        </aside>
-      </div>
-    </div>
-    {%- endif %}
   </div>
 </section>
 
@@ -405,29 +376,3 @@ stylesheet: brand
   })();
 </script>
 
-<script>
-  // The note in the hero types itself, once, like a Selectric. Only on a page someone can see,
-  // so a page opened in the background shows the finished note.
-  (function () {
-    var box = document.querySelector("[data-type]");
-    if (!box || document.visibilityState !== "visible" || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    var lines = [].slice.call(box.children);
-    var html = lines.map(function (p) { return p.innerHTML; });
-    var text = lines.map(function (p) { return p.textContent; });
-    box.style.minHeight = box.offsetHeight + "px";
-    lines.forEach(function (p) { p.textContent = ""; });
-    function type(i, j) {
-      if (i > 0) lines[i - 1].classList.remove("is-typing");
-      if (i >= lines.length) return;
-      lines[i].classList.add("is-typing");
-      if (j <= text[i].length) {
-        lines[i].textContent = text[i].slice(0, j);
-        setTimeout(function () { type(i, j + 1); }, 22 + Math.random() * 36);
-      } else {
-        lines[i].innerHTML = html[i];  // the finished line gets its tag colors
-        setTimeout(function () { type(i + 1, 0); }, 320);
-      }
-    }
-    setTimeout(function () { type(0, 0); }, 600);
-  })();
-</script>

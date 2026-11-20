@@ -31,7 +31,8 @@ Every page wears Puli's brand (`_config.yml` defaults). Pages marked `published:
 | `lessons.html` | How Lessons Work, at `/lessons/` (Puli's Tricks links here). |
 | `acknowledgements.html` | Puli's open source and font licenses, at `/acknowledgements/` (Puli's About window links here). It reads each license from `assets/licenses/` and `assets/fonts/OFL-*.txt`, so keep those files identical to the ones the app bundles, and update the date when they change. |
 | `assets/licenses/` | The license texts for Puli's open source code (GRDB, SQLCipher), exactly as upstream ships them. |
-| `assets/fonts/` | Self-hosted Newsreader and Instrument Sans (variable WOFF2, Latin and Latin Extended), with their OFL licenses. |
+| `assets/fonts/` | The site's fonts, all WOFF2 with their OFL licenses: Instrument Sans (variable, 400 to 700, Latin and Latin Extended), and IBM Plex Serif Light and Light Italic in `plex/`, as IBM publishes them (split by script). `OFL-Newsreader.txt` stays for the acknowledgements page: the app bundles Newsreader, though the site doesn't use it. |
+| `tools/fonts/` | The desktop fonts `tools/og-image.swift` draws the social preview image with. Not published. |
 | `assets/css/site.css` | All styles. Light and dark mode follow the visitor's system setting. |
 | `assets/js/marks.js` | Opens and closes the phone menu. |
 | `confirm.html` | Where Kit sends people right after they sign up, asking them to confirm their email. |

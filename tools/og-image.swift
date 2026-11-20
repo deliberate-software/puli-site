@@ -9,7 +9,7 @@ import AppKit
 import CoreText
 // Drawn at 2x for crispness, then scaled down.
 let root = CommandLine.arguments[1], out = CommandLine.arguments[2]
-for f in ["assets/fonts/IBMPlexSerif-Light.otf", "assets/fonts/app/InstrumentSans.ttf"] {
+for f in ["tools/fonts/IBMPlexSerif-Light.otf", "tools/fonts/InstrumentSans.ttf"] {
   CTFontManagerRegisterFontsForURL(URL(fileURLWithPath: root + "/" + f) as CFURL, .process, nil) }
 let W = 1200, H = 630, k = 2
 let rep = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: W * k, pixelsHigh: H * k, bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true, isPlanar: false, colorSpaceName: .deviceRGB, bytesPerRow: 0, bitsPerPixel: 0)!
