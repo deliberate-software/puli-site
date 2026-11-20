@@ -1,13 +1,13 @@
 ---
-published: false   # hidden until it is branded and reviewed (Alan, Nov 19)
 layout: default
 title: Support
 description: How to get help with Puli.
 permalink: /support/
+main_class: q-section--teal   # dark teal, like Privacy (Alan, Nov 20)
 ---
 <section class="hero hero--short container">
-  <p class="eyebrow">Puli · Support</p>
-  <h1 class="hero__title">How can we <em>help?</em></h1>
+  <p class="eyebrow">Updated 20 November 2026</p>
+  <h1 class="hero__title">How can we help?</h1>
   <p class="hero__lead">Write to us at <a href="mailto:{{ site.email }}">{{ site.email }}</a>. We read every email, and we answer it ourselves.</p>
   <div class="prose">
     <h2>What to include</h2>
@@ -19,10 +19,15 @@ permalink: /support/
     </ul>
 
     <h2>Lessons</h2>
-    <p><a href="{{ '/lessons/' | relative_url }}">How Lessons Work</a> explains each plan, and what you keep.</p>
-    <p><strong>Lessons missing on a new Mac?</strong> Choose Teach Puli New Tricks… from the Help menu, then Restore Purchases.</p>
-    <p><strong>Cancel a subscription:</strong> open the App Store, click your name, then Account Settings, and manage your subscriptions there.</p>
-    <p><strong>Refunds</strong> are handled by Apple, at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+    <h3>Lessons missing on a new Mac?</h3>
+    <p>Choose Sign Up for Lessons… from the Help menu, then Restore Purchases.</p>
+    {%- comment -%} Drafted for the yearly + lifetime model Alan is leaning toward (Nov 20); no prices until he says so {%- endcomment %}
+    <h3>Cancel the yearly plan</h3>
+    <p>Cancel in <a href="https://apps.apple.com/account/subscriptions">your App Store subscriptions</a>. You keep every lesson you have, and any that arrive before your year ends.</p>
+    <h3>Cancel during the free trial</h3>
+    <p>You won’t be charged. The lessons lock again, but your notes stay as they are, and the sample journals still have every lesson.</p>
+    <h3>Refunds</h3>
+    <p>Apple handles refunds, at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>. If Apple refunds a purchase, its lessons lock again. Your notes are never touched.</p>
 
     <h2>The fine print</h2>
     <p><a href="{{ '/privacy/' | relative_url }}">Privacy policy</a>, <a href="{{ '/terms/' | relative_url }}">terms of use</a>, and <a href="{{ '/acknowledgements/' | relative_url }}">acknowledgements</a>.</p>
