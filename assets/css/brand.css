@@ -499,3 +499,10 @@
 .p-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 50px; padding: 0 26px; border-radius: 999px; font-size: 16px; font-weight: 500; }
 .p-btn--solid { background: var(--accent); color: var(--on-accent); }
 .p-btn--ghost { padding: 0 4px; color: var(--ink); }
+
+/* The short pages (404, confirm, thanks): their button in the golden yellow of every call to action, and the footer
+   held to the bottom of the window, with no band of background beneath it (Nov 19). */
+.is-puli .hero__actions .button { background: var(--cta); color: var(--cta-ink); border-color: transparent; }
+.is-puli .hero__actions .button:hover { background: var(--cta-hover); }
+body.is-puli { display: flex; flex-direction: column; min-height: 100svh; }
+body.is-puli > main { flex: 1 0 auto; }

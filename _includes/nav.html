@@ -1,20 +1,14 @@
 <header class="site-header">
   <nav class="container nav" aria-label="Main">
     <a class="brand" href="{{ '/' | relative_url }}">
-      {%- if page.body_class contains "is-puli" %}
       <img class="brand__icon" src="{{ '/assets/images/puli/puli-icon.png' | relative_url }}" alt="" width="52" height="52">
       <span><span class="brand__name">Puli</span> <span class="brand__for">for Mac</span></span>
-      {%- else %}
-      {% include marks/deliberate.html id="nav" %}
-      <span>{{ site.title }}<sup class="tm">™</sup></span>
-      {%- endif %}
     </a>
     <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
       <span class="nav__toggle-bar"></span>
       <span class="nav__toggle-bar"></span>
     </button>
     <div class="nav__links" id="nav-links">
-      {%- if page.body_class contains "is-puli" %}
       {%- comment -%} The home page's sections, in short (Alan, Nov 19). {%- endcomment %}
       <a class="nav__link" href="{{ '/' | relative_url }}#why">Why</a>
       <a class="nav__link" href="{{ '/' | relative_url }}#what">How</a>
@@ -22,18 +16,8 @@
       <a class="nav__link" href="{{ '/' | relative_url }}#beliefs">Promises</a>
       <a class="nav__link" href="{{ '/' | relative_url }}#questions">Questions</a>
       <a class="nav__link" href="{{ '/' | relative_url }}#about">About</a>
-      {%- else %}
-      <a class="nav__link" href="{{ '/' | relative_url }}#what">What it does</a>
-      <a class="nav__link" href="{{ '/' | relative_url }}#beliefs">Purpose</a>
-      <a class="nav__link" href="{{ '/' | relative_url }}#free">Pricing</a>
-      <a class="nav__link" href="{{ '/' | relative_url }}#questions">Questions</a>
-      <a class="nav__link" href="{{ '/' | relative_url }}#about">About</a>
-      <a class="button button--accent button--small" href="{{ '/' | relative_url }}#waitlist">Join the pack</a>
-      {%- endif %}
     </div>
-    {%- if page.body_class contains "is-puli" %}
     {%- comment -%} Until Puli is in the App Store, the menu bar's button leads to the mailing list at the foot of the home page (Alan, Nov 19). {%- endcomment %}
     <div class="nav__badge"><a class="nav__cta" href="{{ '/' | relative_url }}#download">Keep me posted</a></div>
-    {%- endif %}
   </nav>
 </header>

@@ -1,6 +1,6 @@
-# deliberate.software
+# getpuli.com
 
-The Deliberate Software website: a Jekyll site hosted on GitHub Pages, with the waitlist handled by Kit.
+The Puli for Mac website: a Jekyll site hosted on GitHub Pages, with the mailing list handled by Kit.
 
 ## Run it locally
 
@@ -13,21 +13,23 @@ Then open http://localhost:4000. The Gemfile uses Jekyll 3.10, the version GitHu
 
 ## Project layout
 
+Every page wears Puli's brand (`_config.yml` defaults). Pages marked `published: false` (the guide, the lessons, support, terms, acknowledgements, and the line concept) are hidden until they're branded and reviewed; remove that line to put one up.
+
 | Path | What it is |
 | --- | --- |
 | `_apps/puli.md` | Puli's name, platform, launch timing and Kit tag. Change `launch` here ("soon", or "in early 2027") and the hero and waitlist follow. |
 | `index.html` | The home page, written for Puli. |
-| `_includes/marks/` | The logos: `deliberate.html` (company, the brushed D), and `puli.html` (Puli, the herding dog: sitting in the hero, standing by the waitlist, black or white to stand out from what's behind it). |
+| `_includes/marks/` | `puli.html` (Puli, the herding dog: sitting in the hero, standing by the waitlist, black or white to stand out from what's behind it). |
 | `_includes/waitlist.html` | The Kit signup form: one email field, tagged for Puli with a hidden `tags[]` input. |
-| `privacy.html` | Deliberate Software's privacy policy, for this site and the waitlist. Update it, and its date, whenever what the site or list collects changes. |
-| `puli/privacy.html` | Puli's privacy policy, at `/puli/privacy/`, for the app alone (App Store Connect links here). Keep it matching the App Store's "Data Not Collected" label, and update its date when it changes. |
-| `puli/terms.html` | Puli's terms, at `/puli/terms/`: Apple's standard license agreement. |
-| `puli/support.html` | Puli's support page, at `/puli/support/` (App Store Connect's support URL). |
-| `puli/guide/` | Puli's Handler's Guide, at `/puli/guide/`: `index.html` is its contents, and each page beside it is one topic of the free app. Written from Puli's STORIES.md; keep it matching what ships. |
-| `puli/lessons/` | One page per lesson, at `/puli/lessons/<lesson>/`. `puli/lessons.html` (How Lessons Work, at `/puli/lessons/`) lists them. |
+| `privacy.html` | Puli's privacy policy, at `/privacy/`, for the app and this site's mailing list (App Store Connect links here). Keep it matching the App Store's "Data Not Collected" label, and update its date when it changes. |
+| `terms.html` | Puli's terms, at `/terms/`: Apple's standard license agreement. |
+| `legal.html` | Every trademark notice, at `/legal/` (the footer links here). Add any brand name a published page mentions. |
+| `support.html` | Puli's support page, at `/support/` (App Store Connect's support URL). |
+| `guide/` | Puli's Handler's Guide, at `/guide/`: `index.html` is its contents, and each page beside it is one topic of the free app. Written from Puli's STORIES.md; keep it matching what ships. |
+| `lessons/` | One page per lesson, at `/lessons/<lesson>/`. `lessons.html` (How Lessons Work, at `/lessons/`) lists them. |
 | `PENDING.md` | Everything to update once iCloud and the licensing model are decided. Not published. |
-| `puli/lessons.html` | How Lessons Work, at `/puli/lessons/` (Puli's Tricks links here). |
-| `acknowledgements.html` | Puli's open source and font licenses, at `/puli/acknowledgements/` (Puli's About window links here). It reads each license from `assets/licenses/` and `assets/fonts/OFL-*.txt`, so keep those files identical to the ones the app bundles, and update the date when they change. |
+| `lessons.html` | How Lessons Work, at `/lessons/` (Puli's Tricks links here). |
+| `acknowledgements.html` | Puli's open source and font licenses, at `/acknowledgements/` (Puli's About window links here). It reads each license from `assets/licenses/` and `assets/fonts/OFL-*.txt`, so keep those files identical to the ones the app bundles, and update the date when they change. |
 | `assets/licenses/` | The license texts for Puli's open source code (GRDB, SQLCipher), exactly as upstream ships them. |
 | `assets/fonts/` | Self-hosted Newsreader and Instrument Sans (variable WOFF2, Latin and Latin Extended), with their OFL licenses. |
 | `assets/css/site.css` | All styles. Light and dark mode follow the visitor's system setting. |

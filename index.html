@@ -3,8 +3,6 @@ layout: default
 full_title: Puli for Mac
 body_class: is-puli
 stylesheet: brand
-# Only the marks this page mentions (Alan, Nov 19): the footer's full list covers the guide's too.
-trademarks: "Apple, Mac, macOS, iCloud, Apple Intelligence, and VoiceOver are trademarks of Apple Inc., registered in the U.S. and other countries and regions. Mac App Store is a service mark of Apple Inc."
 ---
 {%- assign app = site.apps | where: "name", "Puli" | first -%}
 {%- comment -%}
@@ -182,7 +180,6 @@ trademarks: "Apple, Mac, macOS, iCloud, Apple Intelligence, and VoiceOver are tr
           <li><strong>Suggestions</strong> Tags and tasks, suggested as you write</li>
           <li><strong>Themes &amp; Typography</strong> A curated look for every journal</li>
         </ul>
-        <a class="q-link" href="{{ '/puli/lessons/' | relative_url }}">How Lessons Work <span aria-hidden="true">→</span></a>
       </div>
     </div>
   </div>
@@ -348,13 +345,15 @@ trademarks: "Apple, Mac, macOS, iCloud, Apple Intelligence, and VoiceOver are tr
 </script>
 
 <script>
-  // How much of the footer sits above its trademark notice, for the closing section to leave room for it. The footer comes
-  // after this script, so this waits for it, and measures again when the window or the footer changes.
+  // How much of the footer sits above its trademark notice (all of it, without one), for the closing section to leave
+  // room for it. The footer comes after this script, so this waits for it, and measures again when the window or the
+  // footer changes.
   document.addEventListener("DOMContentLoaded", function () {
     var footer = document.querySelector(".site-footer"), notice = footer && footer.querySelector(".footer__trademarks");
-    if (!notice) return;
+    if (!footer) return;
     function set() {
-      var top = notice.getBoundingClientRect().top - footer.getBoundingClientRect().top;
+      var box = footer.getBoundingClientRect();
+      var top = notice ? notice.getBoundingClientRect().top - box.top : box.height;
       document.documentElement.style.setProperty("--footer-top", Math.round(top) + "px");
     }
     set();
