@@ -1,0 +1,19 @@
+{%- comment -%}
+  A golden poppy on a section's bottom edge, on the pale bands.
+  Parameters: n (which poppy), w (its width in px), side ("left" or "right" margin; leave it out, with a class, to place
+  it some other way), class (more classes), set ("line", the default: the pen-and-ink poppies, 1–11, 10 retired in
+  favor of 11, its grass above the flowers cleared; or "meadow": the painted clumps, 1–8, for the painted concept).
+{%- endcomment -%}
+{%- if include.set == "meadow" -%}
+  {%- comment -%} each clump's ragged bottom cut flat (Alan, Nov 19), so it meets the section's edge with no gap {%- endcomment -%}
+  {%- assign sizes = "410x204,339x174,239x127,397x221,313x172,371x211,330x191,466x290" | split: "," -%}
+  {%- assign base = '/assets/images/puli/meadow/poppies-flat-' | append: include.n -%}
+{%- else -%}
+  {%- assign sizes = "238x387,220x305,368x275,456x318,290x245,179x213,399x319,111x196,120x143,330x300,330x285" | split: "," -%}
+  {%- assign base = '/assets/images/puli/pasture/poppy-' | append: include.n -%}
+{%- endif -%}
+{%- assign i = include.n | minus: 1 -%}
+{%- assign wh = sizes[i] | split: "x" -%}
+<picture class="q-poppy{% if include.side %} q-poppy--{{ include.side }}{% endif %}{% if include.class %} {{ include.class }}{% endif %}" style="--pw: {{ include.w }}px" aria-hidden="true">
+  <img src="{{ base | append: '.png' | relative_url }}" alt="" width="{{ wh[0] }}" height="{{ wh[1] }}" loading="lazy">
+</picture>

@@ -1,0 +1,32 @@
+<footer class="site-footer">
+  <div class="container footer">
+    <a class="footer__brand" href="{{ '/' | relative_url }}">
+      {% include marks/deliberate.html id="footer" %}
+      <span class="footer__lockup">
+        <span class="footer__name">{{ site.title }}</span>
+        <span class="footer__tagline">{{ site.tagline }}</span>
+      </span>
+    </a>
+    <div class="footer__links">
+      {%- comment -%} The home page's sections, as the menu bar names them (Alan, Nov 19). {%- endcomment %}
+      <a href="{{ '/' | relative_url }}#why">Why</a>
+      <a href="{{ '/' | relative_url }}#what">How</a>
+      <a href="{{ '/' | relative_url }}#free">Pricing</a>
+      <a href="{{ '/' | relative_url }}#beliefs">Promises</a>
+      <a href="{{ '/' | relative_url }}#questions">Questions</a>
+      <a href="{{ '/' | relative_url }}#about">About</a>
+      <a href="{{ '/' | relative_url }}privacy/">Privacy</a>
+      <a href="mailto:{{ site.email }}">Contact</a>
+    </div>
+    <p class="footer__copyright">© {{ site.time | date: "%Y" }} {{ site.legal_name }}</p>
+    <p class="footer__trademarks">{{ site.title }}
+      {%- for app in site.apps -%}
+        {%- if forloop.last %} and {% else %}, {% endif -%}{{ app.name }}
+      {%- endfor %} are trademarks of {{ site.legal_name }}.
+      {%- comment -%} The other names the page uses, credited to their owners. A page can give its own list in its front
+        matter (trademarks:), naming only what it mentions, as the home page does; otherwise this covers every name the
+        published pages use. Add any new one here. {%- endcomment %}
+      {%- if page.trademarks %} {{ page.trademarks }}{% else %}
+      Apple, Mac, macOS, iPhone, iCloud, iCloud Keychain, Apple Intelligence, VoiceOver, Siri, Spotlight, and Shortcuts are trademarks of Apple Inc., registered in the U.S. and other countries and regions. App Store and Mac App Store are service marks of Apple Inc. Google Docs is a trademark of Google LLC. Microsoft Word is a trademark of the Microsoft group of companies. Obsidian, Bear, Agenda, and Kit are trademarks of their respective owners.{% endif %}</p>
+  </div>
+</footer>

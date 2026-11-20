@@ -1,0 +1,434 @@
+---
+layout: default
+full_title: Puli for Mac
+body_class: is-puli
+stylesheet: brand
+# Only the marks this page mentions (Alan, Nov 19): the footer's full list covers the guide's too.
+trademarks: "Apple, Mac, macOS, iCloud, Apple Intelligence, and VoiceOver are trademarks of Apple Inc., registered in the U.S. and other countries and regions. Mac App Store is a service mark of Apple Inc."
+---
+{%- assign app = site.apps | where: "name", "Puli" | first -%}
+{%- comment -%}
+  The home page, in the Quiet Instrument direction (see /concepts/instrument/).
+  The words follow the Puli brand and messaging guide (Nov 14, 2026), except the hero: Alan's
+  Nov 18 call is that the top line says notes, and "Off the record. Top of mind." follows it.
+  Every other section belongs to one room of the guide's messaging house. The roof is the why, the three
+  pillars are How Puli Works (People, Projects, Promises, Alan's call on Nov 18), and "Yours to keep" is the
+  foundation. If a line fits no room, cut it.
+  The hero shows the real screenshot at /assets/images/puli/hero.png once it's there (about 2400px wide
+  is plenty); until then, the stand-in window, marked data-shot. A dark-mode capture at
+  /assets/images/puli/hero-dark.png shows in dark mode; capture both at the same window size.
+  What the screenshot shows (Alan, Nov 18): meeting notes in the editor; the calendar and contextual
+  information in the context pane; and the sidebar, though maybe not the notes list.
+{%- endcomment -%}
+
+<section class="q-hero" id="top" aria-labelledby="q-title">
+  <div class="q-pasture" aria-hidden="true">
+    <img class="q-pasture__left" src="{{ '/assets/images/puli/meadow/poppies-flat-4.png' | relative_url }}" alt="" width="397" height="221">
+    <img class="q-pasture__right" src="{{ '/assets/images/puli/meadow/grass-flat-8.png' | relative_url }}" alt="" width="368" height="235">
+  </div>
+  <div class="q-wrap">
+    <div class="q-hero__head">
+      <h1 class="q-hero__title" id="q-title">Herd your thoughts.</h1>
+      <div class="q-hero__aside">
+        <p class="q-hero__sub">Your notes about the people your work with, the projects you work on, and the promises made&nbsp;along&nbsp;the&nbsp;way, filed for you, in the privacy of your own&nbsp;Mac. For&nbsp;free.&nbsp;Forever.</p>
+      </div>
+    </div>
+
+    {%- assign shot = site.static_files | where: "path", "/assets/images/puli/hero.png" | first -%}
+    {%- assign shot_dark = site.static_files | where: "path", "/assets/images/puli/hero-dark.png" | first -%}
+    {%- if shot %}
+    {%- comment -%} AVIF first, a seventh the size of the PNGs, which stay for browsers without AVIF. The hero is the first
+      thing anyone sees, so it loads ahead of everything else. {%- endcomment %}
+    <figure class="q-shot"><picture>
+      {%- if shot_dark %}
+      <source srcset="{{ '/assets/images/puli/hero-dark.avif' | relative_url }}" type="image/avif" media="(prefers-color-scheme: dark)">
+      <source srcset="{{ shot_dark.path | relative_url }}" media="(prefers-color-scheme: dark)">
+      {%- endif %}
+      <source srcset="{{ '/assets/images/puli/hero.avif' | relative_url }}" type="image/avif">
+      <img src="{{ shot.path | relative_url }}" width="1828" height="994" fetchpriority="high" alt="Puli on a Mac: a meeting note, with the page of the person it mentions open beside it.">
+    </picture></figure>
+    {%- else %}
+    <div class="q-window q-app" data-shot="Screenshot: meeting notes in the editor; the calendar and contextual information in the context pane; the sidebar showing, maybe not the notes list.">
+      <span class="q-window__bar" aria-hidden="true"><i></i><i></i><i></i></span>
+      <div class="q-app__body">
+        <div class="q-typed" data-type>
+          <p class="q-typed__title">1:1 with Dana · Tue, Nov 10</p>
+          <p>Caught up with <b class="q-person">@Dana-Whitfield</b> on <b class="q-project">#Project-Atlas</b>.</p>
+          <p>The reorg landed better than she feared.</p>
+          <p>[ ] Introduce <b class="q-person">@Dana-Whitfield</b> to the finance team by Fri</p>
+        </div>
+        <aside class="q-pane" aria-label="Dana's page, in the context pane">
+          <p class="q-pane__name">Dana Whitfield</p>
+          <p class="q-pane__role">Head of Ops</p>
+          <dl>
+            <div><dt>About</dt><dd>Married to Sam. Two kids, both in soccer.</dd></div>
+            <div><dt>Projects</dt><dd><span class="q-project">#Project-Atlas</span></dd></div>
+            <div><dt>Last time · Oct 20</dt><dd>Worried about the reorg.</dd></div>
+            <div><dt>You owe her</dt><dd>An introduction to the finance team</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </div>
+    {%- endif %}
+  </div>
+</section>
+
+<section class="q-section q-section--teal" id="why" aria-labelledby="why-heading">
+  <img class="q-ewe q-ewe--low q-ewe--lower" src="{{ '/assets/images/puli/flock/flock-standing-left.png' | relative_url }}" alt="" width="362" height="310" aria-hidden="true">
+  {%- comment -%} a wall of short grass along the border, a little longer than the sheep (Alan, Nov 19) {%- endcomment %}
+  <img class="q-tuft-at" src="{{ '/assets/images/puli/meadow/grass-flat-1.png' | relative_url }}" alt="" width="180" height="86" style="--f: 0; --tw: 46px; --b: 0px" aria-hidden="true">
+  <img class="q-tuft-at q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-5.png' | relative_url }}" alt="" width="158" height="85" style="--f: 0.068; --tw: 40px; --b: 0px" aria-hidden="true">
+  <img class="q-tuft-at" src="{{ '/assets/images/puli/meadow/grass-flat-2.png' | relative_url }}" alt="" width="167" height="95" style="--f: 0.176; --tw: 44px; --b: 0px" aria-hidden="true">
+  <img class="q-tuft-at q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-1.png' | relative_url }}" alt="" width="180" height="86" style="--f: 0.284; --tw: 38px; --b: 0px" aria-hidden="true">
+  <img class="q-tuft-at" src="{{ '/assets/images/puli/meadow/grass-flat-5.png' | relative_url }}" alt="" width="158" height="85" style="--f: 0.392; --tw: 48px; --b: 0px" aria-hidden="true">
+  <img class="q-tuft-at q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-2.png' | relative_url }}" alt="" width="167" height="95" style="--f: 0.5; --tw: 40px; --b: 0px" aria-hidden="true">
+  <img class="q-tuft-at" src="{{ '/assets/images/puli/meadow/grass-flat-1.png' | relative_url }}" alt="" width="180" height="86" style="--f: 0.608; --tw: 44px; --b: 0px" aria-hidden="true">
+  <img class="q-tuft-at q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-5.png' | relative_url }}" alt="" width="158" height="85" style="--f: 0.716; --tw: 42px; --b: 0px" aria-hidden="true">
+  <img class="q-tuft-at" src="{{ '/assets/images/puli/meadow/grass-flat-2.png' | relative_url }}" alt="" width="167" height="95" style="--f: 0.824; --tw: 46px; --b: 0px" aria-hidden="true">
+  <img class="q-tuft-at q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-1.png' | relative_url }}" alt="" width="180" height="86" style="--f: 0.932; --tw: 40px; --b: 0px" aria-hidden="true">
+  <img class="q-tuft-at" src="{{ '/assets/images/puli/meadow/grass-flat-5.png' | relative_url }}" alt="" width="158" height="85" style="--f: 1.04; --tw: 44px; --b: 0px" aria-hidden="true">
+  <div class="q-wrap">
+    <h2 class="q-caps q-caps--body" id="why-heading"><span class="q-num">01</span>Why Puli</h2>
+    <div class="q-pair">
+      <div class="q-point">
+        <h3 class="q-h2">Thoughts are fleeting. Write them&nbsp;down.</h3>
+        <p class="q-lede">Everyone’s racing to record, transcribe, and summarize your meetings. But transcripts only capture what was said. A note captures what you thought. Puli tends your thoughts.</p>
+      </div>
+      <div class="q-point">
+        <h3 class="q-h2">Preferably somewhere with good&nbsp;recall.</h3>
+        <p class="q-lede">Other note-taking apps make you pick a folder. But a note about Dana and the Q3 launch belongs to both. Tag them, and Puli puts the note in both places, ready to recall the next time either is mentioned.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="q-section q-section--pasture" id="what" aria-labelledby="how-heading">
+  <span class="q-ewe-shadow" aria-hidden="true"></span>
+  <img class="q-ewe q-ewe--left q-ewe--grazing" src="{{ '/assets/images/puli/flock/flock-grazing-right.png' | relative_url }}" alt="" width="330" height="223" aria-hidden="true">
+  <img class="q-tuft-at q-tuft-at--left q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-5.png' | relative_url }}" alt="" width="158" height="85" style="--f: 0.07; --tw: 24px; --b: 0px" aria-hidden="true">
+  <img class="q-tuft-at q-tuft-at--left" src="{{ '/assets/images/puli/meadow/grass-flat-2.png' | relative_url }}" alt="" width="167" height="95" style="--f: 0.21; --tw: 44px; --b: 0px" aria-hidden="true">
+  <img class="q-tuft-at q-tuft-at--left" src="{{ '/assets/images/puli/meadow/grass-flat-1.png' | relative_url }}" alt="" width="180" height="86" style="--f: 0.58; --tw: 40px; --b: 0px" aria-hidden="true">
+  <img class="q-nibble" src="{{ '/assets/images/puli/meadow/grass-flat-5.png' | relative_url }}" alt="" width="158" height="85" aria-hidden="true">
+  {% include poppy.html n=6 set="meadow" side="right" w=170 %}
+  <div class="q-wrap">
+    <header class="q-head q-head--wide">
+      <p class="q-caps q-caps--body"><span class="q-num">02</span>How Puli Works</p>
+      <h2 class="q-h2 q-h2--oneline" id="how-heading">Just start writing. <span>Puli takes&nbsp;it from&nbsp;there.</span></h2>
+    </header>
+    {%- comment -%} From The Field mock (/concepts/field/): where your notes end up, a row each, alternating sides. {%- endcomment %}
+    <div class="q-pens" aria-label="Where your notes end up">
+      <article class="q-pen">
+        <div class="q-pen__copy">
+          <p class="q-pen__kicker">People</p>
+          <h3 class="q-pen__title">Everyone you talk to has a page.</h3>
+          <p>Type <span class="q-person">@Ben-Adler</span> in any note, and that line lands on Ben’s page, with everything else you’ve written about them. Before your next 1:1, it’s all there.</p>
+        </div>
+        {% include pen-shot.html name="people" label="a person’s page" alt="Ben Adler’s page in Puli, beside a studio meeting note." shot="Ben Adler's page in the context pane, beside a studio meeting note. About, Open tasks, Mentioned with, and Notes showing." %}
+      </article>
+      <article class="q-pen">
+        <div class="q-pen__copy">
+          <p class="q-pen__kicker">Projects</p>
+          <h3 class="q-pen__title">Every project keeps its own thread.</h3>
+          <p>Type <span class="q-project">#Marlow-Website</span>, and the note joins the project, whichever meeting it came from. See who it comes up with, and what’s been said lately.</p>
+        </div>
+        {% include pen-shot.html name="projects" label="a project’s page" alt="The Marlow Website project’s page in Puli, beside the note from its launch." shot="the Marlow Website project page beside its launch note: About, Open tasks, and Mentioned with showing." %}
+      </article>
+      <article class="q-pen">
+        <div class="q-pen__copy">
+          <p class="q-pen__kicker">Promises</p>
+          <h3 class="q-pen__title">Yours, and theirs.</h3>
+          <p>Start a line with <span class="q-code">[]</span>, and it’s a task. Start it with someone’s name, and it’s a promise they made to you. Puli keeps track of both, so nothing wanders off.</p>
+        </div>
+        {% include pen-shot.html name="promises" label="the Tasks list" alt="Puli’s Tasks list for the Tidewell App project: your tasks, and a promise Ben Adler made to you." shot="the Tasks list, with a few of your own tasks and two promises others made to you, with due dates." %}
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="q-section q-section--teal q-pricing" id="free" aria-labelledby="pricing-heading">
+  <img class="q-ewe q-ewe--lower" src="{{ '/assets/images/puli/flock/flock-lying.png' | relative_url }}" alt="" width="347" height="226" aria-hidden="true">
+  {%- comment -%} grass at either end of the lying sheep, pinned to the border; its middle open (Alan, Nov 19) {%- endcomment %}
+  <img class="q-tuft-at" src="{{ '/assets/images/puli/meadow/grass-flat-2.png' | relative_url }}" alt="" width="167" height="95" style="--f: -0.107; --tw: 42px; --b: 0px" aria-hidden="true">
+  <img class="q-tuft-at q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-5.png' | relative_url }}" alt="" width="158" height="85" style="--f: 0.001; --tw: 46px; --b: 0px" aria-hidden="true">
+  <img class="q-tuft-at q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-2.png' | relative_url }}" alt="" width="167" height="95" style="--f: 0.905; --tw: 44px; --b: 0px" aria-hidden="true">
+  <img class="q-tuft-at" src="{{ '/assets/images/puli/meadow/grass-flat-5.png' | relative_url }}" alt="" width="158" height="85" style="--f: 1.013; --tw: 40px; --b: 0px" aria-hidden="true">
+  <div class="q-wrap">
+    <header class="q-head">
+      <p class="q-caps q-caps--body"><span class="q-num">03</span>Pricing</p>
+      <h2 class="q-h2" id="pricing-heading">Free. Forever.</h2>
+      <p class="q-lede">Taking notes and capturing tasks are always free. You can teach Puli new tricks by purchasing lessons.</p>
+    </header>
+    <div class="q-plans">
+      <div class="q-plan">
+        <div class="q-plan__head"><h3>Free</h3></div>
+        <ul>
+          <li>Notes in Markdown</li>
+          <li>People and projects, filed as you write</li>
+          <li>Their pages beside your note, when you need them</li>
+          <li>Every task from every note in one place</li>
+          <li>Multiple journals, with templates</li>
+          <li>Import from Notes and Markdown</li>
+          <li>Export to Markdown</li>
+          <li>VoiceOver, Voice Control, and the keyboard for everything</li>
+        </ul>
+      </div>
+      <div class="q-plan q-plan--lessons">
+        <div class="q-plan__head"><h3>Lessons</h3></div>
+        <ul>
+          <li><strong>Today</strong> Your day, with meetings and what’s due</li>
+          <li><strong>Triage</strong> Task priorities, due dates, sorting, and grouping</li>
+          <li><strong>Progress</strong> A board for tracking projects</li>
+          <li><strong>Explore</strong> How your people and projects connect</li>
+          <li><strong>Suggestions</strong> Tags and tasks, suggested as you write</li>
+          <li><strong>Themes &amp; Typography</strong> A curated look for every journal</li>
+        </ul>
+        <a class="q-link" href="{{ '/puli/lessons/' | relative_url }}">How Lessons Work <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="q-section q-section--pasture" id="beliefs" aria-labelledby="beliefs-heading">
+  {% include poppy.html n=3 set="meadow" side="left" w=120 %}
+  {% include poppy.html n=5 set="meadow" side="right" w=140 %}
+  <div class="q-tufts" aria-hidden="true">
+    <img src="{{ '/assets/images/puli/meadow/grass-flat-1.png' | relative_url }}" alt="" style="left: max(60px, 4%); width: 110px" loading="lazy">
+    <img src="{{ '/assets/images/puli/meadow/grass-flat-5.png' | relative_url }}" alt="" style="left: 22%; width: 88px" loading="lazy">
+    <img src="{{ '/assets/images/puli/meadow/grass-flat-10.png' | relative_url }}" alt="" style="left: 46%; width: 62px" loading="lazy">
+    <img src="{{ '/assets/images/puli/meadow/grass-flat-2.png' | relative_url }}" alt="" style="left: 68%; width: 96px" loading="lazy">
+    <img src="{{ '/assets/images/puli/meadow/grass-flat-4.png' | relative_url }}" alt="" style="left: 90%; width: 70px" loading="lazy">
+  </div>
+  <div class="q-wrap">
+    <header class="q-head q-head--wide">
+      <p class="q-caps q-caps--body"><span class="q-num">04</span>Promises</p>
+      <h2 class="q-h2" id="beliefs-heading">We promise not to infringe upon…</h2>
+    </header>
+    <div class="q-cols">
+      <div class="q-col">
+        <h3>Your privacy</h3>
+        <p>No recordings, transcripts or bots. Your notes live on your Macs and in your own iCloud, encrypted with keys in your keychain. We never see them. Apple can’t even see them.</p>
+      </div>
+      <div class="q-col">
+        <h3>Your attention</h3>
+        <p>The app is intentionally calm. There are no red bubbles and no advertisements to break your train of thought.</p>
+      </div>
+      <div class="q-col">
+        <h3>Your purchases</h3>
+        <p>Once you purchase a lesson, it’s yours to keep. You paid for it. It’s yours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="q-section q-section--teal" id="questions" aria-labelledby="questions-heading">
+  <img class="q-ewe q-ewe--left q-ewe--low q-ewe--lower q-ewe--lowest" src="{{ '/assets/images/puli/flock/flock-standing-right.png' | relative_url }}" alt="" width="290" height="294" aria-hidden="true">
+  {%- comment -%} a wall of short grass along the border, a little longer than the sheep (Alan, Nov 19) {%- endcomment %}
+  <img class="q-tuft-at q-tuft-at--left q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-5.png' | relative_url }}" alt="" width="158" height="85" style="--f: -0.04; --tw: 44px; --b: 0px" aria-hidden="true">
+  <img class="q-tuft-at q-tuft-at--left" src="{{ '/assets/images/puli/meadow/grass-flat-1.png' | relative_url }}" alt="" width="180" height="86" style="--f: 0.068; --tw: 40px; --b: 0px" aria-hidden="true">
+  <img class="q-tuft-at q-tuft-at--left q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-2.png' | relative_url }}" alt="" width="167" height="95" style="--f: 0.176; --tw: 46px; --b: 0px" aria-hidden="true">
+  <img class="q-tuft-at q-tuft-at--left" src="{{ '/assets/images/puli/meadow/grass-flat-5.png' | relative_url }}" alt="" width="158" height="85" style="--f: 0.284; --tw: 42px; --b: 0px" aria-hidden="true">
+  <img class="q-tuft-at q-tuft-at--left q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-1.png' | relative_url }}" alt="" width="180" height="86" style="--f: 0.392; --tw: 44px; --b: 0px" aria-hidden="true">
+  <img class="q-tuft-at q-tuft-at--left" src="{{ '/assets/images/puli/meadow/grass-flat-2.png' | relative_url }}" alt="" width="167" height="95" style="--f: 0.5; --tw: 40px; --b: 0px" aria-hidden="true">
+  <img class="q-tuft-at q-tuft-at--left q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-5.png' | relative_url }}" alt="" width="158" height="85" style="--f: 0.608; --tw: 48px; --b: 0px" aria-hidden="true">
+  <img class="q-tuft-at q-tuft-at--left" src="{{ '/assets/images/puli/meadow/grass-flat-1.png' | relative_url }}" alt="" width="180" height="86" style="--f: 0.716; --tw: 38px; --b: 0px" aria-hidden="true">
+  <img class="q-tuft-at q-tuft-at--left q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-2.png' | relative_url }}" alt="" width="167" height="95" style="--f: 0.824; --tw: 44px; --b: 0px" aria-hidden="true">
+  <img class="q-tuft-at q-tuft-at--left" src="{{ '/assets/images/puli/meadow/grass-flat-5.png' | relative_url }}" alt="" width="158" height="85" style="--f: 0.932; --tw: 40px; --b: 0px" aria-hidden="true">
+  <img class="q-tuft-at q-tuft-at--left q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-1.png' | relative_url }}" alt="" width="180" height="86" style="--f: 1; --tw: 46px; --b: 0px" aria-hidden="true">
+  <div class="q-wrap q-faq">
+    <header class="q-head">
+      <p class="q-caps q-caps--body"><span class="q-num">05</span>Questions</p>
+      <h2 class="q-h2" id="questions-heading">Questions?</h2>
+      <p class="q-lede">Still curious? <a href="mailto:{{ site.email }}">Ask us.</a></p>
+    </header>
+    <div class="q-faq__list">
+      <details name="faq" open>
+        <summary>Why is it called Puli?</summary>
+        <p>It’s named for a Hungarian herding dog, famous for its corded coat. Say it POO-lee.</p>
+        <p>A herding dog doesn’t replace the shepherd. The shepherd decides where the sheep go, and the dog keeps the flock together. You decide what matters. Puli makes sure none of it wanders off.</p>
+      </details>
+      <details name="faq">
+        <summary>Is Puli really free?</summary>
+        <p>Yes. Everything you need to capture and herd your notes is free, forever. You can improve your experience by purchasing lessons to teach Puli new tricks.</p>
+      </details>
+      <details name="faq">
+        <summary>Do I keep the lessons I buy?</summary>
+        <p>Yes. Every lesson you purchase is yours to keep. You paid for it. It’s yours.</p>
+      </details>
+      <details name="faq">
+        <summary>Does Puli record my meetings?</summary>
+        <p>No. Absolutely not. No recordings. No transcriptions. And no bots sending your notes to far-off data centers.</p>
+      </details>
+      <details name="faq">
+        <summary>Where are my notes kept?</summary>
+        <p>On your Mac, and if you choose, in your own iCloud, encrypted end to end. We never see your notes. And neither does anyone else. Not even Apple.</p>
+      </details>
+      <details name="faq">
+        <summary>What do I need?</summary>
+        <p>Puli works on any Mac running macOS 15 or later.</p>
+        <p>Some features can leverage your Mac’s onboard Apple Intelligence which requires a Mac with Apple silicon running macOS 26 or later.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="q-founder q-section--pasture" id="about" aria-labelledby="about-heading">
+  {% include poppy.html n=2 set="meadow" side="right" w=170 %}
+  <div class="q-wrap q-founder__inner">
+    <h2 class="q-caps q-caps--body" id="about-heading"><span class="q-num">06</span>About</h2>
+    <blockquote class="q-founder__quote">
+      <p>After a decade of managing people and many years of recorded meetings, I realized I didn’t need to capture more information. And I didn’t need transcriptions of everything that was said. What I wanted was a place to capture my thoughts and surface them again when relevant.</p>
+      <p>I built Puli to herd your thoughts into all the right places, so the context you need is right there when you need it.</p>
+    </blockquote>
+    <div class="q-founder__sign">
+      <span class="signature" role="img" aria-label="Alan’s signature"></span>
+      <p>Alan Ridlehoover<br><span>Founder, Deliberate Software</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="waitlist" id="download" aria-label="Download Puli" tabindex="-1">
+  {%- comment -%} The link preview's meadow along the foot of the page (Alan, Nov 19): painted grass, poppies and three
+    sheep at the site's scale, each placed by its center along the section's width. Fewer on phones. {%- endcomment %}
+  <div class="q-meadow" aria-hidden="true">
+    <img src="{{ '/assets/images/puli/meadow/grass-flat-8.png' | relative_url }}" alt="" width="368" height="235" style="left: 4%; width: 118px" loading="lazy">
+    <img src="{{ '/assets/images/puli/meadow/poppies-flat-4.png' | relative_url }}" alt="" width="397" height="221" style="left: 12%; width: 138px" loading="lazy">
+    <img class="q-meadow__wide" src="{{ '/assets/images/puli/flock/flock-grazing-right.png' | relative_url }}" alt="" width="330" height="223" style="left: 23%; width: 152px; bottom: 4px" loading="lazy">
+    <img class="q-meadow__flip q-meadow__wide" src="{{ '/assets/images/puli/meadow/grass-flat-1.png' | relative_url }}" alt="" width="180" height="86" style="left: 21%; width: 66px" loading="lazy">
+    <img class="q-meadow__wide" src="{{ '/assets/images/puli/meadow/grass-flat-5.png' | relative_url }}" alt="" width="158" height="85" style="left: calc(23% + 61px); width: 54px" loading="lazy">
+    <img class="q-meadow__wide" src="{{ '/assets/images/puli/meadow/grass-flat-2.png' | relative_url }}" alt="" width="167" height="95" style="left: 33%; width: 64px" loading="lazy">
+    <img class="q-meadow__wide" src="{{ '/assets/images/puli/meadow/poppies-flat-3.png' | relative_url }}" alt="" width="239" height="127" style="left: 40%; width: 104px" loading="lazy">
+    <img src="{{ '/assets/images/puli/flock/flock-lying.png' | relative_url }}" alt="" width="347" height="226" style="left: 50%; width: 150px; bottom: 3px" loading="lazy">
+    <img class="q-meadow__flip" src="{{ '/assets/images/puli/meadow/grass-flat-5.png' | relative_url }}" alt="" width="158" height="85" style="left: 44%; width: 50px" loading="lazy">
+    <img src="{{ '/assets/images/puli/meadow/grass-flat-1.png' | relative_url }}" alt="" width="180" height="86" style="left: 56.5%; width: 56px" loading="lazy">
+    <img class="q-meadow__wide" src="{{ '/assets/images/puli/meadow/poppies-flat-5.png' | relative_url }}" alt="" width="313" height="172" style="left: 63%; width: 118px" loading="lazy">
+    <img class="q-meadow__wide" src="{{ '/assets/images/puli/flock/flock-standing-left.png' | relative_url }}" alt="" width="362" height="310" style="left: 74%; width: 150px; bottom: 5px" loading="lazy">
+    <img class="q-meadow__flip q-meadow__wide" src="{{ '/assets/images/puli/meadow/grass-flat-2.png' | relative_url }}" alt="" width="167" height="95" style="left: 70%; width: 62px" loading="lazy">
+    <img class="q-meadow__wide" src="{{ '/assets/images/puli/meadow/grass-flat-10.png' | relative_url }}" alt="" width="128" height="126" style="left: 81%; width: 44px" loading="lazy">
+    <img src="{{ '/assets/images/puli/meadow/poppies-flat-6.png' | relative_url }}" alt="" width="371" height="211" style="left: 88%; width: 134px" loading="lazy">
+    <img class="q-meadow__flip" src="{{ '/assets/images/puli/meadow/grass-flat-8.png' | relative_url }}" alt="" width="368" height="235" style="left: 97%; width: 110px" loading="lazy">
+  </div>
+  <div class="container waitlist__inner">
+    <img class="waitlist__icon" src="{{ '/assets/images/puli/puli-icon-square-400.png' | relative_url }}" alt="Puli’s app icon" width="200" height="200" loading="lazy">
+    {%- comment -%} Apple's badge can't be reworded, so until launch a plain pill says it's coming (Alan, Nov 19).
+      At launch, put {% include app-store-badge.html %} back here. {%- endcomment %}
+    <p class="q-coming">Coming soon to the Mac App Store.</p>
+    {%- comment -%} The mailing list (Alan, Nov 19): Kit's form, the one the old waitlist used, with the same tag.
+      The wording is a draft. {%- endcomment %}
+    <form class="waitlist__form waitlist__form--list" id="keep-posted" action="{{ site.kit.form_action }}" method="post">
+      <input type="hidden" name="tags[]" value="{{ app.kit_tag_id }}">
+      <p class="waitlist__lead">Hear when Puli learns new tricks.</p>
+      <div class="field">
+        <label for="list-email">Email address</label>
+        <div class="field__row">
+          <input id="list-email" name="email_address" type="email" autocomplete="email" placeholder="you@example.com" required>
+          <button class="button button--inverse" type="submit">Keep me posted</button>
+        </div>
+      </div>
+      <p class="waitlist__note">Only Puli news, now and then. We never sell or share your email, and every one has an unsubscribe link. <a href="{{ '/privacy/' | relative_url }}">Privacy, plainly</a></p>
+    </form>
+  </div>
+</section>
+
+<script>
+  // The hero's two plants sit halfway between the page's edge and the screenshot, which changes width with the window.
+  (function () {
+    var shot = document.querySelector(".q-hero .q-shot img");
+    var left = document.querySelector(".q-pasture__left"), right = document.querySelector(".q-pasture__right");
+    if (!shot || !left || !right) return;
+    function place() {
+      var r = shot.getBoundingClientRect(), w = document.documentElement.clientWidth;
+      left.style.left = Math.max(0, r.left / 2 - left.offsetWidth / 2) + "px";
+      right.style.right = Math.max(0, (w - r.right) / 2 - right.offsetWidth / 2) + "px";
+    }
+    place();
+    if (window.ResizeObserver) new ResizeObserver(place).observe(shot);
+    window.addEventListener("resize", place);
+    shot.addEventListener("load", place);
+  })();
+</script>
+
+<script>
+  // How much of the footer sits above its trademark notice, for the closing section to leave room for it. The footer comes
+  // after this script, so this waits for it, and measures again when the window or the footer changes.
+  document.addEventListener("DOMContentLoaded", function () {
+    var footer = document.querySelector(".site-footer"), notice = footer && footer.querySelector(".footer__trademarks");
+    if (!notice) return;
+    function set() {
+      var top = notice.getBoundingClientRect().top - footer.getBoundingClientRect().top;
+      document.documentElement.style.setProperty("--footer-top", Math.round(top) + "px");
+    }
+    set();
+    window.addEventListener("resize", set);
+    if (window.ResizeObserver) new ResizeObserver(set).observe(footer);
+  });
+</script>
+
+<script>
+  // "Keep me posted" (Alan, Nov 19): after the jump to the closing section, keyboard focus starts there too, so the next
+  // Tab lands in the email field, not back at the top of the page. Focus moves without scrolling, so the jump stays put.
+  (function () {
+    var section = document.getElementById("download");
+    if (!section) return;
+    function arrive() { if (location.hash === "#download") section.focus({ preventScroll: true }); }
+    window.addEventListener("hashchange", arrive);
+    document.querySelectorAll('a[href$="#download"]').forEach(function (a) {
+      a.addEventListener("click", function () { setTimeout(function () { section.focus({ preventScroll: true }); }, 0); });
+    });
+    arrive();
+  })();
+</script>
+
+<script>
+  // Questions keeps one height (Alan, Nov 19): as tall as it gets with its longest answer open, so the page below
+  // doesn't jump as questions open and close. Measured again whenever the list's width changes.
+  (function () {
+    var list = document.querySelector(".q-faq__list");
+    if (!list) return;
+    var items = [].slice.call(list.querySelectorAll("details"));
+    var width = 0;
+    function measure() {
+      if (list.offsetWidth === width) return;
+      width = list.offsetWidth;
+      var was = items.map(function (d) { return d.open; });
+      list.style.minHeight = "";
+      var tallest = 0;
+      items.forEach(function (d) {
+        items.forEach(function (o) { o.open = o === d; });
+        tallest = Math.max(tallest, list.offsetHeight);
+      });
+      items.forEach(function (d, i) { d.open = was[i]; });
+      list.style.minHeight = tallest + "px";
+    }
+    measure();
+    if (window.ResizeObserver) new ResizeObserver(measure).observe(list);
+    window.addEventListener("resize", measure);
+    if (document.fonts) document.fonts.ready.then(function () { width = 0; measure(); });
+  })();
+</script>
+
+<script>
+  // The note in the hero types itself, once, like a Selectric. Only on a page someone can see,
+  // so a page opened in the background shows the finished note.
+  (function () {
+    var box = document.querySelector("[data-type]");
+    if (!box || document.visibilityState !== "visible" || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var lines = [].slice.call(box.children);
+    var html = lines.map(function (p) { return p.innerHTML; });
+    var text = lines.map(function (p) { return p.textContent; });
+    box.style.minHeight = box.offsetHeight + "px";
+    lines.forEach(function (p) { p.textContent = ""; });
+    function type(i, j) {
+      if (i > 0) lines[i - 1].classList.remove("is-typing");
+      if (i >= lines.length) return;
+      lines[i].classList.add("is-typing");
+      if (j <= text[i].length) {
+        lines[i].textContent = text[i].slice(0, j);
+        setTimeout(function () { type(i, j + 1); }, 22 + Math.random() * 36);
+      } else {
+        lines[i].innerHTML = html[i];  // the finished line gets its tag colors
+        setTimeout(function () { type(i + 1, 0); }, 320);
+      }
+    }
+    setTimeout(function () { type(0, 0); }, 600);
+  })();
+</script>

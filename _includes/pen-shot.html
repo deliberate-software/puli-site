@@ -1,0 +1,26 @@
+{%- comment -%}
+  A screenshot for one of the People / Projects / Promises rows on the home page, from The Field mock.
+  Save the capture at /assets/images/puli/{{ include.name }}.png (and, if you like, a dark one at
+  {{ include.name }}-dark.png, which shows in dark mode). Until then, a dashed stand-in describes it.
+  Parameters: name, alt, shot (what the screenshot should show), label (the stand-in's text).
+{%- endcomment -%}
+{%- capture light_path %}/assets/images/puli/{{ include.name }}.png{% endcapture -%}
+{%- capture dark_path %}/assets/images/puli/{{ include.name }}-dark.png{% endcapture -%}
+{%- capture light_avif_path %}/assets/images/puli/{{ include.name }}.avif{% endcapture -%}
+{%- capture dark_avif_path %}/assets/images/puli/{{ include.name }}-dark.avif{% endcapture -%}
+{%- assign light = site.static_files | where: "path", light_path | first -%}
+{%- assign dark = site.static_files | where: "path", dark_path | first -%}
+{%- assign light_avif = site.static_files | where: "path", light_avif_path | first -%}
+{%- assign dark_avif = site.static_files | where: "path", dark_avif_path | first -%}
+{%- comment -%} As with the hero: an AVIF copy beside each PNG (about a seventh the size) goes first, and the PNG stays for
+  browsers without AVIF. The captures are 2000×1317; width and height hold their space until they load. {%- endcomment -%}
+{%- if light %}
+<figure class="q-pen__shot q-shot"><picture>
+  {%- if dark_avif %}<source srcset="{{ dark_avif.path | relative_url }}" type="image/avif" media="(prefers-color-scheme: dark)">{% endif %}
+  {%- if dark %}<source srcset="{{ dark.path | relative_url }}" media="(prefers-color-scheme: dark)">{% endif %}
+  {%- if light_avif %}<source srcset="{{ light_avif.path | relative_url }}" type="image/avif">{% endif %}
+  <img src="{{ light.path | relative_url }}" width="{{ include.width | default: 2000 }}" height="{{ include.height | default: 1317 }}" alt="{{ include.alt }}" loading="lazy">
+</picture></figure>
+{%- else %}
+<div class="q-pen__shot q-pen__stand-in" data-shot="Screenshot: {{ include.shot }}">Screenshot to come: {{ include.label }}</div>
+{%- endif %}

@@ -1,0 +1,11 @@
+{%- comment -%}
+  Apple's "Download on the Mac App Store" badge, from Apple's own badge service (toolbox.marketingtools.apple.com):
+  black by day, white by night. The link waits for Puli's App Store page. Before launch, download Apple's badge
+  files into the site rather than load them from Apple.
+{%- endcomment -%}
+<a class="q-badge" href="#" aria-label="Download {{ include.name | default: 'Puli' }} on the Mac App Store">
+  <picture>
+    <source srcset="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-mac-app-store/white/en-us" media="(prefers-color-scheme: dark)">
+    <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-mac-app-store/black/en-us" alt="Download on the Mac App Store">
+  </picture>
+</a>
