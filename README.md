@@ -43,8 +43,8 @@ Every page wears Puli's brand (`_config.yml` defaults). Pages marked `published:
 2. **Copy the form's action URL.** Click **Save & Publish** first. Then click **Embed** at the top right of the form builder and choose the **HTML** tab. In that code, find `action="…"` on the `<form>` tag and paste the URL into `kit.form_action` in `_config.yml`.
 
    If you don't see Embed, use the form's ID instead. It's the number in the browser's address bar while you're editing the form (for example `…/forms/designers/1234567/edit`). Then set `kit.form_action` to `https://app.kit.com/forms/1234567/subscriptions`, with your number in place of `1234567`.
-3. **Turn on confirmation.** In the form's settings, under Incentive, keep "Send incentive email" on. Kit then emails new subscribers a link to confirm their address. In the same Incentive settings, set the page people land on after they click that link to a redirect URL: `https://deliberate.software/thanks/`.
-4. **Send people to the confirm page.** In the form's settings, under "After subscribing," choose "Redirect to an external page" and enter `https://deliberate.software/confirm/`.
+3. **Turn on confirmation.** In the form's settings, under Incentive, keep "Send incentive email" on. Kit then emails new subscribers a link to confirm their address. In the same Incentive settings, set the page people land on after they click that link to a redirect URL: `https://getpuli.com/thanks/`.
+4. **Send people to the confirm page.** In the form's settings, under "After subscribing," choose "Redirect to an external page" and enter `https://getpuli.com/confirm/`.
 5. **Create the Puli tag.** Go to **Grow → Subscribers**. In the right sidebar, below the charts, find the Tags section (the **All Tags** dropdown) and click the **+** next to it. Name the tag "Puli waitlist" and save.
 
    To find a tag's ID, click the tag in that sidebar. The page shows only that tag's subscribers, and the address bar ends with something like `?tag=1234567`. That number is the ID. Put it in `kit_tag_id` in `_apps/puli.md`.
@@ -54,8 +54,9 @@ Every page wears Puli's brand (`_config.yml` defaults). Pages marked `published:
 
 1. Create a repository in your organization and push this folder to it.
 2. In the repository, go to Settings → Pages. Under "Build and deployment," choose "Deploy from a branch," select `main` and `/ (root)`, and save.
-3. Under "Custom domain," enter `deliberate.software` (the `CNAME` file already contains it). Turn on "Enforce HTTPS" once it becomes available.
+3. Under "Custom domain," enter `getpuli.com` (the `CNAME` file already contains it). Turn on "Enforce HTTPS" once it becomes available.
 4. At your domain registrar, add DNS records:
+   - For getpuli.com, an `ALIAS` record for `@` pointing to `deliberate-software.github.io` does the work of the A and AAAA records below; a host that offers ALIAS won't allow both.
    - `A` records for `@` pointing to `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
    - `AAAA` records for `@` pointing to `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`
    - A `CNAME` record for `www` pointing to `<your-org>.github.io`
