@@ -1,7 +1,7 @@
 /* Puli's brand on the home page alone (body.is-puli). Loaded after site.css.
-   The Quiet Instrument direction (see /concepts/instrument/): mid-century, precise, quiet.
+   The Quiet Instrument direction: mid-century, precise, quiet.
    Colors (Alan, Nov 18): by day the page is pale teal #CFE1DD with charcoal text and the app's amber as the one
-   accent, and the menu bar is the app editor's cream (see /concepts/pop/, option 4, with the light screenshot).
+   accent, and the menu bar is the app editor's cream (with the light screenshot).
    By night, a deep teal with warm white text. The rest is the app's (Puli's Cream theme, Look.swift).
    No metal, no sheen, no gradients: rules and edges are ink thinned into paper.
    Type (Alan, Nov 18): headings in IBM Plex Serif Light; text in Instrument Sans, the app's text face; the Mac's
@@ -185,7 +185,7 @@
 /* A sheep in the icon's painted style on the bottom edge of Why, How, Pricing and Questions, each centered in a margin and
    facing the text (Alan, Nov 18–19). --gutter is that margin; a sheep is up to 150px wide, never wider than the margin
    less 40px, and stands just above the edge while the flowers and grass stay pinned to it. Only where the margin is wide
-   enough. Full color, so the same by night. (/concepts/line/ swaps in the pen-and-ink sheep, with its own styles.) */
+   enough. Full color, so the same by night. */
 .q-section--teal { position: relative; --gutter: max(var(--pad), calc((100% - var(--max)) / 2 + var(--pad))); }
 .q-section--teal > .q-wrap { position: relative; z-index: 1; }
 .q-ewe { display: none; }
@@ -465,18 +465,6 @@
 @media (prefers-reduced-motion: reduce) {
   .q-btn, .q-link span, .q-faq__list summary::after { transition: none; }
 }
-
-/* ---------- the concept pages (/concepts/) still lean on these ---------- */
-
-.is-puli { --surface: var(--glass); }
-.p-wrap { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
-@media (max-width: 560px) { .p-wrap { padding: 0 20px; } }
-.p-tag { display: inline-flex; align-items: center; gap: 10px; padding: 6px 14px 6px 10px; border: 1px solid var(--line); border-radius: 999px; font-size: 14px; color: var(--muted); background: var(--glass); }
-.p-tag__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--mustard); }
-.p-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px; }
-.p-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 50px; padding: 0 26px; border-radius: 999px; font-size: 16px; font-weight: 500; }
-.p-btn--solid { background: var(--accent); color: var(--on-accent); }
-.p-btn--ghost { padding: 0 4px; color: var(--ink); }
 
 /* The short pages (404, confirm, thanks): their button in the golden yellow of every call to action, and the footer
    held to the bottom of the window, with no band of background beneath it (Nov 19). */

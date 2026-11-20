@@ -27,7 +27,6 @@ Every page wears Puli's brand (`_config.yml` defaults). Pages marked `published:
 | `support.html` | Puli's support page, at `/support/` (App Store Connect's support URL). |
 | `guide/` | Puli's Handler's Guide, at `/guide/`: `index.html` is its contents, and each page beside it is one topic of the free app. Written from Puli's STORIES.md; keep it matching what ships. |
 | `lessons/` | One page per lesson, at `/lessons/<lesson>/`. `lessons.html` (How Lessons Work, at `/lessons/`) lists them. |
-| `PENDING.md` | Everything to update once iCloud and the licensing model are decided. Not published. |
 | `lessons.html` | How Lessons Work, at `/lessons/` (Puli's Tricks links here). |
 | `acknowledgements.html` | Puli's open source and font licenses, at `/acknowledgements/` (Puli's About window links here). It reads each license from `assets/licenses/` and `assets/fonts/OFL-*.txt`, so keep those files identical to the ones the app bundles, and update the date when they change. |
 | `assets/licenses/` | The license texts for Puli's open source code (GRDB, SQLCipher), exactly as upstream ships them. |

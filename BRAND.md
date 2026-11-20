@@ -15,7 +15,7 @@ Puli is the meeting notebook for the person in the room who's expected to sweat 
 
 ## The look (Alan, Nov 18)
 
-By day the page is pale teal, with the light screenshot and a cream menu bar (see /concepts/pop/, option 4); the rest of the colors come from the app.
+By day the page is pale teal, with the light screenshot and a cream menu bar; the rest of the colors come from the app.
 
 - **Colors:** by day, pale teal `#CFE1DD` with charcoal `#1F2023` for text and the app's amber `#8A4B08` as the one accent. By night, a deep teal `#153F3C` with warm white `#FBF8F3` and light amber `#FAC775`. Graphite `#27282B` for the dark band.
 - **Tags:** pills in the app's colors: people blue, organizations plum, projects green.
