@@ -1,25 +1,26 @@
 ---
-published: false   # hidden until it is branded and reviewed (Alan, Nov 19)
 layout: default
 title: Terms of Use
 description: Puli is licensed under Apple’s standard license agreement for App Store apps.
 permalink: /terms/
+main_class: q-section--teal   # dark teal, like Privacy (Alan, Nov 20)
 ---
 <section class="hero hero--short container">
-  <p class="eyebrow">Puli</p>
-  <h1 class="hero__title">Terms of <em>use.</em></h1>
+  <p class="eyebrow">Updated 20 November 2026</p>
+  <h1 class="hero__title">Terms of use.</h1>
   <p class="hero__lead">Puli is licensed to you under Apple’s standard license agreement for apps from the App Store.</p>
   <div class="prose">
     <h2>The agreement</h2>
     <p>When you download Puli from the App Store, you agree to Apple’s <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Licensed Application End User License Agreement</a>. Its “Application Provider” is {{ site.legal_name }}.</p>
 
     <h2>Lessons</h2>
-    <p>Lessons are bought through the App Store, under Apple’s terms. <a href="{{ '/lessons/' | relative_url }}">How Lessons Work</a> explains what each plan includes, and what you keep.</p>
+    {%- comment -%} The How Lessons Work link is gone until that page is published, as on the home page; how lessons are licensed is still Alan's to decide (Nov 20) {%- endcomment %}
+    <p>Lessons are bought through the App Store, under Apple’s terms.</p>
 
     <h2>Privacy</h2>
     <p>Our <a href="{{ '/privacy/' | relative_url }}">privacy policy</a> explains what Puli collects. (Nothing.)</p>
 
     <h2>Questions?</h2>
-    <p>Email us at <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
+    <p>Write to us at <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
   </div>
 </section>
