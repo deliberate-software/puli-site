@@ -1,0 +1,14 @@
+---
+# The site's one stylesheet (Nov 20): _includes/css/site.css, then _includes/css/brand.css, joined and minified as the
+# site builds. Edit those two; this file only strips their comments and spare whitespace.
+---
+{%- capture css -%}{% include css/site.css %}
+{% include css/brand.css %}{%- endcapture -%}
+{%- assign chunks = css | split: "/*" -%}
+{%- capture bare -%}
+{%- for chunk in chunks -%}
+{%- if forloop.first -%}{{ chunk }}{%- else -%}{%- assign note = chunk | split: "*/" | first -%}{{ chunk | remove_first: note | remove_first: "*/" }}{%- endif -%}
+{%- endfor -%}
+{%- endcapture -%}
+{%- assign out = bare | normalize_whitespace | replace: " {", "{" | replace: "{ ", "{" | replace: "; ", ";" | replace: " }", "}" | replace: "} ", "}" | replace: ";}", "}" | replace: ": ", ":" | replace: ", ", "," -%}
+{{ out }}

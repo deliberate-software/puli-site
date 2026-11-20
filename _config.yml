@@ -23,13 +23,12 @@ collections:
 
 markdown: kramdown
 
-# Every page is Puli's: its menu bar, colors, and type.
+# Every page is Puli's: its menu bar, colors, and type (assets/css/puli.css).
 defaults:
   - scope:
       path: ""
     values:
       body_class: is-puli
-      stylesheet: brand
 
 exclude:
   - signature.jpg   # the photo the signature SVG was traced from

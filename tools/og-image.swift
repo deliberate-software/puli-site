@@ -2,7 +2,7 @@
 //
 //   swift tools/og-image.swift . assets/images/og-image.png
 //
-// Run from the site's folder. It uses the site's own fonts (assets/fonts) and art (assets/images/puli): the app icon,
+// Run from the site's folder. It uses the site's own fonts (assets/fonts) and art (tools/art: the originals the site's AVIFs are drawn from): the app icon,
 // "Puli for Mac", "Herd your thoughts.", a two-line lede and a byline, centered as a group with equal margins, over the
 // painted meadow and three sheep along the bottom. Change the words in L1–L5 below; the layout follows their widths.
 import AppKit
@@ -17,7 +17,7 @@ rep.size = NSSize(width: W, height: H)
 NSGraphicsContext.saveGraphicsState()
 let ctx = NSGraphicsContext(bitmapImageRep: rep)!; NSGraphicsContext.current = ctx; ctx.imageInterpolation = .high
 func hex(_ h: Int, _ a: CGFloat = 1) -> NSColor { NSColor(srgbRed: CGFloat((h >> 16) & 255) / 255, green: CGFloat((h >> 8) & 255) / 255, blue: CGFloat(h & 255) / 255, alpha: a) }
-func img(_ p: String) -> NSImage { NSImage(contentsOf: URL(fileURLWithPath: root + "/assets/images/puli/" + p))! }
+func img(_ p: String) -> NSImage { NSImage(contentsOf: URL(fileURLWithPath: root + "/tools/art/" + p))! }
 // top-left coordinates
 func rect(_ x: CGFloat, _ y: CGFloat, _ w: CGFloat, _ h: CGFloat) -> NSRect { NSRect(x: x, y: CGFloat(H) - y - h, width: w, height: h) }
 func place(_ p: String, x: CGFloat, bottom: CGFloat, width: CGFloat, flip: Bool = false) {

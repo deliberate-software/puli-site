@@ -2,7 +2,6 @@
 layout: default
 full_title: Puli for Mac
 body_class: is-puli
-stylesheet: brand
 ---
 {%- assign app = site.apps | where: "name", "Puli" | first -%}
 {%- comment -%}
@@ -20,8 +19,8 @@ stylesheet: brand
 
 <section class="q-hero" id="top" aria-labelledby="q-title">
   <div class="q-pasture" aria-hidden="true">
-    <img class="q-pasture__left" src="{{ '/assets/images/puli/meadow/poppies-flat-4.png' | relative_url }}" alt="" width="397" height="221">
-    <img class="q-pasture__right" src="{{ '/assets/images/puli/meadow/grass-flat-8.png' | relative_url }}" alt="" width="368" height="235">
+    <img class="q-pasture__left" src="{{ '/assets/images/puli/meadow/poppies-flat-4.avif' | relative_url }}" alt="" width="397" height="221" loading="lazy">
+    <img class="q-pasture__right" src="{{ '/assets/images/puli/meadow/grass-flat-8.avif' | relative_url }}" alt="" width="368" height="235" loading="lazy">
   </div>
   <div class="q-wrap">
     <div class="q-hero__head">
@@ -31,31 +30,32 @@ stylesheet: brand
       </div>
     </div>
 
-    {%- comment -%} AVIF first, a seventh the size of the PNGs, which stay for browsers without AVIF. The hero is the first
-      thing anyone sees, so it loads ahead of everything else. {%- endcomment %}
+    {%- comment -%} AVIF first, a seventh the size of the PNGs, which stay for browsers without AVIF; a 1200px copy for
+      smaller windows. The hero is the first thing anyone sees, so it loads ahead of everything else. Click it to see it
+      enlarged, at full size (data-full; see marks.js). {%- endcomment %}
     <figure class="q-shot"><picture>
-      <source srcset="{{ '/assets/images/puli/hero-dark.avif' | relative_url }}" type="image/avif" media="(prefers-color-scheme: dark)">
+      <source srcset="{{ '/assets/images/puli/hero-dark-1200.avif' | relative_url }} 1200w, {{ '/assets/images/puli/hero-dark.avif' | relative_url }} 1828w" sizes="(min-width: 1100px) 1000px, 92vw" type="image/avif" media="(prefers-color-scheme: dark)">
       <source srcset="{{ '/assets/images/puli/hero-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)">
-      <source srcset="{{ '/assets/images/puli/hero.avif' | relative_url }}" type="image/avif">
-      <img src="{{ '/assets/images/puli/hero.png' | relative_url }}" width="1828" height="994" fetchpriority="high" alt="Puli on a Mac: a meeting note, with the page of the person it mentions open beside it.">
+      <source srcset="{{ '/assets/images/puli/hero-1200.avif' | relative_url }} 1200w, {{ '/assets/images/puli/hero.avif' | relative_url }} 1828w" sizes="(min-width: 1100px) 1000px, 92vw" type="image/avif">
+      <img src="{{ '/assets/images/puli/hero.png' | relative_url }}" width="1828" height="994" fetchpriority="high" data-full="{{ '/assets/images/puli/hero.avif' | relative_url }}" data-full-dark="{{ '/assets/images/puli/hero-dark.avif' | relative_url }}\" alt="Puli on a Mac: a meeting note, with the page of the person it mentions open beside it.">
     </picture></figure>
   </div>
 </section>
 
 <section class="q-section q-section--teal" id="why" aria-labelledby="why-heading">
-  <img class="q-ewe q-ewe--low q-ewe--lower" src="{{ '/assets/images/puli/flock/flock-standing-left.png' | relative_url }}" alt="" width="362" height="310" aria-hidden="true">
+  <img class="q-ewe q-ewe--low q-ewe--lower" src="{{ '/assets/images/puli/flock/flock-standing-left.avif' | relative_url }}" alt="" width="362" height="310" aria-hidden="true" loading="lazy">
   {%- comment -%} a wall of short grass along the border, a little longer than the sheep (Alan, Nov 19) {%- endcomment %}
-  <img class="q-tuft-at" src="{{ '/assets/images/puli/meadow/grass-flat-1.png' | relative_url }}" alt="" width="180" height="86" style="--f: 0; --tw: 46px; --b: 0px" aria-hidden="true">
-  <img class="q-tuft-at q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-5.png' | relative_url }}" alt="" width="158" height="85" style="--f: 0.068; --tw: 40px; --b: 0px" aria-hidden="true">
-  <img class="q-tuft-at" src="{{ '/assets/images/puli/meadow/grass-flat-2.png' | relative_url }}" alt="" width="167" height="95" style="--f: 0.176; --tw: 44px; --b: 0px" aria-hidden="true">
-  <img class="q-tuft-at q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-1.png' | relative_url }}" alt="" width="180" height="86" style="--f: 0.284; --tw: 38px; --b: 0px" aria-hidden="true">
-  <img class="q-tuft-at" src="{{ '/assets/images/puli/meadow/grass-flat-5.png' | relative_url }}" alt="" width="158" height="85" style="--f: 0.392; --tw: 48px; --b: 0px" aria-hidden="true">
-  <img class="q-tuft-at q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-2.png' | relative_url }}" alt="" width="167" height="95" style="--f: 0.5; --tw: 40px; --b: 0px" aria-hidden="true">
-  <img class="q-tuft-at" src="{{ '/assets/images/puli/meadow/grass-flat-1.png' | relative_url }}" alt="" width="180" height="86" style="--f: 0.608; --tw: 44px; --b: 0px" aria-hidden="true">
-  <img class="q-tuft-at q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-5.png' | relative_url }}" alt="" width="158" height="85" style="--f: 0.716; --tw: 42px; --b: 0px" aria-hidden="true">
-  <img class="q-tuft-at" src="{{ '/assets/images/puli/meadow/grass-flat-2.png' | relative_url }}" alt="" width="167" height="95" style="--f: 0.824; --tw: 46px; --b: 0px" aria-hidden="true">
-  <img class="q-tuft-at q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-1.png' | relative_url }}" alt="" width="180" height="86" style="--f: 0.932; --tw: 40px; --b: 0px" aria-hidden="true">
-  <img class="q-tuft-at" src="{{ '/assets/images/puli/meadow/grass-flat-5.png' | relative_url }}" alt="" width="158" height="85" style="--f: 1.04; --tw: 44px; --b: 0px" aria-hidden="true">
+  <img class="q-tuft-at" src="{{ '/assets/images/puli/meadow/grass-flat-1.avif' | relative_url }}" alt="" width="180" height="86" style="--f: 0; --tw: 46px; --b: 0px" aria-hidden="true" loading="lazy">
+  <img class="q-tuft-at q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-5.avif' | relative_url }}" alt="" width="158" height="85" style="--f: 0.068; --tw: 40px; --b: 0px" aria-hidden="true" loading="lazy">
+  <img class="q-tuft-at" src="{{ '/assets/images/puli/meadow/grass-flat-2.avif' | relative_url }}" alt="" width="167" height="95" style="--f: 0.176; --tw: 44px; --b: 0px" aria-hidden="true" loading="lazy">
+  <img class="q-tuft-at q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-1.avif' | relative_url }}" alt="" width="180" height="86" style="--f: 0.284; --tw: 38px; --b: 0px" aria-hidden="true" loading="lazy">
+  <img class="q-tuft-at" src="{{ '/assets/images/puli/meadow/grass-flat-5.avif' | relative_url }}" alt="" width="158" height="85" style="--f: 0.392; --tw: 48px; --b: 0px" aria-hidden="true" loading="lazy">
+  <img class="q-tuft-at q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-2.avif' | relative_url }}" alt="" width="167" height="95" style="--f: 0.5; --tw: 40px; --b: 0px" aria-hidden="true" loading="lazy">
+  <img class="q-tuft-at" src="{{ '/assets/images/puli/meadow/grass-flat-1.avif' | relative_url }}" alt="" width="180" height="86" style="--f: 0.608; --tw: 44px; --b: 0px" aria-hidden="true" loading="lazy">
+  <img class="q-tuft-at q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-5.avif' | relative_url }}" alt="" width="158" height="85" style="--f: 0.716; --tw: 42px; --b: 0px" aria-hidden="true" loading="lazy">
+  <img class="q-tuft-at" src="{{ '/assets/images/puli/meadow/grass-flat-2.avif' | relative_url }}" alt="" width="167" height="95" style="--f: 0.824; --tw: 46px; --b: 0px" aria-hidden="true" loading="lazy">
+  <img class="q-tuft-at q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-1.avif' | relative_url }}" alt="" width="180" height="86" style="--f: 0.932; --tw: 40px; --b: 0px" aria-hidden="true" loading="lazy">
+  <img class="q-tuft-at" src="{{ '/assets/images/puli/meadow/grass-flat-5.avif' | relative_url }}" alt="" width="158" height="85" style="--f: 1.04; --tw: 44px; --b: 0px" aria-hidden="true" loading="lazy">
   <div class="q-wrap">
     <h2 class="q-caps q-caps--body" id="why-heading"><span class="q-num">01</span>Why Puli</h2>
     <div class="q-pair">
@@ -73,11 +73,11 @@ stylesheet: brand
 
 <section class="q-section q-section--pasture" id="what" aria-labelledby="how-heading">
   <span class="q-ewe-shadow" aria-hidden="true"></span>
-  <img class="q-ewe q-ewe--left q-ewe--grazing" src="{{ '/assets/images/puli/flock/flock-grazing-right.png' | relative_url }}" alt="" width="330" height="223" aria-hidden="true">
-  <img class="q-tuft-at q-tuft-at--left q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-5.png' | relative_url }}" alt="" width="158" height="85" style="--f: 0.07; --tw: 24px; --b: 0px" aria-hidden="true">
-  <img class="q-tuft-at q-tuft-at--left" src="{{ '/assets/images/puli/meadow/grass-flat-2.png' | relative_url }}" alt="" width="167" height="95" style="--f: 0.21; --tw: 44px; --b: 0px" aria-hidden="true">
-  <img class="q-tuft-at q-tuft-at--left" src="{{ '/assets/images/puli/meadow/grass-flat-1.png' | relative_url }}" alt="" width="180" height="86" style="--f: 0.58; --tw: 40px; --b: 0px" aria-hidden="true">
-  <img class="q-nibble" src="{{ '/assets/images/puli/meadow/grass-flat-5.png' | relative_url }}" alt="" width="158" height="85" aria-hidden="true">
+  <img class="q-ewe q-ewe--left q-ewe--grazing" src="{{ '/assets/images/puli/flock/flock-grazing-right.avif' | relative_url }}" alt="" width="330" height="223" aria-hidden="true" loading="lazy">
+  <img class="q-tuft-at q-tuft-at--left q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-5.avif' | relative_url }}" alt="" width="158" height="85" style="--f: 0.07; --tw: 24px; --b: 0px" aria-hidden="true" loading="lazy">
+  <img class="q-tuft-at q-tuft-at--left" src="{{ '/assets/images/puli/meadow/grass-flat-2.avif' | relative_url }}" alt="" width="167" height="95" style="--f: 0.21; --tw: 44px; --b: 0px" aria-hidden="true" loading="lazy">
+  <img class="q-tuft-at q-tuft-at--left" src="{{ '/assets/images/puli/meadow/grass-flat-1.avif' | relative_url }}" alt="" width="180" height="86" style="--f: 0.58; --tw: 40px; --b: 0px" aria-hidden="true" loading="lazy">
+  <img class="q-nibble" src="{{ '/assets/images/puli/meadow/grass-flat-5.avif' | relative_url }}" alt="" width="158" height="85" aria-hidden="true" loading="lazy">
   {% include poppy.html n=6 set="meadow" side="right" w=170 %}
   <div class="q-wrap">
     <header class="q-head q-head--wide">
@@ -115,12 +115,12 @@ stylesheet: brand
 </section>
 
 <section class="q-section q-section--teal q-pricing" id="free" aria-labelledby="pricing-heading">
-  <img class="q-ewe q-ewe--lower" src="{{ '/assets/images/puli/flock/flock-lying.png' | relative_url }}" alt="" width="347" height="226" aria-hidden="true">
+  <img class="q-ewe q-ewe--lower" src="{{ '/assets/images/puli/flock/flock-lying.avif' | relative_url }}" alt="" width="347" height="226" aria-hidden="true" loading="lazy">
   {%- comment -%} grass at either end of the lying sheep, pinned to the border; its middle open (Alan, Nov 19) {%- endcomment %}
-  <img class="q-tuft-at" src="{{ '/assets/images/puli/meadow/grass-flat-2.png' | relative_url }}" alt="" width="167" height="95" style="--f: -0.107; --tw: 42px; --b: 0px" aria-hidden="true">
-  <img class="q-tuft-at q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-5.png' | relative_url }}" alt="" width="158" height="85" style="--f: 0.001; --tw: 46px; --b: 0px" aria-hidden="true">
-  <img class="q-tuft-at q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-2.png' | relative_url }}" alt="" width="167" height="95" style="--f: 0.905; --tw: 44px; --b: 0px" aria-hidden="true">
-  <img class="q-tuft-at" src="{{ '/assets/images/puli/meadow/grass-flat-5.png' | relative_url }}" alt="" width="158" height="85" style="--f: 1.013; --tw: 40px; --b: 0px" aria-hidden="true">
+  <img class="q-tuft-at" src="{{ '/assets/images/puli/meadow/grass-flat-2.avif' | relative_url }}" alt="" width="167" height="95" style="--f: -0.107; --tw: 42px; --b: 0px" aria-hidden="true" loading="lazy">
+  <img class="q-tuft-at q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-5.avif' | relative_url }}" alt="" width="158" height="85" style="--f: 0.001; --tw: 46px; --b: 0px" aria-hidden="true" loading="lazy">
+  <img class="q-tuft-at q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-2.avif' | relative_url }}" alt="" width="167" height="95" style="--f: 0.905; --tw: 44px; --b: 0px" aria-hidden="true" loading="lazy">
+  <img class="q-tuft-at" src="{{ '/assets/images/puli/meadow/grass-flat-5.avif' | relative_url }}" alt="" width="158" height="85" style="--f: 1.013; --tw: 40px; --b: 0px" aria-hidden="true" loading="lazy">
   <div class="q-wrap">
     <header class="q-head">
       <p class="q-caps q-caps--body"><span class="q-num">03</span>Pricing</p>
@@ -160,11 +160,11 @@ stylesheet: brand
   {% include poppy.html n=3 set="meadow" side="left" w=120 %}
   {% include poppy.html n=5 set="meadow" side="right" w=140 %}
   <div class="q-tufts" aria-hidden="true">
-    <img src="{{ '/assets/images/puli/meadow/grass-flat-1.png' | relative_url }}" alt="" style="left: max(60px, 4%); width: 110px" loading="lazy">
-    <img src="{{ '/assets/images/puli/meadow/grass-flat-5.png' | relative_url }}" alt="" style="left: 22%; width: 88px" loading="lazy">
-    <img src="{{ '/assets/images/puli/meadow/grass-flat-10.png' | relative_url }}" alt="" style="left: 46%; width: 62px" loading="lazy">
-    <img src="{{ '/assets/images/puli/meadow/grass-flat-2.png' | relative_url }}" alt="" style="left: 68%; width: 96px" loading="lazy">
-    <img src="{{ '/assets/images/puli/meadow/grass-flat-4.png' | relative_url }}" alt="" style="left: 90%; width: 70px" loading="lazy">
+    <img src="{{ '/assets/images/puli/meadow/grass-flat-1.avif' | relative_url }}" alt="" style="left: max(60px, 4%); width: 110px" loading="lazy">
+    <img src="{{ '/assets/images/puli/meadow/grass-flat-5.avif' | relative_url }}" alt="" style="left: 22%; width: 88px" loading="lazy">
+    <img src="{{ '/assets/images/puli/meadow/grass-flat-10.avif' | relative_url }}" alt="" style="left: 46%; width: 62px" loading="lazy">
+    <img src="{{ '/assets/images/puli/meadow/grass-flat-2.avif' | relative_url }}" alt="" style="left: 68%; width: 96px" loading="lazy">
+    <img src="{{ '/assets/images/puli/meadow/grass-flat-4.avif' | relative_url }}" alt="" style="left: 90%; width: 70px" loading="lazy">
   </div>
   <div class="q-wrap">
     <header class="q-head q-head--wide">
@@ -189,19 +189,19 @@ stylesheet: brand
 </section>
 
 <section class="q-section q-section--teal" id="questions" aria-labelledby="questions-heading">
-  <img class="q-ewe q-ewe--left q-ewe--low q-ewe--lower q-ewe--lowest" src="{{ '/assets/images/puli/flock/flock-standing-right.png' | relative_url }}" alt="" width="290" height="294" aria-hidden="true">
+  <img class="q-ewe q-ewe--left q-ewe--low q-ewe--lower q-ewe--lowest" src="{{ '/assets/images/puli/flock/flock-standing-right.avif' | relative_url }}" alt="" width="290" height="294" aria-hidden="true" loading="lazy">
   {%- comment -%} a wall of short grass along the border, a little longer than the sheep (Alan, Nov 19) {%- endcomment %}
-  <img class="q-tuft-at q-tuft-at--left q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-5.png' | relative_url }}" alt="" width="158" height="85" style="--f: -0.04; --tw: 44px; --b: 0px" aria-hidden="true">
-  <img class="q-tuft-at q-tuft-at--left" src="{{ '/assets/images/puli/meadow/grass-flat-1.png' | relative_url }}" alt="" width="180" height="86" style="--f: 0.068; --tw: 40px; --b: 0px" aria-hidden="true">
-  <img class="q-tuft-at q-tuft-at--left q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-2.png' | relative_url }}" alt="" width="167" height="95" style="--f: 0.176; --tw: 46px; --b: 0px" aria-hidden="true">
-  <img class="q-tuft-at q-tuft-at--left" src="{{ '/assets/images/puli/meadow/grass-flat-5.png' | relative_url }}" alt="" width="158" height="85" style="--f: 0.284; --tw: 42px; --b: 0px" aria-hidden="true">
-  <img class="q-tuft-at q-tuft-at--left q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-1.png' | relative_url }}" alt="" width="180" height="86" style="--f: 0.392; --tw: 44px; --b: 0px" aria-hidden="true">
-  <img class="q-tuft-at q-tuft-at--left" src="{{ '/assets/images/puli/meadow/grass-flat-2.png' | relative_url }}" alt="" width="167" height="95" style="--f: 0.5; --tw: 40px; --b: 0px" aria-hidden="true">
-  <img class="q-tuft-at q-tuft-at--left q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-5.png' | relative_url }}" alt="" width="158" height="85" style="--f: 0.608; --tw: 48px; --b: 0px" aria-hidden="true">
-  <img class="q-tuft-at q-tuft-at--left" src="{{ '/assets/images/puli/meadow/grass-flat-1.png' | relative_url }}" alt="" width="180" height="86" style="--f: 0.716; --tw: 38px; --b: 0px" aria-hidden="true">
-  <img class="q-tuft-at q-tuft-at--left q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-2.png' | relative_url }}" alt="" width="167" height="95" style="--f: 0.824; --tw: 44px; --b: 0px" aria-hidden="true">
-  <img class="q-tuft-at q-tuft-at--left" src="{{ '/assets/images/puli/meadow/grass-flat-5.png' | relative_url }}" alt="" width="158" height="85" style="--f: 0.932; --tw: 40px; --b: 0px" aria-hidden="true">
-  <img class="q-tuft-at q-tuft-at--left q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-1.png' | relative_url }}" alt="" width="180" height="86" style="--f: 1; --tw: 46px; --b: 0px" aria-hidden="true">
+  <img class="q-tuft-at q-tuft-at--left q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-5.avif' | relative_url }}" alt="" width="158" height="85" style="--f: -0.04; --tw: 44px; --b: 0px" aria-hidden="true" loading="lazy">
+  <img class="q-tuft-at q-tuft-at--left" src="{{ '/assets/images/puli/meadow/grass-flat-1.avif' | relative_url }}" alt="" width="180" height="86" style="--f: 0.068; --tw: 40px; --b: 0px" aria-hidden="true" loading="lazy">
+  <img class="q-tuft-at q-tuft-at--left q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-2.avif' | relative_url }}" alt="" width="167" height="95" style="--f: 0.176; --tw: 46px; --b: 0px" aria-hidden="true" loading="lazy">
+  <img class="q-tuft-at q-tuft-at--left" src="{{ '/assets/images/puli/meadow/grass-flat-5.avif' | relative_url }}" alt="" width="158" height="85" style="--f: 0.284; --tw: 42px; --b: 0px" aria-hidden="true" loading="lazy">
+  <img class="q-tuft-at q-tuft-at--left q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-1.avif' | relative_url }}" alt="" width="180" height="86" style="--f: 0.392; --tw: 44px; --b: 0px" aria-hidden="true" loading="lazy">
+  <img class="q-tuft-at q-tuft-at--left" src="{{ '/assets/images/puli/meadow/grass-flat-2.avif' | relative_url }}" alt="" width="167" height="95" style="--f: 0.5; --tw: 40px; --b: 0px" aria-hidden="true" loading="lazy">
+  <img class="q-tuft-at q-tuft-at--left q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-5.avif' | relative_url }}" alt="" width="158" height="85" style="--f: 0.608; --tw: 48px; --b: 0px" aria-hidden="true" loading="lazy">
+  <img class="q-tuft-at q-tuft-at--left" src="{{ '/assets/images/puli/meadow/grass-flat-1.avif' | relative_url }}" alt="" width="180" height="86" style="--f: 0.716; --tw: 38px; --b: 0px" aria-hidden="true" loading="lazy">
+  <img class="q-tuft-at q-tuft-at--left q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-2.avif' | relative_url }}" alt="" width="167" height="95" style="--f: 0.824; --tw: 44px; --b: 0px" aria-hidden="true" loading="lazy">
+  <img class="q-tuft-at q-tuft-at--left" src="{{ '/assets/images/puli/meadow/grass-flat-5.avif' | relative_url }}" alt="" width="158" height="85" style="--f: 0.932; --tw: 40px; --b: 0px" aria-hidden="true" loading="lazy">
+  <img class="q-tuft-at q-tuft-at--left q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-1.avif' | relative_url }}" alt="" width="180" height="86" style="--f: 1; --tw: 46px; --b: 0px" aria-hidden="true" loading="lazy">
   <div class="q-wrap q-faq">
     <header class="q-head">
       <p class="q-caps q-caps--body"><span class="q-num">05</span>Questions</p>
@@ -258,25 +258,25 @@ stylesheet: brand
   {%- comment -%} The link preview's meadow along the foot of the page (Alan, Nov 19): painted grass, poppies and three
     sheep at the site's scale, each placed by its center along the section's width. Fewer on phones. {%- endcomment %}
   <div class="q-meadow" aria-hidden="true">
-    <img src="{{ '/assets/images/puli/meadow/grass-flat-8.png' | relative_url }}" alt="" width="368" height="235" style="left: 4%; width: 118px" loading="lazy">
-    <img src="{{ '/assets/images/puli/meadow/poppies-flat-4.png' | relative_url }}" alt="" width="397" height="221" style="left: 12%; width: 138px" loading="lazy">
-    <img class="q-meadow__wide" src="{{ '/assets/images/puli/flock/flock-grazing-right.png' | relative_url }}" alt="" width="330" height="223" style="left: 23%; width: 152px; bottom: 4px" loading="lazy">
-    <img class="q-meadow__flip q-meadow__wide" src="{{ '/assets/images/puli/meadow/grass-flat-1.png' | relative_url }}" alt="" width="180" height="86" style="left: 21%; width: 66px" loading="lazy">
-    <img class="q-meadow__wide" src="{{ '/assets/images/puli/meadow/grass-flat-5.png' | relative_url }}" alt="" width="158" height="85" style="left: calc(23% + 61px); width: 54px" loading="lazy">
-    <img class="q-meadow__wide" src="{{ '/assets/images/puli/meadow/grass-flat-2.png' | relative_url }}" alt="" width="167" height="95" style="left: 33%; width: 64px" loading="lazy">
-    <img class="q-meadow__wide" src="{{ '/assets/images/puli/meadow/poppies-flat-3.png' | relative_url }}" alt="" width="239" height="127" style="left: 40%; width: 104px" loading="lazy">
-    <img src="{{ '/assets/images/puli/flock/flock-lying.png' | relative_url }}" alt="" width="347" height="226" style="left: 50%; width: 150px; bottom: 3px" loading="lazy">
-    <img class="q-meadow__flip" src="{{ '/assets/images/puli/meadow/grass-flat-5.png' | relative_url }}" alt="" width="158" height="85" style="left: 44%; width: 50px" loading="lazy">
-    <img src="{{ '/assets/images/puli/meadow/grass-flat-1.png' | relative_url }}" alt="" width="180" height="86" style="left: 56.5%; width: 56px" loading="lazy">
-    <img class="q-meadow__wide" src="{{ '/assets/images/puli/meadow/poppies-flat-5.png' | relative_url }}" alt="" width="313" height="172" style="left: 63%; width: 118px" loading="lazy">
-    <img class="q-meadow__wide" src="{{ '/assets/images/puli/flock/flock-standing-left.png' | relative_url }}" alt="" width="362" height="310" style="left: 74%; width: 150px; bottom: 5px" loading="lazy">
-    <img class="q-meadow__flip q-meadow__wide" src="{{ '/assets/images/puli/meadow/grass-flat-2.png' | relative_url }}" alt="" width="167" height="95" style="left: 70%; width: 62px" loading="lazy">
-    <img class="q-meadow__wide" src="{{ '/assets/images/puli/meadow/grass-flat-10.png' | relative_url }}" alt="" width="128" height="126" style="left: 81%; width: 44px" loading="lazy">
-    <img src="{{ '/assets/images/puli/meadow/poppies-flat-6.png' | relative_url }}" alt="" width="371" height="211" style="left: 88%; width: 134px" loading="lazy">
-    <img class="q-meadow__flip" src="{{ '/assets/images/puli/meadow/grass-flat-8.png' | relative_url }}" alt="" width="368" height="235" style="left: 97%; width: 110px" loading="lazy">
+    <img src="{{ '/assets/images/puli/meadow/grass-flat-8.avif' | relative_url }}" alt="" width="368" height="235" style="left: 4%; width: 118px" loading="lazy">
+    <img src="{{ '/assets/images/puli/meadow/poppies-flat-4.avif' | relative_url }}" alt="" width="397" height="221" style="left: 12%; width: 138px" loading="lazy">
+    <img class="q-meadow__wide" src="{{ '/assets/images/puli/flock/flock-grazing-right.avif' | relative_url }}" alt="" width="330" height="223" style="left: 23%; width: 152px; bottom: 4px" loading="lazy">
+    <img class="q-meadow__flip q-meadow__wide" src="{{ '/assets/images/puli/meadow/grass-flat-1.avif' | relative_url }}" alt="" width="180" height="86" style="left: 21%; width: 66px" loading="lazy">
+    <img class="q-meadow__wide" src="{{ '/assets/images/puli/meadow/grass-flat-5.avif' | relative_url }}" alt="" width="158" height="85" style="left: calc(23% + 61px); width: 54px" loading="lazy">
+    <img class="q-meadow__wide" src="{{ '/assets/images/puli/meadow/grass-flat-2.avif' | relative_url }}" alt="" width="167" height="95" style="left: 33%; width: 64px" loading="lazy">
+    <img class="q-meadow__wide" src="{{ '/assets/images/puli/meadow/poppies-flat-3.avif' | relative_url }}" alt="" width="239" height="127" style="left: 40%; width: 104px" loading="lazy">
+    <img src="{{ '/assets/images/puli/flock/flock-lying.avif' | relative_url }}" alt="" width="347" height="226" style="left: 50%; width: 150px; bottom: 3px" loading="lazy">
+    <img class="q-meadow__flip" src="{{ '/assets/images/puli/meadow/grass-flat-5.avif' | relative_url }}" alt="" width="158" height="85" style="left: 44%; width: 50px" loading="lazy">
+    <img src="{{ '/assets/images/puli/meadow/grass-flat-1.avif' | relative_url }}" alt="" width="180" height="86" style="left: 56.5%; width: 56px" loading="lazy">
+    <img class="q-meadow__wide" src="{{ '/assets/images/puli/meadow/poppies-flat-5.avif' | relative_url }}" alt="" width="313" height="172" style="left: 63%; width: 118px" loading="lazy">
+    <img class="q-meadow__wide" src="{{ '/assets/images/puli/flock/flock-standing-left.avif' | relative_url }}" alt="" width="362" height="310" style="left: 74%; width: 150px; bottom: 5px" loading="lazy">
+    <img class="q-meadow__flip q-meadow__wide" src="{{ '/assets/images/puli/meadow/grass-flat-2.avif' | relative_url }}" alt="" width="167" height="95" style="left: 70%; width: 62px" loading="lazy">
+    <img class="q-meadow__wide" src="{{ '/assets/images/puli/meadow/grass-flat-10.avif' | relative_url }}" alt="" width="128" height="126" style="left: 81%; width: 44px" loading="lazy">
+    <img src="{{ '/assets/images/puli/meadow/poppies-flat-6.avif' | relative_url }}" alt="" width="371" height="211" style="left: 88%; width: 134px" loading="lazy">
+    <img class="q-meadow__flip" src="{{ '/assets/images/puli/meadow/grass-flat-8.avif' | relative_url }}" alt="" width="368" height="235" style="left: 97%; width: 110px" loading="lazy">
   </div>
   <div class="container waitlist__inner">
-    <img class="waitlist__icon" src="{{ '/assets/images/puli/puli-icon-square-400.png' | relative_url }}" alt="Puli’s app icon" width="200" height="200" loading="lazy">
+    <img class="waitlist__icon" src="{{ '/assets/images/puli/puli-icon-square-400.avif' | relative_url }}" alt="Puli’s app icon" width="200" height="200" loading="lazy">
     {%- comment -%} Apple's badge can't be reworded, so until launch a plain pill says it's coming (Alan, Nov 19).
       At launch, put {% include app-store-badge.html %} back here. {%- endcomment %}
     <p class="q-coming">Coming soon to the Mac App Store.</p>

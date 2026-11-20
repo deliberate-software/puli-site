@@ -3,7 +3,6 @@ published: false   # hidden until it is branded and reviewed (Alan, Nov 19)
 layout: default
 full_title: Puli for Mac (line)
 body_class: is-puli
-stylesheet: brand
 permalink: /concepts/line/
 sitemap: false
 ---
@@ -58,13 +57,14 @@ sitemap: false
       </div>
     </div>
 
-    {%- comment -%} AVIF first, a seventh the size of the PNGs, which stay for browsers without AVIF. The hero is the first
-      thing anyone sees, so it loads ahead of everything else. {%- endcomment %}
+    {%- comment -%} AVIF first, a seventh the size of the PNGs, which stay for browsers without AVIF; a 1200px copy for
+      smaller windows. The hero is the first thing anyone sees, so it loads ahead of everything else. Click it to see it
+      enlarged, at full size (data-full; see marks.js). {%- endcomment %}
     <figure class="q-shot"><picture>
-      <source srcset="{{ '/assets/images/puli/hero-dark.avif' | relative_url }}" type="image/avif" media="(prefers-color-scheme: dark)">
+      <source srcset="{{ '/assets/images/puli/hero-dark-1200.avif' | relative_url }} 1200w, {{ '/assets/images/puli/hero-dark.avif' | relative_url }} 1828w" sizes="(min-width: 1100px) 1000px, 92vw" type="image/avif" media="(prefers-color-scheme: dark)">
       <source srcset="{{ '/assets/images/puli/hero-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)">
-      <source srcset="{{ '/assets/images/puli/hero.avif' | relative_url }}" type="image/avif">
-      <img src="{{ '/assets/images/puli/hero.png' | relative_url }}" width="1828" height="994" fetchpriority="high" alt="Puli on a Mac: a meeting note, with the page of the person it mentions open beside it.">
+      <source srcset="{{ '/assets/images/puli/hero-1200.avif' | relative_url }} 1200w, {{ '/assets/images/puli/hero.avif' | relative_url }} 1828w" sizes="(min-width: 1100px) 1000px, 92vw" type="image/avif">
+      <img src="{{ '/assets/images/puli/hero.png' | relative_url }}" width="1828" height="994" fetchpriority="high" data-full="{{ '/assets/images/puli/hero.avif' | relative_url }}" data-full-dark="{{ '/assets/images/puli/hero-dark.avif' | relative_url }}\" alt="Puli on a Mac: a meeting note, with the page of the person it mentions open beside it.">
     </picture></figure>
   </div>
 </section>
@@ -250,7 +250,7 @@ sitemap: false
 
 <section class="waitlist" id="download" aria-label="Download Puli">
   <div class="container waitlist__inner">
-    <img class="waitlist__icon" src="{{ '/assets/images/puli/puli-icon-square-400.png' | relative_url }}" alt="Puli’s app icon" width="200" height="200" loading="lazy">
+    <img class="waitlist__icon" src="{{ '/assets/images/puli/puli-icon-square-400.avif' | relative_url }}" alt="Puli’s app icon" width="200" height="200" loading="lazy">
     {%- comment -%} Apple's badge can't be reworded, so until launch a plain pill says it's coming (Alan, Nov 19).
       At launch, put {% include app-store-badge.html %} back here. {%- endcomment %}
     <p class="q-coming">Coming soon to the Mac App Store.</p>

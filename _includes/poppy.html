@@ -8,12 +8,14 @@
   {%- comment -%} each clump's ragged bottom cut flat (Alan, Nov 19), so it meets the section's edge with no gap {%- endcomment -%}
   {%- assign sizes = "410x204,339x174,239x127,397x221,313x172,371x211,330x191,466x290" | split: "," -%}
   {%- assign base = '/assets/images/puli/meadow/poppies-flat-' | append: include.n -%}
+  {%- assign ext = '.avif' -%}{%- comment -%} AVIF, at twice their largest size on the page (Nov 20); the originals are in tools/art/meadow {%- endcomment -%}
 {%- else -%}
   {%- assign sizes = "238x387,220x305,368x275,456x318,290x245,179x213,399x319,111x196,120x143,330x300,330x285" | split: "," -%}
   {%- assign base = '/assets/images/puli/pasture/poppy-' | append: include.n -%}
+  {%- assign ext = '.png' -%}
 {%- endif -%}
 {%- assign i = include.n | minus: 1 -%}
 {%- assign wh = sizes[i] | split: "x" -%}
 <picture class="q-poppy{% if include.side %} q-poppy--{{ include.side }}{% endif %}{% if include.class %} {{ include.class }}{% endif %}" style="--pw: {{ include.w }}px" aria-hidden="true">
-  <img src="{{ base | append: '.png' | relative_url }}" alt="" width="{{ wh[0] }}" height="{{ wh[1] }}" loading="lazy">
+  <img src="{{ base | append: ext | relative_url }}" alt="" width="{{ wh[0] }}" height="{{ wh[1] }}" loading="lazy">
 </picture>
