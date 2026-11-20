@@ -1,9 +1,9 @@
 ---
-published: false   # hidden until it is branded and reviewed (Alan, Nov 19)
 layout: default
 title: Acknowledgements
 description: The open source software and fonts Puli is built with, and their licenses.
 permalink: /acknowledgements/
+main_class: q-section--teal   # dark teal, like Privacy (Alan, Nov 20)
 ---
 {%- comment -%}
   The license texts are the same files the app bundles, so the two can't drift.
@@ -12,8 +12,8 @@ permalink: /acknowledgements/
 <section class="hero hero--short container">
   <p class="eyebrow">Updated 20 November 2026</p>
   <h1 class="hero__title hero__title--long">Acknowledgements</h1>
-  <p class="hero__lead">Puli stands on the shoulders of remarkably generous people. Your notes are stored by SQLite, encrypted by SQLCipher, and handled by GRDB, and every word is set in IBM Plex Serif and Instrument Sans. Their makers poured their skill into this work and then gave it away. Puli wouldn’t exist without them, and we’re deeply grateful.</p>
-  <div class="prose">
+  <p class="hero__lead">Puli stands on the shoulders of remarkably generous people. Your notes are stored by SQLite, encrypted by SQLCipher, and handled by GRDB, and every word is set in the fonts listed below. Their makers poured their skill into this work and then gave it away. Puli wouldn’t exist without them, and we’re deeply grateful.</p>
+  <div class="prose prose--credits">
 
     <h2>Software</h2>
 
@@ -53,8 +53,6 @@ permalink: /acknowledgements/
       <summary>License</summary>
       <pre>{{ text | strip | escape }}</pre>
     </details>
-
-    <p>And in Puli’s other font themes:</p>
 
     <h3>IBM Plex Mono</h3>
     <p>Copyright © 2017 IBM Corp. <a href="https://github.com/IBM/plex">IBM Plex</a> is licensed under the SIL Open Font License, Version 1.1.</p>
