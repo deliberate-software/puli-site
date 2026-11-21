@@ -1,43 +1,51 @@
 ---
-published: false   # hidden until it is branded and reviewed (Alan, Nov 19)
 layout: default
-title: Tasks
-description: "The Tasks lesson: see every task from every note in one place, sort, filter, and group them, and see what's due wherever you are."
-permalink: /lessons/tasks/
+title: Triage
+description: "The Triage lesson: give tasks due dates and priorities, sort, filter, and group them, see each page's open tasks, and see what's due wherever you are."
+permalink: /lessons/triage/
+main_class: q-section--teal   # dark teal, like Privacy (Alan, Nov 20)
 ---
 <section class="hero hero--short container">
   <p class="eyebrow">Puli · <a href="{{ '/lessons/' | relative_url }}">How Lessons Work</a></p>
-  <h1 class="hero__title"><em>Tasks.</em></h1>
-  <p class="hero__lead">See every task from every note in one place, sort, filter, and group them, and see what’s due wherever you are.</p>
+  <h1 class="hero__title">Triage.</h1>
+  <p class="hero__lead">Give tasks due dates and priorities, sort, filter, and group them, and see what’s due wherever you are.</p>
   <div class="prose prose--topics">
+    {%- comment -%} Rewritten Nov 20: only the Tasks view is free, usable but not convenient; Triage is due dates, priorities, sorting, filtering, grouping, and a page's open tasks (Alan) {%- endcomment %}
 
     <div class="topic">
       <h2 id="a-lesson">A lesson</h2>
       <div class="topic__text">
-        <p>Tasks is a lesson. It’s free in Job Search journals. Without it, you can still write, start, and complete tasks in your notes; see <a href="{{ '/guide/tasks/' | relative_url }}">Tasks and promises</a>. See <a href="{{ '/lessons/' | relative_url }}">How Lessons Work</a>.</p>
+        <p>Triage is a lesson. It’s free in Job Search and sample journals. Without it, you can still write, start, and complete tasks, and see them all in the Tasks view; see <a href="{{ '/guide/tasks/' | relative_url }}">Tasks and promises</a>. See <a href="{{ '/lessons/' | relative_url }}">How Lessons Work</a>.</p>
       </div>
     </div>
 
     <div class="topic">
-      <h2 id="the-tasks-view">The Tasks view</h2>
+      <h2 id="give-a-task-a-due-date">Give a task a due date</h2>
       <div class="topic__text">
-        <p>Choose View › Tasks, press <kbd>⇧⌘T</kbd>, or click Tasks in the sidebar. You see the open tasks from every note, with their priorities and due dates. Click Task, Priority, or Due at the top to sort by it.</p>
-        <p>Click a checkbox to complete a task. Double-click a task to change its words, and <kbd>↩</kbd> to open its note.</p>
+        <p>Write when it’s due, in words: <code>[] Send the deck by Fri</code>. When you save, Puli writes the date in its place, as in <code>by 2026-11-20</code>. Press <kbd>⌘Z</kbd> right after saving to get your words back.</p>
+        <p><code>by</code> or <code>due</code> works with a day, a date, or a word, such as <code>by Friday</code>, <code>due Nov 20</code>, or <code>by next week</code>. <code>today</code>, <code>tomorrow</code>, and <code>EOW</code> work on their own.</p>
       </div>
     </div>
 
     <div class="topic">
-      <h2 id="add-a-task">Add a task</h2>
+      <h2 id="give-a-task-a-priority">Give a task a priority</h2>
       <div class="topic__text">
-        <p>Type in “Add a task”, above the tasks, and press <kbd>↩</kbd>. Due dates and priorities work as in a note: <code>Send @Diane-Okafor the deck by Fri P1</code>. The task goes in today’s note, under Tasks.</p>
+        <p>Write <code>P0</code>, <code>P1</code>, <code>P2</code>, or <code>P3</code> anywhere in the task. <code>P0</code> is the most urgent: <code>[] P0 Fix the outage</code>.</p>
+        <p>In your notes, a due date shows as a pill, such as “Fri, Nov 20”, and a priority as a small label. A task past due shows in red.</p>
+      </div>
+    </div>
+
+    <div class="topic">
+      <h2 id="sort-and-reorder">Sort and reorder</h2>
+      <div class="topic__text">
+        <p>In the Tasks view, click Task, Priority, or Due at the top to sort by it. To put tasks in your own order, drag one by the grab bar at the end of its row, or press <kbd>⌥⌘↑</kbd> and <kbd>⌥⌘↓</kbd>.</p>
       </div>
     </div>
 
     <div class="topic">
       <h2 id="change-a-priority-or-a-due-date">Change a priority or a due date</h2>
       <div class="topic__text">
-        <p>Click a task’s priority or due date, or its “—”, and choose another. Puli changes it in the note.</p>
-        <p>To put tasks in your own order, drag one by the grab bar at the end of its row, or press <kbd>⌥⌘↑</kbd> and <kbd>⌥⌘↓</kbd>.</p>
+        <p>In the Tasks view, click a task’s priority or due date, or its “—”, and choose another. Puli changes it in the note.</p>
       </div>
     </div>
 
@@ -51,13 +59,6 @@ permalink: /lessons/tasks/
           <li><strong>Group by</strong>: Priority; Owner, to see what each person promised you; or a kind of tag, such as People or Projects.</li>
         </ul>
         <p>The sidebar also shows In progress, Past due, and Due today beneath Tasks. Click one to see those tasks.</p>
-      </div>
-    </div>
-
-    <div class="topic">
-      <h2 id="dates-and-priorities-in-your-notes">Dates and priorities in your notes</h2>
-      <div class="topic__text">
-        <p>With Tasks, a due date shows as a pill, such as “Fri, Nov 13”, and a priority as a small label. A task past due shows in red.</p>
       </div>
     </div>
 
