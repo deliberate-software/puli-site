@@ -396,7 +396,7 @@
   .is-puli .waitlist { --paper: #132826; --ink: #FBF8F3; --muted: #A9BFBB; --line: #22383A; --hair: #3C5653; --accent: #FAC775; --on-accent: #27282B; --glass: #0B1716; }  /* the email field in the ink teal, not graphite (Nov 21) */
 }
 .is-puli .waitlist__inner { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; padding-top: 72px; padding-bottom: 128px; }
-.waitlist__icon { display: block; width: 200px; height: auto; margin-bottom: 32px; border-radius: 22.37%; box-shadow: 0 10px 24px rgba(23, 63, 60, 0.28); }  /* the app icon, as the Dock shows it: a square image, its corners rounded here, Apple's 22.37% (Alan, Nov 19) */
+.waitlist__icon { display: block; width: 200px; height: auto; margin-bottom: 32px; border-radius: 22.37%; box-shadow: 0 10px 24px rgba(23, 63, 60, 0.28); }  /* the app icon, as the Dock shows it, its corners already cut away in the image (Nov 21), so it never shows as a square while it loads; the radius stays so the shadow follows the corners */
 @media (max-width: 480px) { .waitlist__icon { width: 160px; } }
 .waitlist__dog { display: block; width: min(300px, 70%); height: auto; border-radius: 6px; margin-bottom: 24px; }  /* its cream ground, framed, on the teal */
 .is-puli .waitlist__copy { align-items: center; gap: 28px; }
@@ -473,3 +473,9 @@
 .is-puli .hero__actions .button:hover { background: var(--cta-hover); }
 body.is-puli { display: flex; flex-direction: column; min-height: 100svh; }
 body.is-puli > main { flex: 1 0 auto; }
+
+/* The meadow's edge at the foot of every other page (Alan, Nov 21), from _includes/meadow-edge.html: room beneath the
+   page for the grass to stand in, pinned to the footer's line like the home page's meadow. */
+main.has-meadow { position: relative; overflow: hidden; padding-bottom: 120px; }
+main.has-meadow:has(img[src*="-480."]) { padding-bottom: 190px; }  /* the 404 page's larger Puli needs more room (Alan, Nov 21) */
+@media (max-width: 760px) { main.has-meadow { padding-bottom: 104px; } }
