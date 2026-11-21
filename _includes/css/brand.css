@@ -241,6 +241,10 @@
 @media (max-width: 600px) { .q-tufts > img:nth-of-type(even) { display: none; } }
 .q-lede a, .q-faq a, .q-col a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--hair); text-underline-offset: 3px; }
 .q-lede a:hover, .q-faq a:hover { text-decoration-color: var(--accent); }
+/* How Lessons Work →, beneath the lessons in Pricing (Alan, Nov 21) */
+.q-link { display: inline-block; margin-top: 24px; font-size: 15px; font-weight: 500; color: var(--accent); }
+.q-link span { display: inline-block; transition: transform 150ms ease; }
+.q-link:hover span { transform: translateX(3px); }
 
 /* ---------- hero: the headline, then the screenshot, which starts above the fold ---------- */
 
@@ -439,7 +443,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .q-faq__list summary::after { transition: none; }
+  .q-link span, .q-faq__list summary::after { transition: none; }
 }
 
 /* The short pages (404, confirm, thanks): their button in the golden yellow of every call to action, and the footer
