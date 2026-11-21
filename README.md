@@ -20,7 +20,6 @@ Every page wears Puli's brand (`_config.yml` defaults). Pages marked `published:
 | `_apps/puli.md` | Puli's name, platform, launch timing and Kit tag. Change `launch` here ("soon", or "in early 2027") and the hero and waitlist follow. |
 | `index.html` | The home page, written for Puli. |
 | `_includes/marks/` | `puli.html` (Puli, the herding dog: sitting in the hero, standing by the waitlist, black or white to stand out from what's behind it). |
-| `_includes/waitlist.html` | The Kit signup form: one email field, tagged for Puli with a hidden `tags[]` input. |
 | `privacy.html` | Puli's privacy policy, at `/privacy/`, for the app and this site's mailing list (App Store Connect links here). Keep it matching the App Store's "Data Not Collected" label, and update its date when it changes. |
 | `terms.html` | Puli's terms, at `/terms/`: Apple's standard license agreement. |
 | `legal.html` | Every trademark notice, at `/legal/` (the footer links here). Add any brand name a published page mentions. |
