@@ -34,8 +34,7 @@ exclude:
   - signature.jpg   # the photo the signature SVG was traced from
   - README.md
   - GUIDE-AUDIT.md    # the guide checked against the app, not a page
-  - BRAND.md          # who Puli is for, not a page
-  - "Puli brand and messaging guide.pdf"   # the brand guide, not a page
+  - BRAND.md          # Puli's brand, and who it's for: not a page
   - tools             # scripts for making the site's images, not pages
   - Gemfile
   - Gemfile.lock

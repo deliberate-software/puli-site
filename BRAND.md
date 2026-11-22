@@ -1,49 +1,64 @@
-# Puli: who it's for
+# Puli: the brand
 
-Notes to ourselves, not a page. The **Puli brand and messaging guide** (the PDF beside this file, Nov 14, 2026) is the source of truth for messaging: the locked home page hero, the messaging house, the voice, and the banned words. Where this file and the guide disagree, the guide wins.
+Notes to ourselves, not a page. This file is getpuli.com's brand guide; the company's, Deliberate Software, is `~/dev/deliberate-software.github.io/BRAND.md`. Where this file and the live site disagree, the site wins, and this file needs updating.
+
+Copy is Alan's. Apply his line edits as he writes them, with the site's typography: curly quotes and apostrophes, the middle dot in eyebrows.
+
+The app. Its site, getpuli.com, is the home page, How Lessons Work and a page per lesson, the Handler's Guide, Support, Privacy, Terms, Trademarks, Acknowledgements, and a 404.
 
 ## In one line
 
-Puli is the meeting notebook for the person in the room who's expected to sweat the details. Managers and founders first.
+Your notes about the people you work with, the projects you work on, and the promises made along the way, filed for you, in the privacy of your own Mac.
 
-## The home page hero (Alan's, Nov 18, replacing the guide's)
+## The name
 
-- **Menu bar:** the app icon (the cream Puli on teal) and "**Puli** for Mac", and the Download on the Mac App Store badge at the right end
-- **Headline:** Herd your thoughts.
-- **Subhead:** Your notes about the people your work with, the projects you work on, and the promises made along the way, filed for you, in the privacy of your own Mac. For free. Forever.
-- **Image:** a real screenshot: meeting notes in the editor; the calendar and contextual information in the context pane; the sidebar, maybe without the notes list
+Puli is named for a Hungarian herding dog with a corded coat. Say it POO-lee. A herding dog doesn't replace the shepherd: you decide what matters, and Puli makes sure none of it wanders off. Be subtle with the dog: herding, tricks, and lessons, not puns in every line.
 
-## The look (Alan, Nov 18)
+## The home page
 
-By day the page is pale teal, with the light screenshot and a cream menu bar; the rest of the colors come from the app.
+Every section has one job. If a line fits none of them, cut it.
 
-- **Colors:** by day, pale teal `#CFE1DD` with charcoal `#1F2023` for text and the app's amber `#8A4B08` as the one accent. By night, a deep teal `#153F3C` with warm white `#FBF8F3` and light amber `#FAC775`. Graphite `#27282B` for the dark band.
-- **Tags:** pills in the app's colors: people blue, organizations plum, projects green.
+1. **The hero.** Headline: "Herd your thoughts." Subhead: "Your notes about the people you work with, the projects you work on, and the promises made along the way, filed for you, in the privacy of your own Mac. For free. Forever." Then a real screenshot of the app.
+2. **Why Puli.** "Thoughts are fleeting. Write them down." Transcripts only capture what was said; a note captures what you thought. "Preferably somewhere with good recall." A note about Dana and the Q3 launch belongs to both.
+3. **How Puli Works.** "Just start writing. Puli takes it from there." The three pillars:
+   - **People:** everyone you talk to has a page.
+   - **Projects:** every project keeps its own thread.
+   - **Promises:** yours, and theirs.
+4. **Pricing.** "Free. Forever." Taking notes and capturing tasks are always free. Lessons teach Puli new tricks.
+5. **Three promises.** We will never abuse your privacy. We will never steal your attention. We will never revoke your purchases.
+6. **Questions,** then **About:** Alan's note, signed.
+7. **The mailing list:** "Hear when Puli learns new tricks." Until launch, a plain "Coming soon to the Mac App Store." stands in for Apple's badge.
+
+## The look
+
+By day the page is pale teal, with light screenshots and a cream menu bar. By night it's ink teal, a near-black teal, with dark screenshots. Nothing is graphite at night.
+
+- **Colors by day:** pale teal `#CFE1DD`, charcoal `#1F2023` text, muted `#44514E`, lines `#B1C9C4`. The app's amber `#8A4B08` is the one accent.
+- **Colors by night:** the page `#10201F`, teal bands `#0A1615`, the menu bar and mailing list `#132826`, warm white `#FBF8F3` text, muted `#A9BFBB`, lines `#22383A` and `#2C4643`. Light amber `#FAC775` is the accent.
+- **Menu bar:** the app editor's cream `#FBF9F4` with charcoal `#27282B` text by day; ink teal by night. It shows the icon, "Puli for Mac", and the links.
+- **Tags:** pills in the app's colors. People are blue, organizations plum, projects green.
+- **Type:** headings in IBM Plex Serif Light; text in Instrument Sans, the app's text face. On pages, h2 is 44px and h3 is Plex Serif Light at 26px, with no bold lead-ins.
+- **No italics,** except Alan's About note on the home page, which reads like a quote.
 - **Buttons:** the app's 8px corners.
-- **Type:** headings in IBM Plex Serif Light; text in Instrument Sans, the app's text face; IBM Plex Mono for typed notes.
-- **Menu bar:** the app editor's cream `#FBF9F4` with charcoal `#27282B` text (by night, the app editor's `#323537` with warm white).
-- **Walnut** stays for the founder panel.
+- **Pages** other than the home page are dark teal at the top, with an "Updated" date eyebrow.
 
-The why, right after the hero (Alan, Nov 18): "Thoughts are fleeting. Write them down." Everyone’s racing to record, transcribe, and summarize your meetings. But transcripts only capture what was said. A note captures what you thought. Puli tends your thoughts.
+## The art
 
-Its second point: "Preferably somewhere with good recall." Other note-taking apps make you pick a folder. But a note about Dana and the Q3 launch belongs to both. Tag them, and Puli puts the note in both places, ready to recall the next time either is mentioned.
+Painted illustrations, not photos, so the site feels like software: grass, poppies, and sheep from the meadow. The home page has them throughout. Every other page has a strip of meadow along its foot, now and then with a sheep. The Puli herself appears only in the app icon and on the 404, sniffing a tuft of grass. The art is always full color, by day and by night: never dim or filter it.
 
-## The messaging house
+## Words
 
-Every line of copy belongs to one room. If it fits none, cut it.
-
-- **Roof:** Through your brain, not around it.
-- **People:** everyone you talk to has a page.
-- **Projects:** every project keeps its own thread.
-- **Promises:** yours, and theirs.
-- **Foundation:** yours to keep, not ours to take: your privacy, your attention, what you've paid for.
-
-The pillars are People, Projects, Promises (Alan, Nov 18): there's room for one set of three P's, and these are more uniquely Puli than the guide's Walk in prepared, Stay present, Nothing wanders off, which they replace.
+- Call ⋮ "the ⋮ menu."
+- Use "suggest" only for the Suggestions lesson.
+- Name things ("the person, group, or project"), not "whoever or whatever."
+- Write the Escape key as Esc.
+- Use the pillar names, not before, during, and after.
 
 ## Pricing and platform
 
-- The basics (taking notes and managing tasks) are free. Lessons are paid. The licensing model isn't settled, so don't promise a trial, "free forever," or a price.
-- Puli is Mac only. Don't promise an iPhone app.
+- The basics, taking notes and managing tasks, are free, forever. Lessons are paid. Lessons you buy are yours to keep.
+- Don't publish prices, trials, or plans until Alan says so.
+- Puli is Mac only, macOS 15 or later. Some features use Apple Intelligence, which needs a Mac with Apple silicon and macOS 26 or later. Don't promise an iPhone app.
 
 ## Who it's for
 
@@ -60,8 +75,8 @@ They have three things in common:
 | Corporate managers and leaders | Alan, Fito, Cole | **Proven.** Alan wrote Puli for himself. Fito, the first beta tester: "I need this at work!" |
 | Agency owners | Marco, Julie | **Lived.** Alan has worked at agencies, with clients, projects, and people. |
 | Entrepreneurs | Sandi, John, Chris (EdTech) | **Confident, untested.** They live in meetings and task lists. A journal per idea helps them focus. |
-| Students and professors | Marci, a college peer group | **Hypothesis.** A journal per semester or class. The guide says not now. |
-| Job seekers | Anyone between jobs | **The reason Puli exists.** It was the original purpose. The guide holds them for a later campaign of their own. |
+| Students and professors | Marci, a college peer group | **Hypothesis.** A journal per semester or class. Not now. |
+| Job seekers | Anyone between jobs | **The reason Puli exists.** It was the original purpose. |
 
 ### Corporate managers and leaders
 
@@ -83,7 +98,7 @@ They have classes, students, other professors, assignments, labs, and tests, wit
 
 ### Job seekers
 
-A job search is the manager's problem in its sharpest form: dozens of people and companies, conversations to prepare for, promises to keep, and high stakes. The Job Search template is free, with Today, Tasks, Progress, and Graph. That generosity, at the moment someone needs it most, is a story no competitor has.
+A job search is the manager's problem in its sharpest form: dozens of people and companies, conversations to prepare for, promises to keep, and high stakes. The Job Search sample journal shows it.
 
 Job seekers become managers again. Someone who lands a job with Puli takes it to work.
 
@@ -96,10 +111,10 @@ If your notes belong somewhere else, or to someone else, Puli isn't for you.
 - **Software engineers like Chris.** They have too few meetings, and their notes land in the repo, where others see them.
 - **Real estate agents like Dara.** They live in MLS, so Puli would be a second place to keep the same people.
 - **People writing long things,** like books, essays, or documentation.
-- **Teams sharing a workspace.** Puli is private and single-person.
+- **Teams sharing a workspace.** Puli is private and single-person, for now.
 - **Linked-note power users** who want backlinks, plugins, and a scriptable vault.
 - **People who want AI to write for them.** Puli's AI reads your notes and points things out. It doesn't draft.
-- **Anyone not on a Mac with macOS 15 or later,** for now.
+- **Anyone not on a Mac with macOS 15 or later.**
 
 ## Maybes, and what would make them a yes
 
@@ -121,13 +136,7 @@ Obsidian already claims "private," so privacy alone doesn't set Puli apart. Nobo
 
 Evernote's feature list overlaps Puli's. Many of its users feel let down and are looking for somewhere to go. Puli doesn't import from Evernote yet.
 
-## Marco's notes
+## Still open, from Marco's notes
 
-- Who is this for? (This doc.)
-- Be subtle with metaphors. The dog is everywhere.
-- Use illustration and iconography, not photos, so it feels like software.
-- Show screenshots or video. The site has none.
 - Add testimonials, once there are beta users to quote.
-- The Deliberate Software logo is too old-school.
-- The process: branding (messaging), then a vision board, then design.
-- Buy feeder domains that point to the Puli site.
+- Buy feeder domains that point to getpuli.com.
