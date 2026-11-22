@@ -34,10 +34,10 @@ body_class: is-puli
       smaller windows. The hero is the first thing anyone sees, so it loads ahead of everything else. Click it to see it
       enlarged, at full size (data-full; see marks.js). {%- endcomment %}
     <figure class="q-shot"><picture>
-      <source srcset="{{ '/assets/images/puli/hero-dark-1200.avif' | relative_url }} 1200w, {{ '/assets/images/puli/hero-dark.avif' | relative_url }} 1828w" sizes="(min-width: 1100px) 1000px, 92vw" type="image/avif" media="(prefers-color-scheme: dark)">
+      <source srcset="{{ '/assets/images/puli/hero-dark-1200.avif' | relative_url }} 1200w, {{ '/assets/images/puli/hero-dark.avif' | relative_url }} 2022w" sizes="(min-width: 1100px) 1000px, 92vw" type="image/avif" media="(prefers-color-scheme: dark)">
       <source srcset="{{ '/assets/images/puli/hero-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)">
-      <source srcset="{{ '/assets/images/puli/hero-1200.avif' | relative_url }} 1200w, {{ '/assets/images/puli/hero.avif' | relative_url }} 1828w" sizes="(min-width: 1100px) 1000px, 92vw" type="image/avif">
-      <img src="{{ '/assets/images/puli/hero.png' | relative_url }}" width="1828" height="994" fetchpriority="high" data-full="{{ '/assets/images/puli/hero.avif' | relative_url }}" data-full-dark="{{ '/assets/images/puli/hero-dark.avif' | relative_url }}\" alt="Puli on a Mac: a meeting note, with the page of the person it mentions open beside it.">
+      <source srcset="{{ '/assets/images/puli/hero-1200.avif' | relative_url }} 1200w, {{ '/assets/images/puli/hero.avif' | relative_url }} 2022w" sizes="(min-width: 1100px) 1000px, 92vw" type="image/avif">
+      <img src="{{ '/assets/images/puli/hero.png' | relative_url }}" width="2022" height="1330" fetchpriority="high" data-full="{{ '/assets/images/puli/hero.avif' | relative_url }}" data-full-dark="{{ '/assets/images/puli/hero-dark.avif' | relative_url }}\" alt="Puli on a Mac: a meeting note, with the page of the person it mentions open beside it.">
     </picture></figure>
   </div>
 </section>
@@ -90,17 +90,17 @@ body_class: is-puli
         <div class="q-pen__copy">
           <p class="q-pen__kicker">People</p>
           <h3 class="q-pen__title">Everyone you talk to has a page.</h3>
-          <p>Type <span class="q-person">@Ben-Adler</span> in any note, and that line lands on Ben’s page, with everything else you’ve written about them. Before your next 1:1, it’s all there.</p>
+          <p>Type <span class="q-person">@Marco-Silva</span> in any note, and that line lands on Marco’s page, with everything else you’ve written about them. Before your next 1:1, it’s all there.</p>
         </div>
-        {% include pen-shot.html name="people" label="a person’s page" alt="Ben Adler’s page in Puli, beside a studio meeting note." shot="Ben Adler's page in the context pane, beside a studio meeting note. About, Open tasks, Mentioned with, and Notes showing." %}
+        {% include pen-shot.html name="people" label="a person’s page" alt="Marco Silva’s page in Puli, beside a leadership meeting note." shot="Marco Silva's page in the context pane, beside a leadership meeting note. About, Open tasks, and Mentioned with showing." %}
       </article>
       <article class="q-pen">
         <div class="q-pen__copy">
           <p class="q-pen__kicker">Projects</p>
           <h3 class="q-pen__title">Every project keeps its own thread.</h3>
-          <p>Type <span class="q-project">#Marlow-Website</span>, and the note joins the project, whichever meeting it came from. See who it comes up with, and what’s been said lately.</p>
+          <p>Type <span class="q-project">#Pantry-Expansion</span>, and the note joins the project, whichever meeting it came from. See who it comes up with, and what’s been said lately.</p>
         </div>
-        {% include pen-shot.html name="projects" label="a project’s page" alt="The Marlow Website project’s page in Puli, beside the note from its launch." shot="the Marlow Website project page beside its launch note: About, Open tasks, and Mentioned with showing." %}
+        {% include pen-shot.html name="projects" label="a project’s page" alt="The Pantry Expansion project’s page in Puli, beside its check-in note." shot="the Pantry Expansion project page beside its check-in note: About, Lately, and Mentioned with showing." %}
       </article>
       <article class="q-pen">
         <div class="q-pen__copy">
@@ -108,7 +108,7 @@ body_class: is-puli
           <h3 class="q-pen__title">Yours, and theirs.</h3>
           <p>Start a line with <span class="q-code">[]</span>, and it’s a task. Start it with someone’s name, and it’s a promise they made to you. Puli keeps track of both, so nothing wanders off.</p>
         </div>
-        {% include pen-shot.html name="promises" label="the Tasks list" alt="Puli’s Tasks list for the Tidewell App project: your tasks, and a promise Ben Adler made to you." shot="the Tasks list, with a few of your own tasks and two promises others made to you, with due dates." %}
+        {% include pen-shot.html name="promises" label="the Tasks list" alt="Puli’s Tasks list: your tasks, and a promise Marco Silva made to you." shot="the Tasks list, grouped by owner: your own tasks, and a promise Marco Silva made to you, with due dates." %}
       </article>
     </div>
   </div>
