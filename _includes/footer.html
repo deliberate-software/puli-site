@@ -16,13 +16,13 @@
       <a href="{{ '/' | relative_url }}#questions">Questions</a>
       <a href="{{ '/' | relative_url }}#about">About</a>
       <a href="{{ '/' | relative_url }}privacy/">Privacy</a>
-      <a href="{{ '/legal/' | relative_url }}">Legal</a>
+      <a href="{{ '/trademarks/' | relative_url }}">Trademarks</a>
       <a href="mailto:{{ site.email }}">Contact</a>
     </div>
     <p class="footer__copyright">© {{ site.time | date: "%Y" }} {{ site.legal_name }}</p>
     {%- if page.url == "/" %}
     {%- comment -%} The home page claims our own marks and points to the rest (Alan, Nov 19). {%- endcomment %}
-    <p class="footer__trademarks">Deliberate Software and Puli are trademarks of {{ site.legal_name }}. For a list of all trademarks used on this site, see <a href="{{ '/legal/' | relative_url }}">Legal</a>.</p>
+    <p class="footer__trademarks">Deliberate Software and Puli are trademarks of {{ site.legal_name }}. For a list of all trademarks used on this site, see <a href="{{ '/trademarks/' | relative_url }}">Trademarks</a>.</p>
     {%- endif %}
   </div>
 </footer>

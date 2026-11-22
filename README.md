@@ -22,7 +22,7 @@ Every page wears Puli's brand (`_config.yml` defaults). Pages marked `published:
 | `_includes/marks/` | `puli.html` (Puli, the herding dog: sitting in the hero, standing by the waitlist, black or white to stand out from what's behind it). |
 | `privacy.html` | Puli's privacy policy, at `/privacy/`, for the app and this site's mailing list (App Store Connect links here). Keep it matching the App Store's "Data Not Collected" label, and update its date when it changes. |
 | `terms.html` | Puli's terms, at `/terms/`: Apple's standard license agreement. |
-| `legal.html` | Every trademark notice, at `/legal/` (the footer links here). Add any brand name a published page mentions. |
+| `trademarks.html` | Every trademark notice, at `/trademarks/` (the footer links here). Add any brand name a published page mentions. |
 | `support.html` | Puli's support page, at `/support/` (App Store Connect's support URL). |
 | `guide/` | Puli's Handler's Guide, at `/guide/`: `index.html` is its contents, and each page beside it is one topic of the free app. Written from Puli's STORIES.md; keep it matching what ships. |
 | `lessons/` | One page per lesson, at `/lessons/<lesson>/`. `lessons.html` (How Lessons Work, at `/lessons/`) lists them. |

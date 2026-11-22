@@ -354,7 +354,7 @@ main:has(> .waitlist:last-child) + .site-footer { border-top: 0; }
 /* The copyright ends the main row; the trademarks run beneath it, from the left. */
 .footer__copyright { margin: 0; font-size: 12px; text-align: right; }
 .footer__trademarks { grid-column: 1 / -1; margin: 0; font-size: 11px; text-align: left; text-wrap: pretty; }
-.footer__trademarks a { text-decoration: underline; text-underline-offset: 2px; }  /* the Legal link, as a link (Nov 19) */
+.footer__trademarks a { text-decoration: underline; text-underline-offset: 2px; }  /* the Trademarks link, as a link (Nov 19) */
 @media (max-width: 720px) {
   .footer { grid-template-columns: minmax(0, 1fr); align-items: start; }
   .footer__links { justify-content: flex-start; }
