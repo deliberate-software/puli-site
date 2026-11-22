@@ -1,14 +1,14 @@
 ---
 layout: default
 title: Triage
-description: "The Triage lesson: give tasks due dates and priorities, sort, filter, and group them, see each page's open tasks, and see what's due wherever you are."
+description: "The Triage lesson: filter and group your tasks, see each page's open tasks, and see what's due wherever you are."
 permalink: /lessons/triage/
 main_class: q-section--teal   # dark teal, like Privacy (Alan, Nov 20)
 ---
 <section class="hero hero--short container">
   <p class="eyebrow">Puli · <a href="{{ '/lessons/' | relative_url }}">How Lessons Work</a></p>
   <h1 class="hero__title">Triage.</h1>
-  <p class="hero__lead">Give tasks due dates and priorities, sort, filter, and group them, and see what’s due wherever you are.</p>
+  <p class="hero__lead">Filter and group your tasks, see each page’s open tasks, and see what’s due wherever you are.</p>
   <div class="prose prose--topics">
     {%- comment -%} Rewritten Nov 20: only the Tasks view is free, usable but not convenient; Triage is due dates, priorities, sorting, filtering, grouping, and a page's open tasks (Alan) {%- endcomment %}
 
@@ -20,41 +20,10 @@ main_class: q-section--teal   # dark teal, like Privacy (Alan, Nov 20)
     </div>
 
     <div class="topic">
-      <h2 id="give-a-task-a-due-date">Give a task a due date</h2>
-      <div class="topic__text">
-        <p>Write when it’s due, in words: <code>[] Send the deck by Fri</code>. When you save, Puli writes the date in its place, as in <code>by 2026-11-20</code>. Press <kbd>⌘Z</kbd> right after saving to get your words back.</p>
-        <p><code>by</code> or <code>due</code> works with a day, a date, or a word, such as <code>by Friday</code>, <code>due Nov 20</code>, or <code>by next week</code>. <code>today</code>, <code>tomorrow</code>, and <code>EOW</code> work on their own.</p>
-      </div>
-    </div>
-
-    <div class="topic">
-      <h2 id="give-a-task-a-priority">Give a task a priority</h2>
-      <div class="topic__text">
-        <p>Write <code>P0</code>, <code>P1</code>, <code>P2</code>, or <code>P3</code> anywhere in the task. <code>P0</code> is the most urgent: <code>[] P0 Fix the outage</code>.</p>
-        <p>In your notes, a due date shows as a pill, such as “Fri, Nov 20”, and a priority as a small label. A task past due shows in red.</p>
-      </div>
-    </div>
-
-    <div class="topic">
-      <h2 id="sort-and-reorder">Sort and reorder</h2>
-      <div class="topic__text">
-        <p>In the Tasks view, click Task, Priority, or Due at the top to sort by it. To put tasks in your own order, drag one by the grab bar at the end of its row, or press <kbd>⌥⌘↑</kbd> and <kbd>⌥⌘↓</kbd>.</p>
-      </div>
-    </div>
-
-    <div class="topic">
-      <h2 id="change-a-priority-or-a-due-date">Change a priority or a due date</h2>
-      <div class="topic__text">
-        <p>In the Tasks view, click a task’s priority or due date, or its “—”, and choose another. Puli changes it in the note.</p>
-      </div>
-    </div>
-
-    <div class="topic">
       <h2 id="filter-and-group">Filter and group</h2>
       <div class="topic__text">
         <p>Use the dropdowns beside the Tasks heading:</p>
         <ul>
-          <li><strong>Show</strong>: Open, In progress, or Done tasks.</li>
           <li><strong>Due</strong>: Past due, Today, This week, and more, each with how many.</li>
           <li><strong>Group by</strong>: Priority; Owner, to see what each person promised you; or a kind of tag, such as People or Projects.</li>
         </ul>
