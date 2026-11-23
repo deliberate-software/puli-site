@@ -15,8 +15,16 @@ body_class: is-puli
 
 <section class="q-hero" id="top" aria-labelledby="q-title">
   <div class="q-pasture" aria-hidden="true">
-    <img class="q-pasture__left" src="{{ '/assets/images/puli/meadow/poppies-flat-4.avif' | relative_url }}" alt="" width="397" height="221">
-    <img class="q-pasture__right" src="{{ '/assets/images/puli/meadow/grass-flat-8.avif' | relative_url }}" alt="" width="368" height="235">
+    <img class="q-pasture__right" src="{{ '/assets/images/puli/meadow/poppies-flat-4.avif' | relative_url }}" alt="" width="397" height="221">
+    {%- comment -%} Puli at work on the left, crouched, eyes on the page, with short grass at her hind paws and a soft
+      shadow under her; the poppies on the right (Alan, Nov 22) {%- endcomment %}
+    <div class="q-pasture__left q-pasture__puli">
+    <span class="q-pasture__shadow"></span>
+    <img class="q-pasture__dog" src="{{ '/assets/images/puli/pack/pack-herding.avif' | relative_url }}" alt="" width="300" height="226">
+    <img class="q-pasture__tuft" src="{{ '/assets/images/puli/meadow/grass-flat-5.avif' | relative_url }}" alt="" width="158" height="85" style="--x: 2px; width: 34px">
+    <img class="q-pasture__tuft q-pasture__tuft--flip" src="{{ '/assets/images/puli/meadow/grass-flat-1.avif' | relative_url }}" alt="" width="180" height="86" style="--x: 26px; width: 30px">
+    <img class="q-pasture__tuft" src="{{ '/assets/images/puli/meadow/grass-flat-2.avif' | relative_url }}" alt="" width="167" height="95" style="--x: 50px; width: 22px">
+    </div>
   </div>
   <div class="q-wrap">
     <div class="q-hero__head">
@@ -39,7 +47,7 @@ body_class: is-puli
 </section>
 
 <section class="q-section q-section--teal" id="why" aria-labelledby="why-heading">
-  <img class="q-ewe q-ewe--low q-ewe--lower" src="{{ '/assets/images/puli/flock/flock-standing-left.avif' | relative_url }}" alt="" width="362" height="310" aria-hidden="true" loading="lazy">
+  <img class="q-ewe q-ewe--low q-ewe--lower" src="{{ '/assets/images/puli/pack/pack-standing.avif' | relative_url }}" alt="" width="300" height="246" aria-hidden="true" loading="lazy">
   {%- comment -%} a wall of short grass along the border, a little longer than the sheep (Alan, Nov 19) {%- endcomment %}
   <img class="q-tuft-at" src="{{ '/assets/images/puli/meadow/grass-flat-1.avif' | relative_url }}" alt="" width="180" height="86" style="--f: 0; --tw: 46px; --b: 0px" aria-hidden="true" loading="lazy">
   <img class="q-tuft-at q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-5.avif' | relative_url }}" alt="" width="158" height="85" style="--f: 0.068; --tw: 40px; --b: 0px" aria-hidden="true" loading="lazy">
@@ -69,7 +77,7 @@ body_class: is-puli
 
 <section class="q-section q-section--pasture" id="what" aria-labelledby="how-heading">
   <span class="q-ewe-shadow" aria-hidden="true"></span>
-  <img class="q-ewe q-ewe--left q-ewe--grazing" src="{{ '/assets/images/puli/flock/flock-grazing-right.avif' | relative_url }}" alt="" width="330" height="223" aria-hidden="true" loading="lazy">
+  <img class="q-ewe q-ewe--left q-ewe--grazing q-ewe--sniffing" src="{{ '/assets/images/puli/pack/pack-sniffer-480.avif' | relative_url }}" alt="" width="480" height="302" style="transform: scaleX(-1)" aria-hidden="true" loading="lazy">
   <img class="q-tuft-at q-tuft-at--left q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-5.avif' | relative_url }}" alt="" width="158" height="85" style="--f: 0.07; --tw: 24px; --b: 0px" aria-hidden="true" loading="lazy">
   <img class="q-tuft-at q-tuft-at--left" src="{{ '/assets/images/puli/meadow/grass-flat-2.avif' | relative_url }}" alt="" width="167" height="95" style="--f: 0.21; --tw: 44px; --b: 0px" aria-hidden="true" loading="lazy">
   <img class="q-tuft-at q-tuft-at--left" src="{{ '/assets/images/puli/meadow/grass-flat-1.avif' | relative_url }}" alt="" width="180" height="86" style="--f: 0.58; --tw: 40px; --b: 0px" aria-hidden="true" loading="lazy">
@@ -111,11 +119,11 @@ body_class: is-puli
 </section>
 
 <section class="q-section q-section--teal q-pricing" id="free" aria-labelledby="pricing-heading">
-  <img class="q-ewe q-ewe--lower" src="{{ '/assets/images/puli/flock/flock-lying.avif' | relative_url }}" alt="" width="347" height="226" aria-hidden="true" loading="lazy">
+  <img class="q-ewe q-ewe--lower q-ewe--lying" src="{{ '/assets/images/puli/pack/pack-lying.avif' | relative_url }}" alt="" width="300" height="201" aria-hidden="true" loading="lazy">
   {%- comment -%} grass at either end of the lying sheep, pinned to the border; its middle open (Alan, Nov 19) {%- endcomment %}
   <img class="q-tuft-at" src="{{ '/assets/images/puli/meadow/grass-flat-2.avif' | relative_url }}" alt="" width="167" height="95" style="--f: -0.107; --tw: 42px; --b: 0px" aria-hidden="true" loading="lazy">
   <img class="q-tuft-at q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-5.avif' | relative_url }}" alt="" width="158" height="85" style="--f: 0.001; --tw: 46px; --b: 0px" aria-hidden="true" loading="lazy">
-  <img class="q-tuft-at q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-2.avif' | relative_url }}" alt="" width="167" height="95" style="--f: 0.905; --tw: 44px; --b: 0px" aria-hidden="true" loading="lazy">
+  <img class="q-tuft-at q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-2.avif' | relative_url }}" alt="" width="167" height="95" style="--f: 1.0; --tw: 44px; --b: 0px" aria-hidden="true" loading="lazy">
   <img class="q-tuft-at" src="{{ '/assets/images/puli/meadow/grass-flat-5.avif' | relative_url }}" alt="" width="158" height="85" style="--f: 1.013; --tw: 40px; --b: 0px" aria-hidden="true" loading="lazy">
   <div class="q-wrap">
     <header class="q-head">
@@ -188,7 +196,7 @@ body_class: is-puli
 </section>
 
 <section class="q-section q-section--teal" id="questions" aria-labelledby="questions-heading">
-  <img class="q-ewe q-ewe--left q-ewe--low q-ewe--lower q-ewe--lowest" src="{{ '/assets/images/puli/flock/flock-standing-right.avif' | relative_url }}" alt="" width="290" height="294" aria-hidden="true" loading="lazy">
+  <img class="q-ewe q-ewe--left q-ewe--low q-ewe--lower q-ewe--lowest q-ewe--running" src="{{ '/assets/images/puli/pack/pack-running.avif' | relative_url }}" alt="" width="300" height="166" aria-hidden="true" loading="lazy">
   {%- comment -%} a wall of short grass along the border, a little longer than the sheep (Alan, Nov 19) {%- endcomment %}
   <img class="q-tuft-at q-tuft-at--left q-tuft-at--flip" src="{{ '/assets/images/puli/meadow/grass-flat-5.avif' | relative_url }}" alt="" width="158" height="85" style="--f: -0.04; --tw: 44px; --b: 0px" aria-hidden="true" loading="lazy">
   <img class="q-tuft-at q-tuft-at--left" src="{{ '/assets/images/puli/meadow/grass-flat-1.avif' | relative_url }}" alt="" width="180" height="86" style="--f: 0.068; --tw: 40px; --b: 0px" aria-hidden="true" loading="lazy">
@@ -256,19 +264,17 @@ body_class: is-puli
 <section class="waitlist" id="download" aria-label="Download Puli" tabindex="-1">
   {%- comment -%} The link preview's meadow along the foot of the page (Alan, Nov 19): painted grass, poppies and three
     sheep at the site's scale, each placed by its center along the section's width. Fewer on phones. {%- endcomment %}
+  <img class="q-faraway" src="{{ '/assets/images/puli/pasture/pasture-grazing.avif' | relative_url }}" alt="" width="1248" height="394" aria-hidden="true" loading="lazy">  {%- comment -%} the flock, far off, grazing (Alan, Nov 22: the sheep move to a distant pasture) {%- endcomment %}
   <div class="q-meadow" aria-hidden="true">
     <img src="{{ '/assets/images/puli/meadow/grass-flat-8.avif' | relative_url }}" alt="" width="368" height="235" style="left: 4%; width: 118px" loading="lazy">
     <img src="{{ '/assets/images/puli/meadow/poppies-flat-4.avif' | relative_url }}" alt="" width="397" height="221" style="left: 12%; width: 138px" loading="lazy">
-    <img class="q-meadow__wide" src="{{ '/assets/images/puli/flock/flock-grazing-right.avif' | relative_url }}" alt="" width="330" height="223" style="left: 23%; width: 152px; bottom: 4px" loading="lazy">
     <img class="q-meadow__flip q-meadow__wide" src="{{ '/assets/images/puli/meadow/grass-flat-1.avif' | relative_url }}" alt="" width="180" height="86" style="left: 21%; width: 66px" loading="lazy">
     <img class="q-meadow__wide" src="{{ '/assets/images/puli/meadow/grass-flat-5.avif' | relative_url }}" alt="" width="158" height="85" style="left: calc(23% + 61px); width: 54px" loading="lazy">
     <img class="q-meadow__wide" src="{{ '/assets/images/puli/meadow/grass-flat-2.avif' | relative_url }}" alt="" width="167" height="95" style="left: 33%; width: 64px" loading="lazy">
     <img class="q-meadow__wide" src="{{ '/assets/images/puli/meadow/poppies-flat-3.avif' | relative_url }}" alt="" width="239" height="127" style="left: 40%; width: 104px" loading="lazy">
-    <img src="{{ '/assets/images/puli/flock/flock-lying.avif' | relative_url }}" alt="" width="347" height="226" style="left: 50%; width: 150px; bottom: 3px" loading="lazy">
     <img class="q-meadow__flip" src="{{ '/assets/images/puli/meadow/grass-flat-5.avif' | relative_url }}" alt="" width="158" height="85" style="left: 44%; width: 50px" loading="lazy">
     <img src="{{ '/assets/images/puli/meadow/grass-flat-1.avif' | relative_url }}" alt="" width="180" height="86" style="left: 56.5%; width: 56px" loading="lazy">
     <img class="q-meadow__wide" src="{{ '/assets/images/puli/meadow/poppies-flat-5.avif' | relative_url }}" alt="" width="313" height="172" style="left: 63%; width: 118px" loading="lazy">
-    <img class="q-meadow__wide" src="{{ '/assets/images/puli/flock/flock-standing-left.avif' | relative_url }}" alt="" width="362" height="310" style="left: 74%; width: 150px; bottom: 5px" loading="lazy">
     <img class="q-meadow__flip q-meadow__wide" src="{{ '/assets/images/puli/meadow/grass-flat-2.avif' | relative_url }}" alt="" width="167" height="95" style="left: 70%; width: 62px" loading="lazy">
     <img class="q-meadow__wide" src="{{ '/assets/images/puli/meadow/grass-flat-10.avif' | relative_url }}" alt="" width="128" height="126" style="left: 81%; width: 44px" loading="lazy">
     <img src="{{ '/assets/images/puli/meadow/poppies-flat-6.avif' | relative_url }}" alt="" width="371" height="211" style="left: 88%; width: 134px" loading="lazy">
@@ -297,7 +303,7 @@ body_class: is-puli
 </section>
 
 <script>
-  // The hero's two plants sit halfway between the page's edge and the screenshot, which changes width with the window.
+  // The hero's Puli and poppies sit halfway between the page's edge and the screenshot, which changes width with the window.
   (function () {
     var shot = document.querySelector(".q-hero .q-shot img");
     var left = document.querySelector(".q-pasture__left"), right = document.querySelector(".q-pasture__right");

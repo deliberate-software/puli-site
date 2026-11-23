@@ -180,7 +180,7 @@
 .q-section--teal > .q-wrap { position: relative; z-index: 1; }
 .q-ewe { display: none; }
 @media (min-width: 1380px) {
-  .q-ewe { --w: min(150px, calc(var(--gutter) - 40px)); display: block; position: absolute; bottom: 12px; width: var(--w); height: auto;
+  .q-ewe { --w: calc(min(150px, calc(var(--gutter) - 40px)) * var(--k, 1)); display: block; position: absolute; bottom: 12px; width: var(--w); height: auto;
     right: calc(var(--gutter) / 2 - var(--w) / 2); pointer-events: none; }
 }
 @media (prefers-color-scheme: dark) { .q-section--teal { --paper: #0A1615; --line: #1C2F2D; --muted: #A9BFBB; } }  /* the ink teal's deeper band (Alan, Nov 21) */
@@ -204,25 +204,28 @@
 .q-nibble, .q-ewe-shadow, .q-tuft-at { display: none; }
 @media (min-width: 1380px) {
   /* a little short grass under the grazing sheep's muzzle, pinned to the edge like the other grass (Alan, Nov 19) */
-  .q-nibble { --w: min(150px, calc(var(--gutter) - 40px)); display: block; position: absolute; bottom: 0; width: 48px; height: auto;
-    left: calc(var(--gutter) / 2 - var(--w) / 2 + var(--w) * 0.90 - 24px); pointer-events: none; }
+  .q-nibble { --w: calc(min(150px, calc(var(--gutter) - 40px)) * var(--k, 1)); display: block; position: absolute; bottom: 0; width: calc(48px * var(--k, 1)); height: auto;
+    left: calc(var(--gutter) / 2 - var(--w) / 2 + var(--w) * 0.90 - 24px * var(--k, 1)); pointer-events: none; }
   /* how high each sheep stands: the grazer a little lower, its face in front of the grass it's eating */
   .q-ewe--grazing { bottom: 5px; z-index: 1; }
+  #what { --k: 1.25; }  /* Puli in 02, and her grass and shadow, a quarter larger (Alan, Nov 22) */
+  .q-ewe--sniffing { bottom: calc(8px - var(--w) * 0.053); }  /* Puli sniffing in 02: her paws on the shadow, 6px off the section's edge (Alan, Nov 22) */
+  .q-ewe--lying { bottom: -8px; }  /* Puli lying in 03, a little lower, between the grass at either end (Alan, Nov 22) */
   .q-ewe--low { bottom: 8px; }
   .q-ewe--lower { bottom: 6px; }  /* the sheep in 01 and 03, behind their walls of grass along the border */
   .q-ewe--lowest { bottom: 3px; }  /* section 05's sheep */
   /* tufts of short grass by each sheep (Alan, Nov 19), cut flat along their bases, in front of the hooves: walls along
      the border in 01, 03 and 05, tufts at the grazer's hooves. --f is where a tuft stands along the sheep, from the
      sheep's left; --tw is its width; --b how far above the section's edge it stands. */
-  .q-tuft-at { --w: min(150px, calc(var(--gutter) - 40px)); display: block; position: absolute; bottom: var(--b, 0px); width: var(--tw); height: auto;
-    z-index: 1; right: calc(var(--gutter) / 2 - var(--w) / 2 + var(--w) * (1 - var(--f)) - var(--tw) / 2); pointer-events: none; }
-  .q-tuft-at--left { right: auto; left: calc(var(--gutter) / 2 - var(--w) / 2 + var(--w) * var(--f) - var(--tw) / 2); }
+  .q-tuft-at { --w: calc(min(150px, calc(var(--gutter) - 40px)) * var(--k, 1)); display: block; position: absolute; bottom: var(--b, 0px); --tws: calc(var(--tw) * var(--k, 1)); width: var(--tws); height: auto;
+    z-index: 1; right: calc(var(--gutter) / 2 - var(--w) / 2 + var(--w) * (1 - var(--f)) - var(--tws) / 2); pointer-events: none; }
+  .q-tuft-at--left { right: auto; left: calc(var(--gutter) / 2 - var(--w) / 2 + var(--w) * var(--f) - var(--tws) / 2); }
   .q-tuft-at--flip { transform: scaleX(-1); }
   /* a soft ground shadow under the sheep on the pale band (Alan, Nov 19): an oval where its hooves meet the grass,
      darkest beneath the body and fading out, in the page's own dark teal */
-  .q-ewe-shadow { --w: min(150px, calc(var(--gutter) - 40px)); display: block; position: absolute; bottom: 0; height: 12px;
-    width: calc(var(--w) * 0.86); left: calc(var(--gutter) / 2 - var(--w) / 2 + var(--w) * 0.04);
-    background: radial-gradient(closest-side, rgba(23, 63, 60, 0.38), rgba(23, 63, 60, 0.18) 55%, rgba(23, 63, 60, 0) 100%);
+  .q-ewe-shadow { --w: calc(min(150px, calc(var(--gutter) - 40px)) * var(--k, 1)); display: block; position: absolute; bottom: 4px; height: 10px;
+    width: calc(var(--w) * 0.80); left: calc(var(--gutter) / 2 - var(--w) / 2 + var(--w) * 0.11);  /* under Puli's paws, sniffing (Nov 22) */
+    background: radial-gradient(closest-side, rgba(23, 63, 60, 0.26), rgba(23, 63, 60, 0.10) 60%, rgba(23, 63, 60, 0) 100%);
     pointer-events: none; }
 }
 /* Clumps of painted golden poppies (Alan, Nov 19), on the pale bands' bottom edges, centered in a margin where it's wide
@@ -264,8 +267,16 @@
 @media (min-width: 1100px) {
   .q-pasture { display: block; position: absolute; inset: 0; pointer-events: none; }
   .q-pasture img { position: absolute; bottom: 0; height: auto; }
-  .q-pasture__left  { left: 20px;  width: 170px; }
-  .q-pasture__right { right: 20px; width: 150px; }
+  .q-pasture__right { right: 20px; width: 170px; }  /* the poppies (Alan, Nov 22) */
+  /* Puli herding on the left (Alan, Nov 22), placed as one, like the poppies: short grass at her hind paws, --x from
+     her left, and a soft shadow under her */
+  .q-pasture__puli  { position: absolute; bottom: 0; left: 40px; width: 150px; height: 113px; transform: scale(1.3); transform-origin: 50% 100%; }  /* larger, with her grass and shadow (Alan, Nov 22) */
+  .q-pasture__puli img { left: 0; }
+  .q-pasture__dog   { width: 150px; }
+  .q-pasture__puli .q-pasture__tuft { left: var(--x); z-index: 1; }
+  .q-pasture__tuft--flip { transform: scaleX(-1); }
+  .q-pasture__shadow { position: absolute; bottom: 4px; left: 0; width: 130px; height: 14px;  /* reaching her hind paws, which sit about 11px up (Alan, Nov 22) */
+    background: radial-gradient(closest-side, rgba(23, 63, 60, 0.30), rgba(23, 63, 60, 0.12) 60%, rgba(23, 63, 60, 0) 100%); }
 }
 .q-hero .q-shot { flex: 0 1 auto; min-height: 0; display: flex; justify-content: center; align-items: flex-start; margin-top: 40px; }
 .q-hero .q-shot picture { display: contents; }
@@ -409,6 +420,12 @@
 .is-puli .waitlist:has(.q-meadow) .waitlist__inner { flex: 1; padding-bottom: 148px; }
 @media (max-width: 760px) { .is-puli .waitlist:has(.q-meadow) { min-height: 0; } .is-puli .waitlist:has(.q-meadow) .waitlist__inner { padding-bottom: 136px; } }
 .q-meadow { position: absolute; inset: auto 0 0; height: 0; pointer-events: none; }
+/* The flock, far off (Alan, Nov 22): a painted pasture behind the meadow, its sky and edges fading into the band, so the
+   sheep read as distant. Full color, by day and night. */
+.q-faraway { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 190px; object-fit: cover; object-position: 50% 44%;
+  pointer-events: none; -webkit-mask-image: linear-gradient(to bottom, transparent, #000 45%), linear-gradient(to right, transparent, #000 15%, #000 85%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, #000 45%), linear-gradient(to right, transparent, #000 15%, #000 85%, transparent); -webkit-mask-composite: source-in; mask-composite: intersect; }
+.is-puli .waitlist .waitlist__inner { position: relative; }
 .q-meadow img { position: absolute; bottom: 0; height: auto; transform: translateX(-50%); }
 .q-meadow img.q-meadow__flip { transform: translateX(-50%) scaleX(-1); }
 @media (max-width: 760px) { .q-meadow .q-meadow__wide { display: none; } }
@@ -441,6 +458,18 @@
   .q-founder { padding: 64px 0; }
   .q-faq { grid-template-columns: minmax(0, 1fr); gap: 32px; }
 }
+/* Puli running in 05, with her grass (Alan, Nov 22). Full screen, they stand in the left margin, Puli a little larger than
+   her grass and in mid air, just above it. They never shrink, and never move apart: as the window narrows, they slide
+   together toward its center, slowly, reaching it at 600px. --cx is their center: the margin's middle while they fit
+   there (1560px and up), the window's middle at 600px and below, and a straight line in between. The
+   section leaves room under the questions for them. */
+#questions .q-ewe--running, #questions .q-tuft-at { --w: 187.5px; --cx: max(calc(var(--gutter) / 2), min(calc(415px - 19.167%), 50%));
+  display: block; position: absolute; height: auto; right: auto; pointer-events: none; }
+#questions .q-ewe--running { width: calc(var(--w) * 1.15); left: calc(var(--cx) - var(--w) * 0.575); bottom: 9px; transform: rotate(-3deg); }
+#questions .q-tuft-at { --tws: calc(var(--tw) * 1.25); width: var(--tws); bottom: var(--b, 0px); z-index: 1;
+  left: calc(var(--cx) - var(--w) / 2 + var(--w) * var(--f) - var(--tws) / 2); }
+#questions .q-tuft-at--flip { transform: scaleX(-1); }
+@media (max-width: 1559px) { #questions { padding-bottom: 196px; } }
 
 @media (prefers-reduced-motion: reduce) {
   .q-link span, .q-faq__list summary::after { transition: none; }
