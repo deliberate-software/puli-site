@@ -4,7 +4,8 @@
   differ and a page always looks the same. A page with "meadow_puli: walking", "standing", "lying", "bow", "running", "herding" or "paw" in its front
   matter gets that Puli, from assets/images/puli/pack/pack-<name>.avif, in the first planting; about one page in five.
   The Puli replaced the sheep (Alan, Nov 22: the dog is the star; the sheep were becoming the mascot). With
-  "meadow_puli_large: true" it's 240px, from pack-<name>-480.avif, by a tuft to sniff: only the 404, with the sniffer.
+  "meadow_puli_width: <px>" sets its width (140px unless a page says otherwise; Alan, Nov 22), and the grass beside it
+  moves out with it; "meadow_puli_flip: true" turns it to face the other way. With "meadow_puli_large: true" it's 240px, from pack-<name>-480.avif, by a tuft to sniff: only the 404, with the sniffer.
   Each pose's file is made from Alan's art in tools/art/pack/ with tools/avif.swift. Full color, by day and night.
 {%- endcomment -%}
 {%- assign meadow_n = page.url | size | modulo: 3 -%}
@@ -22,11 +23,12 @@
   {%- endif %}
   <img class="q-meadow__wide" src="{{ g }}grass-flat-10.avif" alt="" width="128" height="126" style="left: {% if page.meadow_puli_large %}calc(34% - 100px){% else %}52%{% endif %}; width: 40px" loading="lazy">  {%- comment -%} where the large Puli would stand, the two trade places (Alan, Nov 21) {%- endcomment -%}
   {%- if page.meadow_puli and page.meadow_puli_large != true %}
+  {%- assign pw = page.meadow_puli_width | default: 140 -%}
   {%- case page.meadow_puli %}{% when "walking" %}{% assign ph = 191 %}{% when "standing" %}{% assign ph = 246 %}{% when "lying" %}{% assign ph = 201 %}{% when "bow" %}{% assign ph = 239 %}{% when "running" %}{% assign ph = 166 %}{% when "herding" %}{% assign ph = 226 %}{% when "paw" %}{% assign ph = 293 %}{% endcase %}
-  <img src="{{ d }}pack-{{ page.meadow_puli }}.avif" alt="" width="300" height="{{ ph }}" style="left: 76%; width: 140px; bottom: 2px" loading="lazy">
+  <img{% if page.meadow_puli_flip %} class="q-meadow__flip"{% endif %} src="{{ d }}pack-{{ page.meadow_puli }}.avif" alt="" width="300" height="{{ ph }}" style="left: 76%; width: {{ pw }}px; bottom: 2px" loading="lazy">
   {%- endif %}
-  <img class="q-meadow__flip" src="{{ g }}grass-flat-1.avif" alt="" width="180" height="86" style="left: calc(76% - 74px); width: 58px" loading="lazy">
-  <img src="{{ g }}grass-flat-5.avif" alt="" width="158" height="85" style="left: calc(76% + 66px); width: 50px" loading="lazy">
+  <img class="q-meadow__flip" src="{{ g }}grass-flat-1.avif" alt="" width="180" height="86" style="left: calc(76% - {{ pw | default: 140 | times: 0.53 | round }}px); width: 58px" loading="lazy">
+  <img src="{{ g }}grass-flat-5.avif" alt="" width="158" height="85" style="left: calc(76% + {{ pw | default: 140 | times: 0.47 | round }}px); width: 50px" loading="lazy">
   <img src="{{ g }}poppies-flat-6.avif" alt="" width="371" height="211" style="left: 95%; width: 110px" loading="lazy">
 {%- elsif meadow_n == 1 %}
   <img src="{{ g }}poppies-flat-4.avif" alt="" width="397" height="221" style="left: 6%; width: 120px" loading="lazy">
