@@ -12,7 +12,7 @@ Your notes about the people you work with, the projects you work on, and the pro
 
 ## The name
 
-Puli is named for a Hungarian herding dog with a corded coat. Say it POO-lee. A herding dog doesn't replace the shepherd: you decide what matters, and Puli makes sure none of it wanders off. Be subtle with the dog: herding, tricks, and lessons, not puns in every line.
+Puli is named for a Hungarian herding dog with a corded coat. Say it POO-lee. A herding dog doesn't replace the shepherd: you decide what matters, and Puli makes sure none of it wanders off. Be subtle with the dog in words: herding, tricks, and lessons, not puns in every line. In pictures, she's the star.
 
 ## The home page
 
@@ -44,7 +44,13 @@ By day the page is pale teal, with light screenshots and a cream menu bar. By ni
 
 ## The art
 
-Painted illustrations, not photos, so the site feels like software: grass, poppies, and sheep from the meadow. The home page has them throughout. Every other page has a strip of meadow along its foot, now and then with a sheep. The Puli herself appears only in the app icon and on the 404, sniffing a tuft of grass. The art is always full color, by day and by night: never dim or filter it.
+Painted illustrations, not photos, so the site feels like software: grass, poppies, and the Puli herself. The Puli is the star. The sheep were becoming the mascot by accident, so they moved to a far-off pasture (Nov 22).
+
+- **The Puli** appears in the app icon and across the site, in poses from Alan's art: herding in the hero, standing, sniffing, lying, running in mid air in Questions, walking, and a downward dog on Thanks. Each pose does something that suits its section; she's never a logo pasted in. More poses come from Alan's art, in the same painted style, so she always looks like one dog.
+- **The sheep** appear only far off: a painted pasture with the flock grazing in the distance, behind the meadow at the foot of the home page. Never a sheep up close, big enough to have a face.
+- **The meadow:** grass and poppies throughout the home page. Every other page has a strip of meadow along its foot; about one page in five has a Puli there, and the 404 has the large sniffer, sniffing a tuft of grass.
+- The art is always full color, by day and by night: never dim or filter it.
+- The originals are in `tools/art/` (`pack/` for the Puli, `pasture/` for the flock, `meadow/` for the grass and poppies); the site's AVIFs are drawn from them with `tools/avif.swift`.
 
 ## Words
 

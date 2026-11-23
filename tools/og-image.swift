@@ -4,7 +4,7 @@
 //
 // Run from the site's folder. It uses the site's own fonts (assets/fonts) and art (tools/art: the originals the site's AVIFs are drawn from): the app icon,
 // "Puli for Mac", "Herd your thoughts.", a two-line lede and a byline, centered as a group with equal margins, over the
-// painted meadow and three sheep along the bottom. Change the words in L1–L5 below; the layout follows their widths.
+// painted meadow along the bottom, with Puli herding and the flock far off in the pasture (Nov 22). Change the words in L1–L5 below; the layout follows their widths.
 import AppKit
 import CoreText
 // Drawn at 2x for crispness, then scaled down.
@@ -29,22 +29,37 @@ func place(_ p: String, x: CGFloat, bottom: CGFloat, width: CGFloat, flip: Bool 
 }
 hex(0xCFE1DD).setFill(); NSRect(x: 0, y: 0, width: W, height: H).fill()
 
-// the meadow along the bottom: smaller grass and poppies, so three sheep can stand among them at the site's scale
+// the flock, far off (Alan, Nov 22): the painted pasture along the bottom, its sky and ends fading into the teal, as at
+// the foot of the home page. Drawn so the pasture's row 277 meets the bottom edge, showing only the distant sheep.
+let pasture = img("pasture/pasture-grazing.png")
+let pScale = CGFloat(W) / pasture.size.width, pH = pasture.size.height * pScale, strip: CGFloat = 170
+pasture.draw(in: rect(0, CGFloat(H) - 277 * pScale, CGFloat(W), pH), from: .zero, operation: .sourceOver, fraction: 1)
+let bg = hex(0xCFE1DD)
+bg.setFill(); rect(0, 0, CGFloat(W), CGFloat(H) - strip).fill()
+NSGradient(starting: bg, ending: bg.withAlphaComponent(0))!.draw(in: rect(0, CGFloat(H) - strip, CGFloat(W), strip * 0.45), angle: -90)
+NSGradient(starting: bg, ending: bg.withAlphaComponent(0))!.draw(in: rect(0, CGFloat(H) - strip, 180, strip), angle: 0)
+NSGradient(starting: bg, ending: bg.withAlphaComponent(0))!.draw(in: rect(CGFloat(W) - 180, CGFloat(H) - strip, 180, strip), angle: 180)
+
+// the meadow in front: grass and poppies, and Puli herding on the left, as in the hero, with short grass at her hind
+// paws and a soft shadow under her
 place("meadow/grass-flat-8.png", x: -16, bottom: 0, width: 118)
-place("meadow/poppies-flat-4.png", x: 70, bottom: 0, width: 138)
-place("flock/flock-grazing-right.png", x: 186, bottom: 4, width: 152)
-place("meadow/grass-flat-1.png", x: 196, bottom: 0, width: 66, flip: true)
-place("meadow/grass-flat-5.png", x: 296, bottom: 0, width: 54)
-place("meadow/grass-flat-2.png", x: 340, bottom: 0, width: 64)
-place("meadow/poppies-flat-3.png", x: 404, bottom: 0, width: 104)
-place("flock/flock-lying.png", x: 516, bottom: 3, width: 150)
-place("meadow/grass-flat-5.png", x: 500, bottom: 0, width: 50, flip: true)
-place("meadow/grass-flat-1.png", x: 630, bottom: 0, width: 56)
-place("meadow/poppies-flat-5.png", x: 690, bottom: 0, width: 118)
-place("flock/flock-standing-left.png", x: 820, bottom: 5, width: 150)
-place("meadow/grass-flat-2.png", x: 812, bottom: 0, width: 62, flip: true)
-place("meadow/grass-flat-10.png", x: 936, bottom: 0, width: 44)
-place("meadow/poppies-flat-6.png", x: 980, bottom: 0, width: 134)
+place("meadow/poppies-flat-4.png", x: 64, bottom: 0, width: 132)
+let pupX: CGFloat = 212, pupW: CGFloat = 140, pk = pupW / 190   // smaller than at first (Alan, Nov 22)
+NSGraphicsContext.saveGraphicsState()
+let shadow = NSBezierPath(ovalIn: rect(pupX, CGFloat(H) - 4 - 12, pupW * 0.87, 12))
+NSGradient(colors: [hex(0x173F3C, 0.30), hex(0x173F3C, 0.12), hex(0x173F3C, 0)], atLocations: [0, 0.6, 1], colorSpace: .sRGB)!.draw(in: shadow, relativeCenterPosition: .zero)
+NSGraphicsContext.restoreGraphicsState()
+place("pack/pack-herding.png", x: pupX, bottom: 0, width: pupW)
+place("meadow/grass-flat-5.png", x: pupX + 2 * pk, bottom: 0, width: 42 * pk)
+place("meadow/grass-flat-1.png", x: pupX + 32 * pk, bottom: 0, width: 38 * pk, flip: true)
+place("meadow/grass-flat-2.png", x: pupX + 62 * pk, bottom: 0, width: 28 * pk)
+place("meadow/grass-flat-5.png", x: 370, bottom: 0, width: 46)
+place("meadow/grass-flat-2.png", x: 430, bottom: 0, width: 60)
+place("meadow/poppies-flat-3.png", x: 520, bottom: 0, width: 100)
+place("meadow/grass-flat-1.png", x: 660, bottom: 0, width: 54)
+place("meadow/poppies-flat-5.png", x: 760, bottom: 0, width: 112)
+place("meadow/grass-flat-10.png", x: 905, bottom: 0, width: 42)
+place("meadow/poppies-flat-6.png", x: 975, bottom: 0, width: 132)
 place("meadow/grass-flat-8.png", x: 1104, bottom: 0, width: 110, flip: true)
 
 // the words, centered on the icon: the name first and largest, as the menu bar sets it, then the headline, then a line
