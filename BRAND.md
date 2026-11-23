@@ -23,7 +23,7 @@ Every section has one job. If a line fits none of them, cut it.
 3. **How Puli Works.** "Just start writing. Puli takes it from there." The three pillars:
    - **People:** everyone you talk to has a page.
    - **Projects:** every project keeps its own thread.
-   - **Promises:** yours, and theirs.
+   - **Promises:** every one in one place.
 4. **Pricing.** "Free. Forever." Taking notes and capturing tasks are always free. Lessons teach Puli new tricks.
 5. **Three promises.** We will never abuse your privacy. We will never steal your attention. We will never revoke your purchases.
 6. **Questions,** then **About:** Alan's note, signed.
