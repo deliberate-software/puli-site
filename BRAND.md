@@ -60,10 +60,14 @@ Painted illustrations, not photos, so the site feels like software: grass, poppi
 - Write the Escape key as Esc.
 - Use the pillar names, not before, during, and after.
 
-## Pricing and platform
+## Licensing and platform
 
 - The basics, taking notes and managing tasks, are free, forever. Lessons are paid. Lessons you buy are yours to keep.
-- Don't publish prices, trials, or plans until Alan says so.
+- Two plans, bought in the app through the App Store:
+  - **A Year of Lessons:** every lesson so far, and every new one for 12 months. It renews yearly, starts with 30 days free, and can be cancelled anytime. Cancel and you keep every lesson you have; cancel during the free days and they lock again.
+  - **Forever Home:** every lesson so far, and every one to come, bought once.
+- Today, Triage, Progress, and Explore are free in Job Search journals, and the sample journals have every lesson.
+- Prices live only in the App Store. Never put them on the site or in these notes, so a change is made in one place.
 - Puli is Mac only, macOS 15 or later. Some features use Apple Intelligence, which needs a Mac with Apple silicon and macOS 26 or later. Don't promise an iPhone app.
 
 ## Who it's for
