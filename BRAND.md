@@ -109,7 +109,7 @@ They have classes, students, other professors, assignments, labs, and tests, wit
 
 ### Job seekers
 
-A job search is the manager's problem in its sharpest form: dozens of people and companies, conversations to prepare for, promises to keep, and high stakes. The Job Search sample journal shows it.
+A job search is the manager's problem in its sharpest form: dozens of people and companies, conversations to prepare for, promises to keep, and high stakes. The Group Product Manager Search sample journal shows it.
 
 Job seekers become managers again. Someone who lands a job with Puli takes it to work.
 
