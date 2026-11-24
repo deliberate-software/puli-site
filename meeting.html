@@ -10,21 +10,46 @@ main_class: q-section--teal   # dark teal, like the 404 and Confirm
   <h1 class="hero__title">Let’s give everyone a minute to join.</h1>
   <p class="hero__lead">Puli’s rounding up the stragglers.</p>
   <figure class="q-film">
-    <video class="q-film__video" autoplay muted loop playsinline preload="auto" width="1280" height="736"
+    <video class="q-film__video" autoplay muted loop playsinline preload="auto" width="1280" height="720"
            poster="{{ '/assets/video/herding-poster.avif' | relative_url }}"
-           aria-label="Puli herds a flock of sheep across a meadow and through the gate into their fold.">
+           aria-label="Puli barks and runs off across a meadow after the flock. The sheep crowd through an open gate, with Puli trotting in last, and then she shows off at the gate, grinning, before she runs off again.">
       <source src="{{ '/assets/video/herding-hevc.mp4' | relative_url }}" type='video/mp4; codecs="hvc1"'>
       <source src="{{ '/assets/video/herding.mp4' | relative_url }}" type="video/mp4">
     </video>
+    <button class="q-film__toggle" type="button" aria-label="Pause the film">
+      <svg class="q-film__pause" viewBox="0 0 18 18" aria-hidden="true"><rect x="3" y="2" width="4" height="14" rx="1"/><rect x="11" y="2" width="4" height="14" rx="1"/></svg>
+      <svg class="q-film__play" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 2.6v12.8a1 1 0 0 0 1.5.86l10.6-6.4a1 1 0 0 0 0-1.72L5.5 1.74A1 1 0 0 0 4 2.6z"/></svg>
+    </button>
   </figure>
 </section>
 <script>
-  // With Reduce Motion on, the film waits to be played, with its controls showing.
   (function () {
-    var video = document.querySelector('.q-film__video');
-    if (!video || !window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    video.removeAttribute('autoplay');
-    video.pause();
-    video.controls = true;
+    var film = document.querySelector('.q-film');
+    var video = film && film.querySelector('.q-film__video');
+    var toggle = film && film.querySelector('.q-film__toggle');
+    if (!video || !toggle) return;
+
+    // With Reduce Motion on, the film waits to be played, with its own controls showing, so the button isn't needed.
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      video.removeAttribute('autoplay');
+      video.pause();
+      video.controls = true;
+      toggle.hidden = true;
+      video.style.cursor = 'auto';
+      return;
+    }
+
+    // Otherwise it plays on its own, and a click on the film, or the button, pauses and resumes it.
+    function show() {
+      var paused = video.paused;
+      film.classList.toggle('q-film--paused', paused);
+      toggle.setAttribute('aria-label', paused ? 'Play the film' : 'Pause the film');
+    }
+    function flip() { if (video.paused) video.play(); else video.pause(); }
+    video.addEventListener('click', flip);
+    toggle.addEventListener('click', flip);
+    video.addEventListener('play', show);
+    video.addEventListener('pause', show);
+    show();
   })();
 </script>
