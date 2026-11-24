@@ -1,0 +1,30 @@
+---
+layout: default
+title: Sample meeting
+permalink: /meeting/
+description: A meeting from one of Puli's sample journals. There's no call to join.
+robots: noindex   # opened by Join Meeting in Puli's sample journals, not a page to find by search (Alan, Nov 24)
+main_class: q-section--teal   # dark teal, like the 404 and Confirm
+---
+<section class="hero q-meeting container">
+  <h1 class="hero__title">Let’s give everyone a minute to join.</h1>
+  <p class="hero__lead">Puli’s rounding up the stragglers. It’s only a sample meeting, so there’s no call to join, and ewe’re free to get back to work.</p>
+  <figure class="q-film">
+    <video class="q-film__video" autoplay muted loop playsinline preload="auto" width="1280" height="736"
+           poster="{{ '/assets/video/herding-poster.avif' | relative_url }}"
+           aria-label="Puli herds a flock of sheep across a meadow and through the gate into their fold.">
+      <source src="{{ '/assets/video/herding-hevc.mp4' | relative_url }}" type='video/mp4; codecs="hvc1"'>
+      <source src="{{ '/assets/video/herding.mp4' | relative_url }}" type="video/mp4">
+    </video>
+  </figure>
+</section>
+<script>
+  // With Reduce Motion on, the film waits to be played, with its controls showing.
+  (function () {
+    var video = document.querySelector('.q-film__video');
+    if (!video || !window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    video.removeAttribute('autoplay');
+    video.pause();
+    video.controls = true;
+  })();
+</script>

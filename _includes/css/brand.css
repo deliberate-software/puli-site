@@ -487,3 +487,15 @@ body.is-puli > main { flex: 1 0 auto; }
 main.has-meadow { position: relative; overflow: hidden; padding-bottom: 120px; }
 main.has-meadow:has(img[src*="-480."]) { padding-bottom: 190px; }  /* the 404 page's larger Puli needs more room (Alan, Nov 21) */
 @media (max-width: 760px) { main.has-meadow { padding-bottom: 104px; } }
+
+/* The sample meeting (meeting.html): everything centered, across and down, in the space between the menu bar and the
+   meadow at the foot, so the page fills one screen */
+.q-meeting { min-height: calc(100svh - 81px - 120px); box-sizing: border-box; justify-content: center; align-items: center;
+  text-align: center; padding-top: 48px; padding-bottom: 48px; gap: 24px; }
+.q-meeting .hero__lead { margin-left: auto; margin-right: auto; }
+@media (max-width: 760px) { .q-meeting { min-height: calc(100svh - 81px - 104px); } }
+/* Its film: the app's 8px corners, a soft shadow, no wider than 880px, and short enough that the headline, line, and
+   film all fit on one screen (1.739 is the film's width over its height; 300px is the headline and line) */
+.q-film { margin: 8px auto 0; width: 100%; max-width: min(880px, max(320px, calc((100svh - 81px - 120px - 300px) * 1.739))); }
+.q-film__video { display: block; width: 100%; height: auto; aspect-ratio: 1280 / 736; border-radius: 8px; background: #0A1615;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, .35), 0 0 0 1px rgba(255, 255, 255, .06); }

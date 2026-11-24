@@ -4,7 +4,7 @@ Notes to ourselves, not a page. This file is getpuli.com's brand guide; the comp
 
 Copy is Alan's. Apply his line edits as he writes them, with the site's typography: curly quotes and apostrophes, the middle dot in eyebrows.
 
-The app. Its site, getpuli.com, is the home page, How Lessons Work and a page per lesson, the Handler's Guide, Support, Privacy, Terms, Trademarks, Acknowledgements, and a 404.
+The app. Its site, getpuli.com, is the home page, How Lessons Work and a page per lesson, the Handler's Guide, Support, Privacy, Terms, Trademarks, Acknowledgements, a 404, and a sample meeting (`/meeting/`, kept out of search) that Join Meeting opens in Puli's sample journals.
 
 ## In one line
 
@@ -49,6 +49,7 @@ Painted illustrations, not photos, so the site feels like software: grass, poppi
 - **The Puli** appears in the app icon and across the site, in poses from Alan's art: herding in the hero, standing, sniffing, lying, running in mid air in Questions, walking, and a downward dog on Thanks. Each pose does something that suits its section; she's never a logo pasted in. More poses come from Alan's art, in the same painted style, so she always looks like one dog.
 - **The sheep** appear only far off: a painted pasture with the flock grazing in the distance, behind the meadow at the foot of the home page. Never a sheep up close, big enough to have a face.
 - **The meadow:** grass and poppies throughout the home page. Every other page has a strip of meadow along its foot; about one page in five has a Puli there, and the 404 has the large sniffer, sniffing a tuft of grass.
+- **The film:** the sample meeting plays Alan's video of the Puli herding the flock into the fold. It's the one place sheep come up close, faces and all: the page is an easter egg, and the joke needs them.
 - The art is always full color, by day and by night: never dim or filter it.
 - The originals are in `tools/art/` (`pack/` for the Puli, `pasture/` for the flock, `meadow/` for the grass and poppies); the site's AVIFs are drawn from them with `tools/avif.swift`.
 
