@@ -1,0 +1,19 @@
+<!doctype html>
+{%- comment -%}
+  An old address, forwarding to where its page lives now (jekyll-redirect-from writes one of these for each address a
+  page's redirect_from lists). It carries the #section along, which a plain refresh would drop: Puli's Help links to
+  sections, as /lessons/triage/#give-a-task-a-due-date. Kept out of search; its canonical link names the new address.
+{%- endcomment -%}
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Moved · Puli for Mac</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="{{ page.redirect.to }}">
+<script>location.replace({{ page.redirect.to | jsonify }} + location.hash);</script>
+<meta http-equiv="refresh" content="0; url={{ page.redirect.to }}">
+</head>
+<body>
+<p>This page has moved to <a href="{{ page.redirect.to }}">{{ page.redirect.to }}</a>.</p>
+</body>
+</html>

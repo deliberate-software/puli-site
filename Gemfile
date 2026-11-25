@@ -8,6 +8,11 @@ gem "jekyll", "~> 3.10"
 gem "kramdown-parser-gfm"
 gem "webrick"
 
+# Old addresses forwarding to new ones (redirect_from in a page's front matter); GitHub Pages runs it too.
+group :jekyll_plugins do
+  gem "jekyll-redirect-from", "~> 0.16"
+end
+
 # Part of Ruby's standard library before Ruby 3.4; Jekyll 3 still needs them.
 gem "csv"
 gem "base64"

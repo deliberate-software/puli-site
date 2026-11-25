@@ -23,6 +23,12 @@ collections:
 
 markdown: kramdown
 
+# Old addresses forward to new ones: a page lists the addresses it used to have in its front matter, as
+# `redirect_from: /lessons/today/`, and the plugin writes a page there that sends the visitor on, through
+# _layouts/redirect.html, which keeps the #section a link named. GitHub Pages runs this plugin (Nov 24).
+plugins:
+  - jekyll-redirect-from
+
 # Every page is Puli's: its menu bar, colors, and type (assets/css/puli.css).
 defaults:
   - scope:
