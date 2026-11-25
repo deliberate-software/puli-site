@@ -24,9 +24,8 @@ Every page wears Puli's brand (`_config.yml` defaults). Pages marked `published:
 | `terms.html` | Puli's terms, at `/terms/`: Apple's standard license agreement. |
 | `trademarks.html` | Every trademark notice, at `/trademarks/` (the footer links here). Add any brand name a published page mentions. |
 | `support.html` | Puli's support page, at `/support/` (App Store Connect's support URL). |
-| `guide/` | Puli's Handler's Guide, at `/guide/`: `index.html` is its contents, and each page beside it is one topic of the free app. Written from Puli's STORIES.md; keep it matching what ships. |
-| `lessons/` | One page per lesson, at `/lessons/<lesson>/`. `lessons.html` (How Lessons Work, at `/lessons/`) lists them. |
-| `lessons.html` | How Lessons Work, at `/lessons/` (Puli's Tricks links here). |
+| `guide/` | Puli's Handler's Guide, at `/guide/`: `index.html` is its contents, and each page beside it is one topic of the free app, or one lesson (today, triage, progress, explore, themes, typography, suggestions). Written from Puli's STORIES.md; keep it matching what ships. |
+| `lessons.html` | How Lessons Work, at `/lessons/` (Puli's Tricks links here): the plans, and each lesson with a blurb and a screenshot (`_includes/lesson-shot.html`, from `assets/images/puli/lessons/`). How to use each lesson is in the guide, at `/guide/<lesson>/`. |
 | `acknowledgements.html` | Puli's open source and font licenses, at `/acknowledgements/` (Puli's About window links here). It reads each license from `assets/licenses/` and `assets/fonts/OFL-*.txt`, so keep those files identical to the ones the app bundles, and update the date when they change. |
 | `assets/licenses/` | The license texts for Puli's open source code (GRDB, SQLCipher), exactly as upstream ships them. |
 | `assets/fonts/` | The site's fonts, all WOFF2 with their OFL licenses: Instrument Sans (variable, 400 to 700, Latin and Latin Extended), and IBM Plex Serif Light and Light Italic in `plex/`, as IBM publishes them (split by script). `OFL-Newsreader.txt` stays for the acknowledgements page: the app bundles Newsreader, though the site doesn't use it. |

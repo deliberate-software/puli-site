@@ -9,11 +9,14 @@ guard a.count >= 4, let maxW = Int(a[3]) else { print("usage: avif <in> <out.avi
 let quality = a.count > 4 ? Double(a[4])! : 0.6
 let src = CGImageSourceCreateWithURL(URL(fileURLWithPath: a[1]) as CFURL, nil)!
 let img = CGImageSourceCreateImageAtIndex(src, 0, nil)!
-let w = min(maxW, img.width), h = Int((Double(img.height) * Double(w) / Double(img.width)).rounded())
+// Both sides even: Chrome decodes some AVIFs with an odd side as wholly transparent (a 2122×937 one did, Nov 24),
+// so the last odd row or column, if any, is left out.
+let w0 = min(maxW, img.width), h0 = Int((Double(img.height) * Double(w0) / Double(img.width)).rounded())
+let w = w0 - w0 % 2, h = h0 - h0 % 2
 let ctx = CGContext(data: nil, width: w, height: h, bitsPerComponent: 8, bytesPerRow: 0,
                     space: CGColorSpace(name: CGColorSpace.sRGB)!, bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue)!
 ctx.interpolationQuality = .high
-ctx.draw(img, in: CGRect(x: 0, y: 0, width: w, height: h))
+ctx.draw(img, in: CGRect(x: 0, y: 0, width: w0, height: h0))   // drawn whole, bottom-left; an odd top row or right column falls off
 let out = ctx.makeImage()!
 let dest = CGImageDestinationCreateWithURL(URL(fileURLWithPath: a[2]) as CFURL, "public.avif" as CFString, 1, nil)!
 CGImageDestinationAddImage(dest, out, [kCGImageDestinationLossyCompressionQuality: quality] as CFDictionary)

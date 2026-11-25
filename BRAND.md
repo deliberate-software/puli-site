@@ -4,7 +4,7 @@ Notes to ourselves, not a page. This file is getpuli.com's brand guide; the comp
 
 Copy is Alan's. Apply his line edits as he writes them, with the site's typography: curly quotes and apostrophes, the middle dot in eyebrows.
 
-The app. Its site, getpuli.com, is the home page, How Lessons Work and a page per lesson, the Handler's Guide, Support, Privacy, Terms, Trademarks, Acknowledgements, a 404, a sample meeting (`/meeting/`, kept out of search) that Join Meeting opens in Puli's sample journals, and a job posting for a herding dog (`/jobs/`, kept out of search) that Group Product Manager Search's Job posting link opens.
+The app. Its site, getpuli.com, is the home page, How Lessons Work, the Handler’s Guide (with a page per lesson), Support, Privacy, Terms, Trademarks, Acknowledgements, a 404, a sample meeting (`/meeting/`, kept out of search) that Join Meeting opens in Puli's sample journals, and a job posting for a herding dog (`/jobs/`, kept out of search) that Group Product Manager Search's Job posting link opens.
 
 ## In one line
 

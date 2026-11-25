@@ -318,6 +318,7 @@
 .q-pen__title { margin: 12px 0 18px; font-family: var(--serif); font-weight: 300; font-size: clamp(32px, 3.4vw, 46px); line-height: 1.08; letter-spacing: -0.02em; }
 .q-pen__copy p:not(.q-pen__kicker) { color: var(--muted); }
 .q-pen .q-shot { margin: 0; }
+.q-lesson__shot { margin: 20px 0 12px; }   /* a lesson's screenshot on How Lessons Work, under its blurb */
 .q-code { font-family: var(--mono); font-size: 0.85em; padding: 1px 6px; border-radius: 5px; background: var(--glass); color: var(--ink); }
 .q-pen__stand-in {
   aspect-ratio: 16 / 10; border-radius: 14px; border: 1px dashed color-mix(in srgb, var(--ink) 25%, transparent);

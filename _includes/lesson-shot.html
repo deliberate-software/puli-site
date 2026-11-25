@@ -1,0 +1,17 @@
+{%- comment -%}
+  A lesson's screenshot on How Lessons Work, from assets/images/puli/lessons/: <name>.png, and its AVIFs, full size
+  and 1200px; a <name>-dark set, if there is one, shows in dark mode. Click it to see it enlarged (data-full; see
+  marks.js). Parameters: name, alt, and width and height when it isn't a 2122×1404 window.
+{%- endcomment -%}
+{%- capture base %}/assets/images/puli/lessons/{{ include.name }}{% endcapture -%}
+{%- capture dark_png %}{{ base }}-dark.png{% endcapture -%}
+{%- assign dark = site.static_files | where: "path", dark_png | first -%}
+{%- assign w = include.width | default: 2122 -%}
+<figure class="q-shot q-lesson__shot"><picture>
+  {%- if dark %}
+  <source srcset="{{ base | append: '-dark-1200.avif' | relative_url }} 1200w, {{ base | append: '-dark.avif' | relative_url }} {{ w }}w" sizes="(min-width: 800px) 720px, 92vw" type="image/avif" media="(prefers-color-scheme: dark)">
+  <source srcset="{{ base | append: '-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)">
+  {%- endif %}
+  <source srcset="{{ base | append: '-1200.avif' | relative_url }} 1200w, {{ base | append: '.avif' | relative_url }} {{ w }}w" sizes="(min-width: 800px) 720px, 92vw" type="image/avif">
+  <img src="{{ base | append: '.png' | relative_url }}" width="{{ w }}" height="{{ include.height | default: 1404 }}" alt="{{ include.alt }}" loading="lazy" data-full="{{ base | append: '.avif' | relative_url }}"{% if dark %} data-full-dark="{{ base | append: '-dark.avif' | relative_url }}"{% endif %}>
+</picture></figure>
