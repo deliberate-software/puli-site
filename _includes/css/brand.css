@@ -435,6 +435,10 @@
    bar between the scene and the footer. The section keeps its height: the bar's height comes out of the scene. By day,
    the scene's light teal fades down into the painting's own sky (#EFEEEA). By night, the pasture stays as it was, its
    sky and edges fading into the ink teal. */
+/* The scene takes the footer's room too (Alan, Nov 25): the section fills the whole screen under the menu bar, so the
+   icon and title sit in the sky with the land below them; the footer follows on scroll. */
+.is-puli .waitlist:has(.waitlist__bar) { min-height: calc(100svh - var(--menu-h)); }
+@media (max-width: 760px) { .is-puli .waitlist:has(.waitlist__bar) { min-height: 0; } }
 .is-puli .waitlist:has(.waitlist__bar) .waitlist__inner { flex: 0 0 auto; justify-content: flex-start; padding-top: 48px; padding-bottom: 40px; }
 .is-puli .waitlist__scene .waitlist__icon { width: 160px; }
 .waitlist__scene { position: relative; flex: 1; display: flex; flex-direction: column; --bar-h: 86px; }
