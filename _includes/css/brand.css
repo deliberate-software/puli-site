@@ -511,3 +511,7 @@ main.has-meadow:has(img[src*="-480."]) { padding-bottom: 190px; }  /* the 404 pa
 .q-film__toggle .q-film__play, .q-film--paused .q-film__toggle .q-film__pause { display: none; }
 .q-film--paused .q-film__toggle .q-film__play { display: block; }
 .q-film__toggle[hidden] { display: none; }
+
+/* The job posting's fine print (jobs.html), as a real posting's equal-opportunity notice: small and muted, below its
+   button (Alan, Nov 24). */
+.q-fineprint { margin: 48px 0 0; max-width: 46em; font-size: 12px; line-height: 1.5; color: var(--muted); text-wrap: pretty; }

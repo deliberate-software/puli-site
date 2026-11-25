@@ -1,7 +1,7 @@
 {%- comment -%}
   The meadow's edge along the foot of every page but the home page (Alan, Nov 21): the home page's painted grass and
   poppies, and now and then a Puli. Each page gets one of three plantings, picked by its address, so neighbouring pages
-  differ and a page always looks the same. A page with "meadow_puli: walking", "standing", "lying", "bow", "running", "herding" or "paw" in its front
+  differ and a page always looks the same. A page with "meadow_puli: walking", "standing", "sitting", "lying", "bow", "running", "herding" or "paw" in its front
   matter gets that Puli, from assets/images/puli/pack/pack-<name>.avif, in the first planting; about one page in five.
   The Puli replaced the sheep (Alan, Nov 22: the dog is the star; the sheep were becoming the mascot). With
   "meadow_puli_width: <px>" sets its width (140px unless a page says otherwise; Alan, Nov 22), and the grass beside it
@@ -24,7 +24,7 @@
   <img class="q-meadow__wide" src="{{ g }}grass-flat-10.avif" alt="" width="128" height="126" style="left: {% if page.meadow_puli_large %}calc(34% - 100px){% else %}52%{% endif %}; width: 40px" loading="lazy">  {%- comment -%} where the large Puli would stand, the two trade places (Alan, Nov 21) {%- endcomment -%}
   {%- if page.meadow_puli and page.meadow_puli_large != true %}
   {%- assign pw = page.meadow_puli_width | default: 140 -%}
-  {%- case page.meadow_puli %}{% when "walking" %}{% assign ph = 191 %}{% when "standing" %}{% assign ph = 246 %}{% when "lying" %}{% assign ph = 201 %}{% when "bow" %}{% assign ph = 239 %}{% when "running" %}{% assign ph = 166 %}{% when "herding" %}{% assign ph = 226 %}{% when "paw" %}{% assign ph = 293 %}{% endcase %}
+  {%- case page.meadow_puli %}{% when "walking" %}{% assign ph = 191 %}{% when "standing" %}{% assign ph = 246 %}{% when "sitting" %}{% assign ph = 368 %}{% when "lying" %}{% assign ph = 201 %}{% when "bow" %}{% assign ph = 239 %}{% when "running" %}{% assign ph = 166 %}{% when "herding" %}{% assign ph = 226 %}{% when "paw" %}{% assign ph = 293 %}{% endcase %}
   <img{% if page.meadow_puli_flip %} class="q-meadow__flip"{% endif %} src="{{ d }}pack-{{ page.meadow_puli }}.avif" alt="" width="300" height="{{ ph }}" style="left: 76%; width: {{ pw }}px; bottom: 2px" loading="lazy">
   {%- endif %}
   <img class="q-meadow__flip" src="{{ g }}grass-flat-1.avif" alt="" width="180" height="86" style="left: calc(76% - {{ pw | default: 140 | times: 0.53 | round }}px); width: 58px" loading="lazy">
