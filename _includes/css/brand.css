@@ -435,17 +435,19 @@
 .is-puli .waitlist__scene .waitlist__icon { width: 160px; }
 .waitlist__scene { position: relative; flex: 1; display: flex; flex-direction: column; --bar-h: 86px; }
 @media (max-width: 760px) { .waitlist__scene { --bar-h: 0px; } }
-.waitlist__title { font-family: var(--serif); font-weight: 300; font-size: clamp(32px, 3.8vw, 52px); line-height: 1.15; letter-spacing: -0.01em; margin: 4px 0 16px; }
+.waitlist__title { font-family: var(--serif); font-weight: 300; font-size: clamp(32px, 3.8vw, 52px); line-height: 1.15; letter-spacing: -0.01em; margin: 4px 0 12px; }
 .is-puli .waitlist__scene .waitlist__icon { margin-bottom: 18px; }
+.waitlist__byline { font-size: 14px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: #173F3C; margin: 0 0 16px; }  /* as on the App Store's closing frame, beneath the line (Alan, Nov 25) */
+@media (prefers-color-scheme: dark) { .waitlist__byline { color: #C3D3CF; } }
 @media not (prefers-color-scheme: dark) {
   .is-puli .waitlist:has(.waitlist__bar) { background: #CFE1DD; }
   /* The pasture stands its full 31.6vw where the scene has room; where it doesn't, it shortens (cropping its sides, never
-     its sheep) so its land, 15% down, always starts below the title (which ends about 310px down, with 40px of sky under it). */
+     its sheep) so its land, 15% down, always starts below the title (with the byline, it ends about 340px down, with 40px of sky under it). */
   /* Its foot runs on behind the bar (Alan, Nov 25: the scene lowered, the flowers left where they are), so it reaches the
      section's foot, --bar-h (the bar's height) below the scene's. */
-  .waitlist__scene { --pasture-h: min(31.6vw, calc((100% + var(--bar-h) - 350px) / 0.85));
+  .waitlist__scene { --pasture-h: min(31.6vw, calc((100% + var(--bar-h) - 380px) / 0.85));
     background: linear-gradient(to bottom, #CFE1DD 0, #CFE1DD calc(100% + var(--bar-h) - var(--pasture-h) - 22vw), #EFEEEA calc(100% + var(--bar-h) - var(--pasture-h))); }
-  .waitlist__scene .q-faraway { bottom: calc(-1 * var(--bar-h)); height: min(31.6vw, calc((100% + var(--bar-h) - 350px) / 0.85)); object-fit: cover; object-position: 50% 100%; -webkit-mask-image: linear-gradient(to bottom, transparent, #000 4vw); mask-image: linear-gradient(to bottom, transparent, #000 4vw); }
+  .waitlist__scene .q-faraway { bottom: calc(-1 * var(--bar-h)); height: min(31.6vw, calc((100% + var(--bar-h) - 380px) / 0.85)); object-fit: cover; object-position: 50% 100%; -webkit-mask-image: linear-gradient(to bottom, transparent, #000 4vw); mask-image: linear-gradient(to bottom, transparent, #000 4vw); }
 }
 /* The bar (Alan, Nov 25): one slim row, no taller than the footer: the line at the left, the field and button in the
    middle, the note at the right in two lines; stacked on narrow screens. */
