@@ -40,7 +40,6 @@ exclude:
   - signature.jpg   # the photo the signature SVG was traced from
   - README.md
   - BRAND.md          # Puli's brand, and who it's for: not a page
-  - tools             # scripts for making the site's images, not pages
   - Gemfile
   - Gemfile.lock
   - vendor

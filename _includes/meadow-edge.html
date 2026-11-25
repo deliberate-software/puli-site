@@ -6,7 +6,7 @@
   The Puli replaced the sheep (Alan, Nov 22: the dog is the star; the sheep were becoming the mascot). With
   "meadow_puli_width: <px>" sets its width (140px unless a page says otherwise; Alan, Nov 22), and the grass beside it
   moves out with it; "meadow_puli_flip: true" turns it to face the other way. With "meadow_puli_large: true" it's 240px, from pack-<name>-480.avif, by a tuft to sniff: only the 404, with the sniffer.
-  Each pose's file is made from Alan's art in tools/art/pack/ with tools/avif.swift. Full color, by day and night.
+  Each pose's file is made from Alan's art in puli-assets' art/pack/ with its site/avif.swift. Full color, by day and night.
 {%- endcomment -%}
 {%- assign meadow_n = page.url | size | modulo: 3 -%}
 {%- if page.meadow_puli %}{% assign meadow_n = 0 %}{% endif -%}

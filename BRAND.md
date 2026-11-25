@@ -51,7 +51,7 @@ Painted illustrations, not photos, so the site feels like software: grass, poppi
 - **The meadow:** grass and poppies throughout the home page. Every other page has a strip of meadow along its foot; about one page in five has a Puli there, and the 404 has the large sniffer, sniffing a tuft of grass.
 - **The film:** the sample meeting plays Alan's video of the Puli herding the flock into the fold. It's the one place sheep come up close, faces and all: the page is an easter egg, and the joke needs them.
 - The art is always full color, by day and by night: never dim or filter it.
-- The originals are in `tools/art/` (`pack/` for the Puli, `pasture/` for the flock, `meadow/` for the grass and poppies); the site's AVIFs are drawn from them with `tools/avif.swift`.
+- The originals are in the private `puli-assets` repo, in `art/` (`pack/` for the Puli, `pasture/` for the flock, `meadow/` for the grass and poppies); the site's AVIFs are drawn from them with its `site/avif.swift`.
 
 ## Words
 
