@@ -17,15 +17,15 @@
 {%- assign light_small = site.static_files | where: "path", light_small_path | first -%}
 {%- assign dark_small = site.static_files | where: "path", dark_small_path | first -%}
 {%- comment -%} As with the hero: an AVIF copy beside each PNG (about a seventh the size) goes first, and the PNG stays for
-  browsers without AVIF. A 1200px copy is what the page shows (about 610px wide, so sharp on Retina); the full 2022×1330
+  browsers without AVIF. A 1200px copy is what the page shows (about 610px wide, so sharp on Retina); the full 2122×1404
   AVIF loads only when someone clicks to enlarge it (data-full; see marks.js). width and height hold the space until the
   shot loads. {%- endcomment -%}
 {%- if light %}
 <figure class="q-pen__shot q-shot"><picture>
-  {%- if dark_avif %}<source srcset="{% if dark_small %}{{ dark_small.path | relative_url }} 1200w, {% endif %}{{ dark_avif.path | relative_url }} 2022w" sizes="(min-width: 1000px) 610px, 92vw" type="image/avif" media="(prefers-color-scheme: dark)">{% endif %}
+  {%- if dark_avif %}<source srcset="{% if dark_small %}{{ dark_small.path | relative_url }} 1200w, {% endif %}{{ dark_avif.path | relative_url }} 2122w" sizes="(min-width: 1000px) 610px, 92vw" type="image/avif" media="(prefers-color-scheme: dark)">{% endif %}
   {%- if dark %}<source srcset="{{ dark.path | relative_url }}" media="(prefers-color-scheme: dark)">{% endif %}
-  {%- if light_avif %}<source srcset="{% if light_small %}{{ light_small.path | relative_url }} 1200w, {% endif %}{{ light_avif.path | relative_url }} 2022w" sizes="(min-width: 1000px) 610px, 92vw" type="image/avif">{% endif %}
-  <img src="{{ light.path | relative_url }}" width="{{ include.width | default: 2022 }}" height="{{ include.height | default: 1330 }}" alt="{{ include.alt }}" loading="lazy"{% if light_avif %} data-full="{{ light_avif.path | relative_url }}"{% endif %}{% if dark_avif %} data-full-dark="{{ dark_avif.path | relative_url }}"{% endif %}>
+  {%- if light_avif %}<source srcset="{% if light_small %}{{ light_small.path | relative_url }} 1200w, {% endif %}{{ light_avif.path | relative_url }} 2122w" sizes="(min-width: 1000px) 610px, 92vw" type="image/avif">{% endif %}
+  <img src="{{ light.path | relative_url }}" width="{{ include.width | default: 2122 }}" height="{{ include.height | default: 1404 }}" alt="{{ include.alt }}" loading="lazy"{% if light_avif %} data-full="{{ light_avif.path | relative_url }}"{% endif %}{% if dark_avif %} data-full-dark="{{ dark_avif.path | relative_url }}"{% endif %}>
 </picture></figure>
 {%- else %}
 <div class="q-pen__shot q-pen__stand-in" data-shot="Screenshot: {{ include.shot }}">Screenshot to come: {{ include.label }}</div>
