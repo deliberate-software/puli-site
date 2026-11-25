@@ -247,7 +247,6 @@ body_class: is-puli
 </section>
 
 <section class="q-founder q-section--pasture" id="about" aria-labelledby="about-heading">
-  {% include poppy.html n=2 set="meadow" side="right" w=170 %}
   <div class="q-wrap q-founder__inner">
     <h2 class="q-caps q-caps--body" id="about-heading"><span class="q-num">06</span>About</h2>
     <blockquote class="q-founder__quote">
@@ -262,43 +261,50 @@ body_class: is-puli
 </section>
 
 <section class="waitlist" id="download" aria-label="Download Puli" tabindex="-1">
-  {%- comment -%} The link preview's meadow along the foot of the page (Alan, Nov 19): painted grass, poppies and three
-    sheep at the site's scale, each placed by its center along the section's width. Fewer on phones. {%- endcomment %}
-  <img class="q-faraway" src="{{ '/assets/images/puli/pasture/pasture-grazing.avif' | relative_url }}" alt="" width="1248" height="394" aria-hidden="true" loading="lazy">  {%- comment -%} the flock, far off, grazing (Alan, Nov 22: the sheep move to a distant pasture) {%- endcomment %}
-  <div class="q-meadow" aria-hidden="true">
-    <img src="{{ '/assets/images/puli/meadow/grass-flat-8.avif' | relative_url }}" alt="" width="368" height="235" style="left: 4%; width: 118px" loading="lazy">
-    <img src="{{ '/assets/images/puli/meadow/poppies-flat-4.avif' | relative_url }}" alt="" width="397" height="221" style="left: 12%; width: 138px" loading="lazy">
-    <img class="q-meadow__flip q-meadow__wide" src="{{ '/assets/images/puli/meadow/grass-flat-1.avif' | relative_url }}" alt="" width="180" height="86" style="left: 21%; width: 66px" loading="lazy">
-    <img class="q-meadow__wide" src="{{ '/assets/images/puli/meadow/grass-flat-5.avif' | relative_url }}" alt="" width="158" height="85" style="left: calc(23% + 61px); width: 54px" loading="lazy">
-    <img class="q-meadow__wide" src="{{ '/assets/images/puli/meadow/grass-flat-2.avif' | relative_url }}" alt="" width="167" height="95" style="left: 33%; width: 64px" loading="lazy">
-    <img class="q-meadow__wide" src="{{ '/assets/images/puli/meadow/poppies-flat-3.avif' | relative_url }}" alt="" width="239" height="127" style="left: 40%; width: 104px" loading="lazy">
-    <img class="q-meadow__flip" src="{{ '/assets/images/puli/meadow/grass-flat-5.avif' | relative_url }}" alt="" width="158" height="85" style="left: 44%; width: 50px" loading="lazy">
-    <img src="{{ '/assets/images/puli/meadow/grass-flat-1.avif' | relative_url }}" alt="" width="180" height="86" style="left: 56.5%; width: 56px" loading="lazy">
-    <img class="q-meadow__wide" src="{{ '/assets/images/puli/meadow/poppies-flat-5.avif' | relative_url }}" alt="" width="313" height="172" style="left: 63%; width: 118px" loading="lazy">
-    <img class="q-meadow__flip q-meadow__wide" src="{{ '/assets/images/puli/meadow/grass-flat-2.avif' | relative_url }}" alt="" width="167" height="95" style="left: 70%; width: 62px" loading="lazy">
-    <img class="q-meadow__wide" src="{{ '/assets/images/puli/meadow/grass-flat-10.avif' | relative_url }}" alt="" width="128" height="126" style="left: 81%; width: 44px" loading="lazy">
-    <img src="{{ '/assets/images/puli/meadow/poppies-flat-6.avif' | relative_url }}" alt="" width="371" height="211" style="left: 88%; width: 134px" loading="lazy">
-    <img class="q-meadow__flip" src="{{ '/assets/images/puli/meadow/grass-flat-8.avif' | relative_url }}" alt="" width="368" height="235" style="left: 97%; width: 110px" loading="lazy">
+  {%- comment -%} The scene (Alan, Nov 25): the icon and the line from the App Store's closing frame in the sky, the
+    whole pasture below, edge to edge; then the form in one dark teal bar between the scene and the footer.
+    The bar takes its height from the scene, so the section stays the same height. {%- endcomment %}
+  <div class="waitlist__scene">
+    {%- comment -%} The link preview's meadow along the foot of the page (Alan, Nov 19): painted grass, poppies and three
+      sheep at the site's scale, each placed by its center along the section's width. Fewer on phones. {%- endcomment %}
+    <img class="q-faraway" src="{{ '/assets/images/puli/pasture/pasture-grazing.avif' | relative_url }}" alt="" width="1248" height="394" aria-hidden="true" loading="lazy">  {%- comment -%} the flock, far off, grazing (Alan, Nov 22: the sheep move to a distant pasture) {%- endcomment %}
+    <div class="q-meadow" aria-hidden="true">
+      <img src="{{ '/assets/images/puli/meadow/grass-flat-8.avif' | relative_url }}" alt="" width="368" height="235" style="left: 4%; width: 118px" loading="lazy">
+      <img src="{{ '/assets/images/puli/meadow/poppies-flat-4.avif' | relative_url }}" alt="" width="397" height="221" style="left: 12%; width: 138px" loading="lazy">
+      <img class="q-meadow__flip q-meadow__wide" src="{{ '/assets/images/puli/meadow/grass-flat-1.avif' | relative_url }}" alt="" width="180" height="86" style="left: 21%; width: 66px" loading="lazy">
+      <img class="q-meadow__wide" src="{{ '/assets/images/puli/meadow/grass-flat-5.avif' | relative_url }}" alt="" width="158" height="85" style="left: calc(23% + 61px); width: 54px" loading="lazy">
+      <img class="q-meadow__wide" src="{{ '/assets/images/puli/meadow/grass-flat-2.avif' | relative_url }}" alt="" width="167" height="95" style="left: 33%; width: 64px" loading="lazy">
+      <img class="q-meadow__wide" src="{{ '/assets/images/puli/meadow/poppies-flat-3.avif' | relative_url }}" alt="" width="239" height="127" style="left: 40%; width: 104px" loading="lazy">
+      <img class="q-meadow__flip" src="{{ '/assets/images/puli/meadow/grass-flat-5.avif' | relative_url }}" alt="" width="158" height="85" style="left: 44%; width: 50px" loading="lazy">
+      <img src="{{ '/assets/images/puli/meadow/grass-flat-1.avif' | relative_url }}" alt="" width="180" height="86" style="left: 56.5%; width: 56px" loading="lazy">
+      <img class="q-meadow__wide" src="{{ '/assets/images/puli/meadow/poppies-flat-5.avif' | relative_url }}" alt="" width="313" height="172" style="left: 63%; width: 118px" loading="lazy">
+      <img class="q-meadow__flip q-meadow__wide" src="{{ '/assets/images/puli/meadow/grass-flat-2.avif' | relative_url }}" alt="" width="167" height="95" style="left: 70%; width: 62px" loading="lazy">
+      <img class="q-meadow__wide" src="{{ '/assets/images/puli/meadow/grass-flat-10.avif' | relative_url }}" alt="" width="128" height="126" style="left: 81%; width: 44px" loading="lazy">
+      <img src="{{ '/assets/images/puli/meadow/poppies-flat-6.avif' | relative_url }}" alt="" width="371" height="211" style="left: 88%; width: 134px" loading="lazy">
+      <img class="q-meadow__flip" src="{{ '/assets/images/puli/meadow/grass-flat-8.avif' | relative_url }}" alt="" width="368" height="235" style="left: 97%; width: 110px" loading="lazy">
+    </div>
+    <div class="container waitlist__inner">
+      <img class="waitlist__icon" src="{{ '/assets/images/puli/puli-icon-rounded-400.avif' | relative_url }}" alt="Puli’s app icon" width="200" height="200" loading="lazy">
+      <p class="waitlist__title">Puli: A good dog for busy people.</p>
+    </div>
   </div>
-  <div class="container waitlist__inner">
-    <img class="waitlist__icon" src="{{ '/assets/images/puli/puli-icon-rounded-400.avif' | relative_url }}" alt="Puli’s app icon" width="200" height="200" loading="lazy">
-    {%- comment -%} Apple's badge can't be reworded, so until launch a plain pill says it's coming (Alan, Nov 19).
-      At launch, put {% include app-store-badge.html %} back here. {%- endcomment %}
-    <p class="q-coming">Coming soon to the Mac App Store.</p>
-    {%- comment -%} The mailing list (Alan, Nov 19): Kit's form, the one the old waitlist used, with the same tag.
-      The wording is a draft. {%- endcomment %}
-    <form class="waitlist__form waitlist__form--list" id="keep-posted" action="{{ site.kit.form_action }}" method="post">
-      <input type="hidden" name="tags[]" value="{{ app.kit_tag_id }}">
-      <p class="waitlist__lead">Hear when Puli learns new tricks.</p>
-      <div class="field">
-        <label for="list-email">Email address</label>
-        <div class="field__row">
-          <input id="list-email" name="email_address" type="email" autocomplete="email" placeholder="you@example.com" required>
-          <button class="button button--inverse" type="submit">Keep me posted</button>
+  <div class="waitlist__bar">
+    <div class="container">
+      {%- comment -%} The mailing list (Alan, Nov 19): Kit's form, the one the old waitlist used, with the same tag.
+        The wording is a draft. {%- endcomment %}
+      <form class="waitlist__form waitlist__form--list" id="keep-posted" action="{{ site.kit.form_action }}" method="post">
+        <input type="hidden" name="tags[]" value="{{ app.kit_tag_id }}">
+        <p class="waitlist__lead">Hear about Puli’s new tricks.</p>
+        <div class="field">
+          <label for="list-email">Email address</label>
+          <div class="field__row">
+            <input id="list-email" name="email_address" type="email" autocomplete="email" placeholder="you@example.com" required>
+            <button class="button button--inverse" type="submit">Keep me posted</button>
+          </div>
         </div>
-      </div>
-      <p class="waitlist__note">Only Puli news, now and then. We never sell or share your email, and every one has an unsubscribe link. <a href="{{ '/privacy/' | relative_url }}">Privacy, plainly</a></p>
-    </form>
+        <p class="waitlist__note">Only Puli news, now and then.<br>We believe in privacy. See our policy below.</p>
+      </form>
+    </div>
   </div>
 </section>
 

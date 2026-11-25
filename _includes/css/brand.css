@@ -426,6 +426,56 @@
 .q-faraway { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 190px; object-fit: cover; object-position: 50% 44%;
   pointer-events: none; -webkit-mask-image: linear-gradient(to bottom, transparent, #000 45%), linear-gradient(to right, transparent, #000 15%, #000 85%, transparent);
   mask-image: linear-gradient(to bottom, transparent, #000 45%), linear-gradient(to right, transparent, #000 15%, #000 85%, transparent); -webkit-mask-composite: source-in; mask-composite: intersect; }
+/* The download section, as the App Store's closing frame (Alan, Nov 25): the icon and "Puli: A good dog for busy people."
+   in the sky, the whole pasture below it, edge to edge, its top edge fading into the sky; then the form in one dark teal
+   bar between the scene and the footer. The section keeps its height: the bar's height comes out of the scene. By day,
+   the scene's light teal fades down into the painting's own sky (#EFEEEA). By night, the pasture stays as it was, its
+   sky and edges fading into the ink teal. */
+.is-puli .waitlist:has(.waitlist__bar) .waitlist__inner { flex: 0 0 auto; justify-content: flex-start; padding-top: 48px; padding-bottom: 40px; }
+.is-puli .waitlist__scene .waitlist__icon { width: 160px; }
+.waitlist__scene { position: relative; flex: 1; display: flex; flex-direction: column; --bar-h: 86px; }
+@media (max-width: 760px) { .waitlist__scene { --bar-h: 0px; } }
+.waitlist__title { font-family: var(--serif); font-weight: 300; font-size: clamp(32px, 3.8vw, 52px); line-height: 1.15; letter-spacing: -0.01em; margin: 4px 0 16px; }
+.is-puli .waitlist__scene .waitlist__icon { margin-bottom: 18px; }
+@media not (prefers-color-scheme: dark) {
+  .is-puli .waitlist:has(.waitlist__bar) { background: #CFE1DD; }
+  /* The pasture stands its full 31.6vw where the scene has room; where it doesn't, it shortens (cropping its sides, never
+     its sheep) so its land, 15% down, always starts below the title (which ends about 310px down, with 40px of sky under it). */
+  /* Its foot runs on behind the bar (Alan, Nov 25: the scene lowered, the flowers left where they are), so it reaches the
+     section's foot, --bar-h (the bar's height) below the scene's. */
+  .waitlist__scene { --pasture-h: min(31.6vw, calc((100% + var(--bar-h) - 350px) / 0.85));
+    background: linear-gradient(to bottom, #CFE1DD 0, #CFE1DD calc(100% + var(--bar-h) - var(--pasture-h) - 22vw), #EFEEEA calc(100% + var(--bar-h) - var(--pasture-h))); }
+  .waitlist__scene .q-faraway { bottom: calc(-1 * var(--bar-h)); height: min(31.6vw, calc((100% + var(--bar-h) - 350px) / 0.85)); object-fit: cover; object-position: 50% 100%; -webkit-mask-image: linear-gradient(to bottom, transparent, #000 4vw); mask-image: linear-gradient(to bottom, transparent, #000 4vw); }
+}
+/* The bar (Alan, Nov 25): one slim row, no taller than the footer: the line at the left, the field and button in the
+   middle, the note at the right in two lines; stacked on narrow screens. */
+.waitlist__bar { position: relative; background: #173F3C; color: #FBF8F3; --ink: #FBF8F3; --muted: #C3D3CF; --glass: #FBF9F4; padding: 22px 0; }  /* about the footer's height (Alan, Nov 25) */
+@media (prefers-color-scheme: dark) { .waitlist__bar { background: #0A1615; } }
+.waitlist__bar .container { max-width: none; padding: 0 48px; }
+.is-puli .waitlist__bar .waitlist__form { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 28px; max-width: none; margin: 0; text-align: left; }
+.is-puli .waitlist__bar .waitlist__lead { margin-right: 10px; }  /* the field's white box reads closer than the note's text; this evens the two gaps by eye */
+.is-puli .waitlist__bar .waitlist__lead { font-family: var(--serif); font-weight: 300; font-size: 20px; white-space: nowrap; justify-self: end; }
+.is-puli .waitlist__bar .field__row { flex-wrap: nowrap; }
+.is-puli .waitlist__bar .field__row input { flex: 0 0 240px; min-width: 0; min-height: 42px; color: #27282B; border-color: #FBF9F4; }
+.is-puli .waitlist__bar .field__row input::placeholder { color: #5C5D61; }
+.is-puli .waitlist__bar .button { white-space: nowrap; flex: none; min-height: 42px; }
+.is-puli .waitlist__bar .waitlist__note { max-width: 500px; font-size: 13px; line-height: 1.45; color: #C3D3CF; }
+.is-puli .waitlist__bar .waitlist__note a { color: #FBF8F3; }
+.is-puli .waitlist__bar :focus-visible { outline-color: #FBF8F3; }
+@media (max-width: 760px) {
+  .is-puli .waitlist__bar { padding: 20px 0; }
+  .waitlist__bar .container { padding: 0 20px; }
+  .is-puli .waitlist__bar .waitlist__lead { white-space: normal; }
+  .is-puli .waitlist__bar .waitlist__form { grid-template-columns: 1fr; gap: 14px; text-align: center; }
+  .is-puli .waitlist__bar .waitlist__lead { justify-self: center; }
+  .is-puli .waitlist__bar .waitlist__note { max-width: none; }
+  .is-puli .waitlist__bar .field { width: 100%; }
+  .is-puli .waitlist__bar .field__row { flex-wrap: wrap; }
+  .is-puli .waitlist__bar .field__row input { flex: 1 1 100%; }
+  .is-puli .waitlist__bar .button { flex: 1 1 100%; }
+  /* On a phone the pasture is short (31.6vw), so the sky makes room for all of it under the title. */
+  .is-puli .waitlist:has(.waitlist__bar) .waitlist__inner { padding-bottom: calc(27vw + 16px); }
+}
 .is-puli .waitlist .waitlist__inner { position: relative; }
 .q-meadow img { position: absolute; bottom: 0; height: auto; transform: translateX(-50%); }
 .q-meadow img.q-meadow__flip { transform: translateX(-50%) scaleX(-1); }
