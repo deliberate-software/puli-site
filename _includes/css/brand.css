@@ -347,6 +347,10 @@
 /* ---------- founder: the one serif voice ---------- */
 
 .q-founder { padding: 96px 0; }
+/* A full screen to itself (Alan, Nov 25): at least the window's height under the menu bar, the note centered in it, so
+   the download section's icon never creeps up into view under it. */
+.is-puli .q-founder { min-height: calc(100svh - var(--menu-h)); display: flex; flex-direction: column; justify-content: center; }
+.is-puli .q-founder > .q-founder__inner { width: 100%; }
 .q-founder__inner { max-width: 860px; }
 .q-founder__quote { margin: 28px 0 0; }
 .q-founder__quote p { font-family: var(--serif); font-style: italic; font-weight: 300; font-size: clamp(24px, 2.6vw, 32px); line-height: 1.45; letter-spacing: -0.01em; text-wrap: pretty; }
