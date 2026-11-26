@@ -439,7 +439,7 @@
    icon and title sit in the sky with the land below them; the footer follows on scroll. */
 .is-puli .waitlist:has(.waitlist__bar) { min-height: calc(100svh - var(--menu-h)); }
 @media (max-width: 760px) { .is-puli .waitlist:has(.waitlist__bar) { min-height: 0; } }
-.is-puli .waitlist:has(.waitlist__bar) .waitlist__inner { flex: 0 0 auto; justify-content: flex-start; padding-top: 48px; padding-bottom: 40px; }
+.is-puli .waitlist:has(.waitlist__bar) .waitlist__inner { flex: 0 0 auto; justify-content: flex-start; padding-top: 88px; padding-bottom: 40px; }  /* lowered 40px (Alan, Nov 26) */
 .is-puli .waitlist__scene .waitlist__icon { width: 160px; }
 .waitlist__scene { position: relative; flex: 1; display: flex; flex-direction: column; --bar-h: 86px; }
 @media (max-width: 760px) { .waitlist__scene { --bar-h: 0px; } }
@@ -450,12 +450,12 @@
 @media not (prefers-color-scheme: dark) {
   .is-puli .waitlist:has(.waitlist__bar) { background: #CFE1DD; }
   /* The pasture stands its full 31.6vw where the scene has room; where it doesn't, it shortens (cropping its sides, never
-     its sheep) so its land, 15% down, always starts below the title (with the byline, it ends about 340px down, with 40px of sky under it). */
+     its sheep) so its land, 15% down, always starts below the title (with the byline, it ends about 380px down, with 40px of sky under it). */
   /* Its foot runs on behind the bar (Alan, Nov 25: the scene lowered, the flowers left where they are), so it reaches the
      section's foot, --bar-h (the bar's height) below the scene's. */
-  .waitlist__scene { --pasture-h: min(31.6vw, calc((100% + var(--bar-h) - 380px) / 0.85));
+  .waitlist__scene { --pasture-h: min(31.6vw, calc((100% + var(--bar-h) - 420px) / 0.85));
     background: linear-gradient(to bottom, #CFE1DD 0, #CFE1DD calc(100% + var(--bar-h) - var(--pasture-h) - 22vw), #EFEEEA calc(100% + var(--bar-h) - var(--pasture-h))); }
-  .waitlist__scene .q-faraway { bottom: calc(-1 * var(--bar-h)); height: min(31.6vw, calc((100% + var(--bar-h) - 380px) / 0.85)); object-fit: cover; object-position: 50% 100%; -webkit-mask-image: linear-gradient(to bottom, transparent, #000 4vw); mask-image: linear-gradient(to bottom, transparent, #000 4vw); }
+  .waitlist__scene .q-faraway { bottom: calc(-1 * var(--bar-h)); height: min(31.6vw, calc((100% + var(--bar-h) - 420px) / 0.85)); object-fit: cover; object-position: 50% 100%; -webkit-mask-image: linear-gradient(to bottom, transparent, #000 4vw); mask-image: linear-gradient(to bottom, transparent, #000 4vw); }
 }
 /* The bar (Alan, Nov 25): one slim row, no taller than the footer: the line at the left, the field and button in the
    middle, the note at the right in two lines; stacked on narrow screens. */
@@ -490,6 +490,18 @@
 .q-meadow img { position: absolute; bottom: 0; height: auto; transform: translateX(-50%); }
 .q-meadow img.q-meadow__flip { transform: translateX(-50%) scaleX(-1); }
 @media (max-width: 760px) { .q-meadow .q-meadow__wide { display: none; } }
+/* Puli in the closing meadow, doing tricks when clicked, as in the app's About window (Alan, Nov 26). One spot, her
+   center; each pose drawn there at one scale (its width and left set by the script in index.html), fading from one to
+   the next; a soft shadow under her paws; the grass at her hind paws in front, leaving her to be clicked. */
+.q-meadow .q-trick { position: absolute; bottom: 0; width: 0; height: 0; }
+.q-meadow .q-trick img { max-width: none; }  /* the box is only a point, her center */
+.q-meadow .q-trick__pose { bottom: 2px; transform: none; opacity: 0; transition: opacity 0.25s ease-in-out; pointer-events: none; cursor: pointer; -webkit-user-drag: none; user-select: none; -webkit-tap-highlight-color: transparent; }
+.q-meadow .q-trick__pose.is-on { opacity: 1; pointer-events: auto; }
+.q-meadow .q-trick__tuft { left: calc(-100px + var(--x)); transform: none; z-index: 1; }
+.q-meadow .q-trick__tuft--flip { transform: scaleX(-1); }
+.q-trick__shadow { position: absolute; bottom: 4px; height: 14px; transition: left 0.25s ease-in-out, width 0.25s ease-in-out;
+  background: radial-gradient(closest-side, rgba(23, 63, 60, 0.30), rgba(23, 63, 60, 0.12) 60%, rgba(23, 63, 60, 0) 100%); }
+@media (prefers-reduced-motion: reduce) { .q-meadow .q-trick__pose, .q-trick__shadow { transition: none; } }
 
 /* A graphite line along the top of the footer (Alan, Nov 19), matching the menu bar's foot; lighter graphite by night.
    Shown even after the closing section, where site.css otherwise drops it. */

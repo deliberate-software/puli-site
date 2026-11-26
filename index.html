@@ -276,6 +276,20 @@ body_class: is-puli
       <img class="q-meadow__wide" src="{{ '/assets/images/puli/meadow/grass-flat-2.avif' | relative_url }}" alt="" width="167" height="95" style="left: 33%; width: 64px" loading="lazy">
       <img class="q-meadow__wide" src="{{ '/assets/images/puli/meadow/poppies-flat-3.avif' | relative_url }}" alt="" width="239" height="127" style="left: 40%; width: 104px" loading="lazy">
       <img class="q-meadow__flip" src="{{ '/assets/images/puli/meadow/grass-flat-5.avif' | relative_url }}" alt="" width="158" height="85" style="left: 44%; width: 50px" loading="lazy">
+      {%- comment -%} Puli, sitting in the meadow, as in the app's About window (Alan, Nov 26): click her and she does her
+        next trick, shake, herd, beg, and sit, with a treat after begging; left alone a minute she lies down, and a minute more
+        she's asleep, till a click sits her up (a script below). Each pose at one scale, centered on one spot, a soft shadow
+        under her paws, and short grass at her hind paws that leaves her to be clicked. {%- endcomment %}
+      <div class="q-trick" style="left: 23.5%">  {%- comment -%} where About has her: centered 193 of its 820 points {%- endcomment %}
+        <span class="q-trick__shadow"></span>
+        {%- assign trick_poses = "sitting,shake,herding,begging,treat,lying,sleeping" | split: "," -%}
+        {%- for p in trick_poses %}
+        <img class="q-trick__pose{% if p == 'sitting' %} is-on{% endif %}" data-pose="{{ p }}" src="{{ '/assets/images/puli/tricks/puli-' | append: p | append: '.avif' | relative_url }}" alt="" loading="lazy">
+        {%- endfor %}
+        <img class="q-trick__tuft" src="{{ '/assets/images/puli/meadow/grass-flat-5.avif' | relative_url }}" alt="" width="158" height="85" style="--x: 2px; width: 42px" loading="lazy">
+        <img class="q-trick__tuft q-trick__tuft--flip" src="{{ '/assets/images/puli/meadow/grass-flat-1.avif' | relative_url }}" alt="" width="180" height="86" style="--x: 32px; width: 38px" loading="lazy">
+        <img class="q-trick__tuft" src="{{ '/assets/images/puli/meadow/grass-flat-2.avif' | relative_url }}" alt="" width="167" height="95" style="--x: 63px; width: 28px" loading="lazy">
+      </div>
       <img src="{{ '/assets/images/puli/meadow/grass-flat-1.avif' | relative_url }}" alt="" width="180" height="86" style="left: 56.5%; width: 56px" loading="lazy">
       <img class="q-meadow__wide" src="{{ '/assets/images/puli/meadow/poppies-flat-5.avif' | relative_url }}" alt="" width="313" height="172" style="left: 63%; width: 118px" loading="lazy">
       <img class="q-meadow__flip q-meadow__wide" src="{{ '/assets/images/puli/meadow/grass-flat-2.avif' | relative_url }}" alt="" width="167" height="95" style="left: 70%; width: 62px" loading="lazy">
@@ -324,6 +338,65 @@ body_class: is-puli
     if (window.ResizeObserver) new ResizeObserver(place).observe(shot);
     window.addEventListener("resize", place);
     shot.addEventListener("load", place);
+  })();
+</script>
+
+<script>
+  // Puli in the closing meadow (Alan, Nov 26), as in the app's About window: sitting; clicked, her next trick for 2
+  // seconds, shake, herd, beg, and sit (sitting one of them, so clicking quickly still shows it; Alan, Nov 26), and after
+  // begging, a treat for 2 more; left alone a minute, she lies down, and a minute
+  // more, she's asleep, till a click sits her up. A click mid-trick starts the next at once.
+  (function () {
+    var box = document.querySelector(".q-trick");
+    if (!box) return;
+    var scale = 150 / 322;   // sitting 150px wide; every pose drawn at one scale, from its picture's pixels
+    // Each pose's picture width, and where her shadow reaches under her paws, in its pixels (the app's own numbers).
+    var poses = {
+      sitting: [322, 40, 300], shake: [419, 30, 310], herding: [432, 0, 373.5], begging: [334, 44, 254],
+      treat: [390, 50, 335], lying: [460, 15, 450], sleeping: [516, 11, 501]
+    };
+    var tricks = ["shake", "herding", "begging", "sitting"], trickTime = 2000, lieDownAfter = 60000, sleepAfter = 120000;
+    var imgs = {}, shadow = box.querySelector(".q-trick__shadow");
+    box.querySelectorAll(".q-trick__pose").forEach(function (img) {
+      var p = poses[img.dataset.pose], w = p[0] * scale;
+      img.style.width = w + "px"; img.style.left = -w / 2 + "px";
+      imgs[img.dataset.pose] = img;
+      img.loading = "eager";   // all of them, so a trick never waits on its picture
+      img.addEventListener("click", click);
+    });
+    var last = Date.now(), trick = null, done = 0, timer = null, shown = null;
+    function hasTreat() { return trick === "begging"; }
+    function aloneSince() { return trick === null ? last : last + trickTime * (hasTreat() ? 2 : 1); }
+    function pose(now) {
+      var since = now - last;
+      if (trick !== null && since < trickTime) return trick;
+      if (hasTreat() && since < 2 * trickTime) return "treat";
+      var alone = now - aloneSince();
+      return alone >= sleepAfter ? "sleeping" : alone >= lieDownAfter ? "lying" : "sitting";
+    }
+    function show() {
+      var now = Date.now(), p = pose(now);
+      if (p !== shown) {
+        if (shown) imgs[shown].classList.remove("is-on");
+        imgs[p].classList.add("is-on"); shown = p;
+        var d = poses[p], w = d[0] * scale;
+        shadow.style.left = (-w / 2 + d[1] * scale) + "px"; shadow.style.width = (d[2] - d[1]) * scale + "px";
+      }
+      // Drawn again the next moment she changes by herself: a trick or treat over, lying down, asleep.
+      var a = aloneSince(), moments = [a + lieDownAfter, a + sleepAfter];
+      if (trick !== null) moments.push(last + trickTime);
+      if (hasTreat()) moments.push(last + 2 * trickTime);
+      var next = Math.min.apply(null, moments.filter(function (m) { return m > now; }).concat([Infinity]));
+      clearTimeout(timer);
+      if (next < Infinity) timer = setTimeout(show, next - now + 20);
+    }
+    function click() {
+      var now = Date.now(), resting = ["lying", "sleeping"].indexOf(pose(now)) >= 0;
+      last = now;
+      if (resting) trick = null; else { trick = tricks[done % tricks.length]; done += 1; }
+      show();
+    }
+    show();
   })();
 </script>
 
