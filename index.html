@@ -270,8 +270,8 @@ body_class: is-puli
     <img class="q-faraway" src="{{ '/assets/images/puli/pasture/pasture-grazing.avif' | relative_url }}" alt="" width="1248" height="394" aria-hidden="true" loading="lazy">  {%- comment -%} the flock, far off, grazing (Alan, Nov 22: the sheep move to a distant pasture) {%- endcomment %}
     <div class="q-meadow" aria-hidden="true">
       {%- comment -%} Puli, sitting in the meadow, as in the app's About window (Alan, Nov 26): click her and she does her
-        next trick, shake, herd, beg, and sit, with a treat after begging; left alone a minute she lies down, and a minute more
-        she's asleep, till a click sits her up (a script below). Each pose at one scale, centered on one spot, a soft shadow
+        next trick, shake, herd, beg, and sit, with a treat after begging; left alone a minute after she's found, she lies down, and a
+        minute more she's asleep, till a click sits her up (a script below). Each pose at one scale, centered on one spot, a soft shadow
         under her paws, and short grass at her hind paws that leaves her to be clicked. First in the meadow, so its grass and poppies stand in front of her (Alan, Nov 26). {%- endcomment %}
       <div class="q-trick" style="left: 23.5%">  {%- comment -%} where About has her: centered 193 of its 820 points {%- endcomment %}
         <span class="q-trick__shadow"></span>
@@ -355,8 +355,8 @@ body_class: is-puli
       sitting: [322, 40, 300], shake: [419, 30, 310], herding: [432, 0, 373.5], begging: [334, 44, 254],
       treat: [390, 50, 335], lying: [460, 15, 450], sleeping: [516, 11, 501]
     };
-    // Lying down drawn smaller than the others' scale, as it read too large beside them (Alan, Nov 26).
-    var shrink = { lying: 0.85 };
+    // Lying down and asleep drawn smaller than the others' scale, as they read too large beside them (Alan, Nov 26).
+    var shrink = { lying: 0.85, sleeping: 0.9 };
     var tricks = ["shake", "herding", "begging", "sitting"], trickTime = 2000, lieDownAfter = 60000, sleepAfter = 120000;
     var imgs = {}, shadow = box.querySelector(".q-trick__shadow");
     box.querySelectorAll(".q-trick__pose").forEach(function (img) {
@@ -366,13 +366,16 @@ body_class: is-puli
       img.loading = "eager";   // all of them, so a trick never waits on its picture
       img.addEventListener("click", click);
     });
-    var last = Date.now(), trick = null, done = 0, timer = null, shown = null;
+    // She lies down and sleeps only once someone's found her tricks (Alan, Nov 26): till the first click she sits, however
+    // long the page has been open, so whoever scrolls down finds her awake.
+    var last = Date.now(), trick = null, done = 0, timer = null, shown = null, found = false;
     function hasTreat() { return trick === "begging"; }
     function aloneSince() { return trick === null ? last : last + trickTime * (hasTreat() ? 2 : 1); }
     function pose(now) {
       var since = now - last;
       if (trick !== null && since < trickTime) return trick;
       if (hasTreat() && since < 2 * trickTime) return "treat";
+      if (!found) return "sitting";
       var alone = now - aloneSince();
       return alone >= sleepAfter ? "sleeping" : alone >= lieDownAfter ? "lying" : "sitting";
     }
@@ -390,11 +393,11 @@ body_class: is-puli
       if (hasTreat()) moments.push(last + 2 * trickTime);
       var next = Math.min.apply(null, moments.filter(function (m) { return m > now; }).concat([Infinity]));
       clearTimeout(timer);
-      if (next < Infinity) timer = setTimeout(show, next - now + 20);
+      if (found && next < Infinity) timer = setTimeout(show, next - now + 20);
     }
     function click() {
       var now = Date.now(), resting = ["lying", "sleeping"].indexOf(pose(now)) >= 0;
-      last = now;
+      found = true; last = now;
       if (resting) trick = null; else { trick = tricks[done % tricks.length]; done += 1; }
       show();
     }
