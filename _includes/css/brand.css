@@ -472,17 +472,20 @@
 .is-puli .waitlist__bar .waitlist__note { max-width: 500px; font-size: 13px; line-height: 1.45; color: #C3D3CF; }
 .is-puli .waitlist__bar .waitlist__note a { color: #FBF8F3; }
 .is-puli .waitlist__bar :focus-visible { outline-color: #FBF8F3; }
+/* Stacked where the row won't fit (Alan, Nov 26: the note was squeezed to a word a line): the line, then the field and
+   button, always on one line, the field taking what's left, then the note. */
+@media (max-width: 1160px) {
+  .is-puli .waitlist__bar .waitlist__lead { white-space: normal; margin-right: 0; justify-self: center; }
+  .is-puli .waitlist__bar .waitlist__form { grid-template-columns: minmax(0, 1fr); gap: 14px; text-align: center; }
+  .is-puli .waitlist__bar .waitlist__note { max-width: none; }
+  .is-puli .waitlist__bar .field { width: 100%; max-width: 480px; justify-self: center; }
+  .is-puli .waitlist__bar .field__row input { flex: 1 1 0; width: auto; min-width: 0; }
+}
 @media (max-width: 760px) {
   .is-puli .waitlist__bar { padding: 20px 0; }
   .waitlist__bar .container { padding: 0 20px; }
-  .is-puli .waitlist__bar .waitlist__lead { white-space: normal; }
-  .is-puli .waitlist__bar .waitlist__form { grid-template-columns: 1fr; gap: 14px; text-align: center; }
-  .is-puli .waitlist__bar .waitlist__lead { justify-self: center; }
-  .is-puli .waitlist__bar .waitlist__note { max-width: none; }
-  .is-puli .waitlist__bar .field { width: 100%; }
-  .is-puli .waitlist__bar .field__row { flex-wrap: wrap; }
-  .is-puli .waitlist__bar .field__row input { flex: 1 1 100%; }
-  .is-puli .waitlist__bar .button { flex: 1 1 100%; }
+  .is-puli .waitlist__bar .button { font-size: 16px; padding-left: 16px; padding-right: 16px; }  /* room for the field beside it */
+  .is-puli .waitlist__bar .field__row input { font-size: 16px; }  /* 16px, so a phone doesn't zoom in on it */
   /* On a phone the pasture is short (31.6vw), so the sky makes room for all of it under the title. */
   .is-puli .waitlist:has(.waitlist__bar) .waitlist__inner { padding-bottom: calc(27vw + 16px); }
 }
@@ -502,6 +505,7 @@
 .q-trick__shadow { position: absolute; bottom: 4px; height: 14px; transition: left 0.25s ease-in-out, width 0.25s ease-in-out;
   background: radial-gradient(closest-side, rgba(23, 63, 60, 0.30), rgba(23, 63, 60, 0.12) 60%, rgba(23, 63, 60, 0) 100%); }
 @media (prefers-reduced-motion: reduce) { .q-meadow .q-trick__pose, .q-trick__shadow { transition: none; } }
+@media (max-width: 760px) { .q-meadow .q-trick { transform: scale(0.6); transform-origin: 0 100%; } }  /* smaller on a phone, below the title */
 
 /* A graphite line along the top of the footer (Alan, Nov 19), matching the menu bar's foot; lighter graphite by night.
    Shown even after the closing section, where site.css otherwise drops it. */
